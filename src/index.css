@@ -1,0 +1,92 @@
+:root {
+  --kraft: #c9a876;
+  --kraft-dark: #a9825a;
+  --kraft-darker: #8a6743;
+  --cream: #f4ecd8;
+  --paper: #faf5ea;
+  --pink: #eec2c6;
+  --pink-line: #d99aa1;
+  --ink: #251d15;
+  --brown: #2b241d;
+  --brown-deep: #1c1712;
+  --olive: #46402f;
+  --line: rgba(37, 29, 21, 0.16);
+  --line-strong: rgba(37, 29, 21, 0.35);
+
+  --font-serif: 'DM Serif Display', Georgia, serif;
+  --font-mono: 'Space Mono', ui-monospace, monospace;
+  --font-script: 'Caveat', cursive;
+  --font-sans: 'Space Grotesk', system-ui, sans-serif;
+
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+#root {
+  position: relative;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+.grain {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+}
+
+.wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding-inline: clamp(20px, 5vw, 64px);
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  color: var(--olive);
+}
+
+.star {
+  display: inline-block;
+}
+
+section {
+  position: relative;
+}
+
+::selection {
+  background: var(--pink);
+  color: var(--brown-deep);
+}

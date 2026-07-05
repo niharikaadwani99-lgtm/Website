@@ -1,0 +1,29 @@
+.site-footer {
+  background: var(--kraft-darker);
+  color: var(--paper);
+  padding: 26px 0;
+}
+
+.site-footer__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.site-footer .star {
+  color: var(--pink);
+}
+
+.site-footer a {
+  text-decoration: none;
+  color: var(--paper);
+  opacity: 0.8;
+}
+
+.site-footer a:hover {
+  opacity: 1;
+}
