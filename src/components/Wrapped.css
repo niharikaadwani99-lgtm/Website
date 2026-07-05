@@ -1,5 +1,9 @@
 .wrapped {
-  background: var(--brown-deep);
+  background:
+    linear-gradient(180deg, rgba(20, 16, 12, 0.55), rgba(20, 16, 12, 0.85) 55%, var(--brown-deep) 90%),
+    radial-gradient(ellipse 70% 40% at 20% 0%, #6f8a5e, transparent 60%),
+    radial-gradient(ellipse 60% 35% at 85% 5%, #7a9a6b, transparent 55%),
+    linear-gradient(180deg, #a9c3d8 0%, #b9a97e 45%, #46402f 75%, var(--brown-deep) 100%);
   padding: 100px 0;
   color: var(--paper);
 }
@@ -52,10 +56,13 @@
 }
 
 .envelope__sub {
-  font-family: var(--font-script);
-  font-size: 1.25rem;
+  font-family: var(--font-sans);
+  font-style: italic;
+  font-size: 0.92rem;
   color: var(--olive);
   margin: 0;
+  max-width: 30ch;
+  margin-inline: auto;
 }
 
 .wrapped__stats {
