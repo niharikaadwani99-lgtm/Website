@@ -24,8 +24,21 @@ src/
     Wrapped.jsx          "year wrapped" stats + envelope card
     Scrapbook.jsx        contact form + polaroid social links
     Footer.jsx
-  index.css              design tokens, grain overlay, globals
+    Deco.jsx             shared tape / stickers / paperclip / stamp bits
+  pages/
+    Home.jsx              the one-page site (everything above)
+    Planner.jsx           /planner — interactive "digital planner" cover
+                          that flips open into a spread with editable
+                          "belongs to" fields, a clickable photo strip
+                          (lightbox), a postcard, and charm nav shortcuts
+  index.css               design tokens, grain overlay, globals
 ```
+
+Routing is client-side (`react-router-dom`, `BrowserRouter`). Deploying to a
+static host (Netlify, Vercel, GitHub Pages, etc.) needs a catch-all rewrite to
+`index.html` so a hard refresh on `/planner` doesn't 404 — `vite preview`
+handles this automatically, but production static hosts need their own
+rewrite rule (e.g. Netlify's `_redirects` with `/* /index.html 200`).
 
 ## Develop
 

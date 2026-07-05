@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './Nav.css'
 
 const LINKS = [
@@ -20,6 +21,7 @@ function Nav() {
               {link.label}
             </a>
           ))}
+          <Link to="/planner">Planner</Link>
         </nav>
         <a href="#contact" className="nav__cta">
           Say hi →

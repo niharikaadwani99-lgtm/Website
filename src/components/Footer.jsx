@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './Footer.css'
 
 function Footer() {
@@ -7,6 +8,7 @@ function Footer() {
         <p>
           <span className="star">✸</span> made by gabbtopia &middot; 2026
         </p>
+        <Link to="/planner">open the planner ✎</Link>
         <a href="#top">back to top ↑</a>
       </div>
     </footer>
