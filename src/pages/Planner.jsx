@@ -21,7 +21,11 @@ function useStoredFields() {
   })
 
   useEffect(() => {
-    localStorage.setItem('gabbtopia-planner', JSON.stringify(fields))
+    try {
+      localStorage.setItem('gabbtopia-planner', JSON.stringify(fields))
+    } catch {
+      // storage can be unavailable (private browsing, sandboxed embeds, etc.) — fields just won't persist
+    }
   }, [fields])
 
   const update = (key) => (e) => setFields((f) => ({ ...f, [key]: e.target.value }))
