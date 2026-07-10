@@ -1,0 +1,175 @@
+/* ————— the room that isn't on the map ————— */
+
+.sx {
+  min-height: 100vh;
+  padding: 34px clamp(22px, 6vw, 80px) 100px;
+  background:
+    radial-gradient(70% 46% at 50% 12%, rgba(214, 150, 118, 0.16), transparent 70%),
+    linear-gradient(180deg, #241a16 0%, #1b1310 60%, #140e0c 100%);
+  color: #f0e2d2;
+}
+
+.sx-nav {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+  padding-bottom: 26px;
+  border-bottom: 1px solid rgba(212, 147, 138, 0.3);
+  color: #a08a76;
+}
+
+.sx-nav__back {
+  transition: color 0.6s ease;
+}
+
+.sx-nav__back:hover {
+  color: #d4938a;
+}
+
+.sx-header {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: clamp(56px, 8vw, 110px) 0 30px;
+  text-align: center;
+}
+
+.sx-header__eyebrow {
+  color: #d4938a;
+}
+
+.sx-header__title {
+  margin-top: 18px;
+  font-family: var(--display);
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  letter-spacing: 0.05em;
+}
+
+.sx-header__subtitle {
+  margin-top: 12px;
+  font-style: italic;
+  font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+  color: #c8a888;
+}
+
+.sx-header__intro {
+  margin-top: 34px;
+  font-size: 1.08rem;
+  line-height: 1.75;
+  text-align: left;
+  color: #e2cfba;
+}
+
+/* pieces hang in a single contemplative column */
+.sx-pieces {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(30px, 4vw, 48px);
+  max-width: 680px;
+  margin: clamp(30px, 5vw, 60px) auto 0;
+}
+
+.sx-piece {
+  padding: 36px 36px 40px;
+  background: rgba(66, 44, 34, 0.35);
+  border: 1px solid rgba(212, 147, 138, 0.25);
+  box-shadow: 0 24px 44px rgba(0, 0, 0, 0.35);
+  transition: border-color 1s ease;
+}
+
+.sx-piece:hover {
+  border-color: rgba(212, 147, 138, 0.6);
+}
+
+/* notes read like they were written by hand, late */
+.sx-piece--note .sx-piece__text,
+.sx-piece--note .sx-piece__list {
+  font-style: italic;
+}
+
+.sx-piece__number {
+  color: #d4938a;
+}
+
+.sx-piece__title {
+  margin-top: 12px;
+  font-family: var(--serif);
+  font-size: 1.65rem;
+  font-weight: 500;
+}
+
+.sx-piece__text {
+  margin-top: 18px;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #ecd9c6;
+}
+
+.sx-piece__list {
+  margin: 18px 0 0;
+  padding-left: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #ecd9c6;
+}
+
+.sx-piece__list li::marker {
+  color: #d4938a;
+}
+
+.sx-photo {
+  margin: 22px 0 0;
+}
+
+.sx-photo__frame {
+  display: block;
+  padding: 10px;
+  background: linear-gradient(135deg, #6f5d4e, #4a3b30);
+  box-shadow: inset 0 0 0 1px rgba(212, 175, 106, 0.35);
+}
+
+.sx-photo figcaption {
+  margin-top: 16px;
+}
+
+.sx-guestbook {
+  margin-top: 12px;
+  padding: 34px 30px;
+  text-align: center;
+  border-top: 1px solid rgba(212, 147, 138, 0.3);
+  border-bottom: 1px solid rgba(212, 147, 138, 0.3);
+}
+
+.sx-guestbook__label {
+  color: #a08a76;
+}
+
+.sx-guestbook__entry {
+  margin-top: 18px;
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #f0e2d2;
+}
+
+.sx-footer {
+  margin-top: clamp(60px, 8vw, 100px);
+  text-align: center;
+  color: #a08a76;
+}
+
+.sx-footer__link {
+  display: inline-block;
+  margin-top: 16px;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: #d4938a;
+  transition: color 0.6s ease;
+}
+
+.sx-footer__link:hover {
+  color: #f0b9ae;
+}

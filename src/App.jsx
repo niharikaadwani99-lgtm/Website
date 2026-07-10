@@ -1,13 +1,37 @@
-import { Route, Routes } from 'react-router-dom'
-import Home from './pages/Home.jsx'
-import Planner from './pages/Planner.jsx'
+import { useEffect } from 'react'
+import { Route, Routes, useLocation } from 'react-router-dom'
+import EntranceHall from './museum/EntranceHall.jsx'
+import Wing from './museum/Wing.jsx'
+import SpecialExhibition from './museum/SpecialExhibition.jsx'
+import Ambience from './museum/Ambience.jsx'
+import { WINGS } from './museum/wings.js'
+
+function ScrollToTop() {
+  const { pathname } = useLocation()
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' })
+  }, [pathname])
+  return null
+}
 
 function App() {
+  const location = useLocation()
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/planner" element={<Planner />} />
-    </Routes>
+    <>
+      <ScrollToTop />
+      {/* keying by pathname replays the slow room-entry fade on every door */}
+      <div className="room" key={location.pathname}>
+        <Routes location={location}>
+          <Route path="/" element={<EntranceHall />} />
+          {WINGS.map((wing) => (
+            <Route key={wing.slug} path={`/${wing.slug}`} element={<Wing wing={wing} />} />
+          ))}
+          <Route path="/special-exhibition" element={<SpecialExhibition />} />
+          <Route path="*" element={<EntranceHall />} />
+        </Routes>
+      </div>
+      <Ambience />
+    </>
   )
 }
 

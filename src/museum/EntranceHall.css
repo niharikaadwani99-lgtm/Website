@@ -1,0 +1,427 @@
+/* ————— the entrance hall ————— */
+
+.hall {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(120% 60% at 50% -8%, rgba(255, 248, 226, 0.9), rgba(255, 248, 226, 0) 60%),
+    linear-gradient(180deg, var(--limestone-warm) 0%, var(--limestone) 46%, var(--limestone-shadow) 100%);
+}
+
+/* limestone block coursing on the walls */
+.hall::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(180deg, transparent 0 118px, rgba(120, 104, 76, 0.07) 118px 120px),
+    repeating-linear-gradient(90deg, transparent 0 238px, rgba(120, 104, 76, 0.05) 238px 240px);
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.25) 70%, transparent);
+}
+
+/* ————— dome & daylight ————— */
+
+.hall-dome {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 640px;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hall-dome__glass {
+  position: absolute;
+  top: -260px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 560px;
+  height: 380px;
+  border-radius: 50%;
+  border: 2px solid rgba(169, 138, 82, 0.35);
+  box-shadow:
+    inset 0 -30px 80px rgba(255, 246, 214, 0.75),
+    0 0 90px rgba(255, 246, 214, 0.55);
+  background:
+    conic-gradient(from 180deg at 50% 50%,
+      rgba(169, 138, 82, 0.16) 0deg 4deg, transparent 4deg 26deg,
+      rgba(169, 138, 82, 0.16) 26deg 30deg, transparent 30deg 52deg,
+      rgba(169, 138, 82, 0.16) 52deg 56deg, transparent 56deg 78deg,
+      rgba(169, 138, 82, 0.16) 78deg 82deg, transparent 82deg 104deg,
+      rgba(169, 138, 82, 0.16) 104deg 108deg, transparent 108deg 130deg,
+      rgba(169, 138, 82, 0.16) 130deg 134deg, transparent 134deg 156deg,
+      rgba(169, 138, 82, 0.16) 156deg 160deg, transparent 160deg 180deg);
+}
+
+.hall-dome__shaft {
+  position: absolute;
+  top: 60px;
+  width: 130px;
+  height: 560px;
+  background: linear-gradient(180deg, rgba(255, 246, 210, 0.5), rgba(255, 246, 210, 0));
+  filter: blur(6px);
+  animation: shaft-breathe 11s ease-in-out infinite;
+}
+
+.hall-dome__shaft--a { left: 30%; transform: skewX(-9deg); }
+.hall-dome__shaft--b { left: 48%; transform: skewX(-2deg); width: 170px; animation-delay: -4s; }
+.hall-dome__shaft--c { left: 64%; transform: skewX(7deg); animation-delay: -8s; }
+
+@keyframes shaft-breathe {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.95; }
+}
+
+.hall-mote {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(255, 243, 205, 0.9);
+  box-shadow: 0 0 6px rgba(255, 243, 205, 0.8);
+  animation: mote-drift linear infinite;
+}
+
+@keyframes mote-drift {
+  0% { transform: translate(0, 0); opacity: 0; }
+  12% { opacity: 0.9; }
+  88% { opacity: 0.6; }
+  100% { transform: translate(-34px, 130px); opacity: 0; }
+}
+
+/* ————— header ————— */
+
+.hall-header {
+  position: relative;
+  z-index: 2;
+  padding: 64px 24px 0;
+  text-align: center;
+  color: var(--stone-text);
+}
+
+.hall-header__eyebrow {
+  color: var(--brass-dim);
+}
+
+.hall-header__wordmark {
+  margin-top: 14px;
+  font-family: var(--display);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.hall-header__hours {
+  margin-top: 14px;
+  color: var(--stone-faint);
+}
+
+/* ————— the plaque ————— */
+
+.hall-plaque-scene {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: clamp(8px, 4vw, 56px);
+  padding: 84px 24px 96px;
+}
+
+.hall-plant {
+  width: clamp(64px, 9vw, 120px);
+  flex-shrink: 0;
+  filter: drop-shadow(0 14px 12px rgba(60, 48, 30, 0.25));
+}
+
+.hall-plant--flip {
+  transform: scaleX(-1);
+}
+
+.hall-plaque {
+  max-width: 620px;
+  padding: 52px 48px 40px;
+  text-align: center;
+  background:
+    linear-gradient(160deg, #f3ecdb 0%, #e6dcc4 58%, #d9cdb0 100%);
+  border: 1px solid rgba(169, 138, 82, 0.5);
+  outline: 6px solid rgba(45, 32, 22, 0.9);
+  outline-offset: 5px;
+  box-shadow:
+    0 0 0 5px var(--brass),
+    0 34px 60px rgba(60, 48, 30, 0.35);
+}
+
+.hall-plaque__finial {
+  display: block;
+  color: var(--brass);
+  font-size: 1.3rem;
+  margin-bottom: 16px;
+}
+
+.hall-plaque__title {
+  font-family: var(--display);
+  font-size: clamp(1.9rem, 4.6vw, 3rem);
+  letter-spacing: 0.08em;
+  color: var(--walnut-deep);
+}
+
+.hall-plaque__line {
+  margin-top: 20px;
+  font-style: italic;
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  color: var(--stone-text);
+}
+
+.hall-plaque__line--last {
+  margin-top: 6px;
+}
+
+.hall-plaque__hint {
+  margin-top: 30px;
+  color: var(--brass-dim);
+}
+
+/* ————— the walls of framed portals ————— */
+
+.hall-walls {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: clamp(36px, 5vw, 72px);
+  align-items: end;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 5vw, 64px) 40px;
+}
+
+.framed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  transition: transform 1s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.framed:hover {
+  transform: translateY(-6px);
+}
+
+.framed__frame {
+  display: block;
+  width: 100%;
+  padding: 13px;
+  background:
+    linear-gradient(135deg, #6b4e33 0%, #4a3526 40%, #33241a 100%);
+  border: 1px solid #241a11;
+  box-shadow:
+    inset 0 0 0 2px rgba(212, 175, 106, 0.55),
+    0 26px 48px rgba(50, 38, 22, 0.45);
+  transition: box-shadow 1s ease;
+}
+
+.framed:hover .framed__frame {
+  box-shadow:
+    inset 0 0 0 2px rgba(212, 175, 106, 0.9),
+    0 36px 64px rgba(50, 38, 22, 0.55);
+}
+
+.framed__mat {
+  display: block;
+  padding: 14px;
+  background: #efe9da;
+  box-shadow: inset 0 0 12px rgba(60, 48, 30, 0.25);
+}
+
+.framed__mat svg {
+  width: 100%;
+  height: auto;
+  transition: transform 1.6s ease;
+}
+
+.framed:hover .framed__mat svg {
+  transform: scale(1.025);
+}
+
+/* the seventh work hangs alone at the end of the hall, as a museum would hang it */
+.hall-walls .framed:last-child {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: min(400px, 100%);
+  margin-top: 12px;
+}
+
+/* brass label plate */
+.framed__plate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 12px 22px 13px;
+  background: linear-gradient(160deg, #d9bc80, #a98a52 70%, #8a6f42);
+  border: 1px solid #6f5731;
+  box-shadow: 0 4px 10px rgba(60, 48, 30, 0.3);
+  color: #2d2016;
+  text-align: center;
+  min-width: 72%;
+}
+
+.framed__title {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.12rem;
+  line-height: 1.2;
+}
+
+.framed__wing {
+  font-size: 0.6rem;
+  letter-spacing: 0.26em;
+  color: #4a3a1e;
+}
+
+.framed__medium {
+  font-size: 0.82rem;
+  font-style: italic;
+  opacity: 0.75;
+}
+
+/* ————— the corridor & the hidden room ————— */
+
+.hall-corridor {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: clamp(28px, 6vw, 96px);
+  padding: 72px 24px 30px;
+}
+
+.hall-bench {
+  width: clamp(140px, 18vw, 220px);
+  opacity: 0.9;
+  filter: drop-shadow(0 12px 10px rgba(60, 48, 30, 0.3));
+}
+
+.hall-plant--corridor {
+  width: clamp(56px, 8vw, 104px);
+}
+
+.hidden-frame {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: clamp(150px, 17vw, 210px);
+  margin-bottom: 8px;
+  cursor: default;
+}
+
+.hidden-frame__frame {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  background: linear-gradient(135deg, #8a8471, #6f6a58);
+  border: 1px solid #57523f;
+  box-shadow: 0 12px 22px rgba(60, 48, 30, 0.3);
+  transition: box-shadow 1.4s ease, transform 1.4s ease;
+}
+
+.hidden-frame__plate {
+  color: var(--stone-faint);
+  font-size: 0.56rem;
+  transition: color 1.4s ease;
+}
+
+.hidden-frame__whisper {
+  position: absolute;
+  left: 50%;
+  bottom: -30px;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--brass-dim);
+  opacity: 0;
+  transition: opacity 1.6s ease 0.35s;
+  pointer-events: none;
+}
+
+/* it looks like nothing — until you stand in front of it */
+.hidden-frame:hover,
+.hidden-frame:focus-visible {
+  cursor: pointer;
+}
+
+.hidden-frame:hover .hidden-frame__frame,
+.hidden-frame:focus-visible .hidden-frame__frame {
+  box-shadow:
+    0 0 0 2px rgba(212, 175, 106, 0.85),
+    0 0 44px rgba(212, 175, 106, 0.55),
+    0 12px 26px rgba(60, 48, 30, 0.35);
+  transform: translateY(-4px);
+}
+
+.hidden-frame:hover .hidden-frame__plate,
+.hidden-frame:focus-visible .hidden-frame__plate {
+  color: var(--brass);
+}
+
+.hidden-frame:hover .hidden-frame__whisper,
+.hidden-frame:focus-visible .hidden-frame__whisper {
+  opacity: 1;
+}
+
+/* ————— marble floor ————— */
+
+.hall-floor {
+  position: relative;
+  z-index: 1;
+  height: 110px;
+  margin-top: -8px;
+  background:
+    repeating-linear-gradient(100deg, transparent 0 90px, rgba(120, 104, 76, 0.14) 90px 92px),
+    linear-gradient(180deg, var(--marble) 0%, var(--marble-vein) 60%, #cabfa8 100%);
+  border-top: 1px solid rgba(120, 104, 76, 0.35);
+  box-shadow: inset 0 18px 30px rgba(255, 252, 240, 0.7);
+}
+
+/* ————— footer ————— */
+
+.hall-footer {
+  position: relative;
+  z-index: 2;
+  padding: 44px 24px 96px;
+  text-align: center;
+  color: var(--stone-text);
+  background: linear-gradient(180deg, #cabfa8, var(--limestone-shadow));
+}
+
+.hall-footer__note {
+  margin-top: 12px;
+  font-style: italic;
+  font-size: 1.05rem;
+}
+
+.hall-footer__colophon {
+  margin-top: 26px;
+  color: var(--stone-faint);
+}
+
+@media (max-width: 720px) {
+  .hall-plaque-scene {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 56px;
+  }
+  .hall-plant:not(.hall-plant--corridor) {
+    display: none;
+  }
+  .hall-corridor {
+    flex-wrap: wrap;
+  }
+}
