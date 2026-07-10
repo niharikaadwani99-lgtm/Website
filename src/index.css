@@ -80,9 +80,11 @@ img, svg {
   text-transform: uppercase;
 }
 
-/* Slow walk between rooms */
+/* Slow walk between rooms. No fill mode: a lingering transform/filter
+   would become the containing block for position: fixed descendants
+   (the exhibit label cards). */
 .room {
-  animation: room-enter 1.3s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  animation: room-enter 1.3s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 @keyframes room-enter {

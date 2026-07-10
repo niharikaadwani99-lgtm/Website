@@ -1,53 +1,137 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ARTWORKS } from './artworkMap.js'
 import { WINGS } from './wings.js'
+import Room3D, { WallFrame } from './Room3D.jsx'
+import ExhibitArt from './ExhibitArt.jsx'
+import ExhibitModal from './ExhibitModal.jsx'
 import './Wing.css'
 
+/* hanging plans — where works sit on each wall, receding with the room */
+const LEFT_POS = [
+  { left: '56%', top: '27%', width: '12%' },
+  { left: '77%', top: '29%', width: '9.5%' },
+]
+const RIGHT_POS = [
+  { left: '32%', top: '27%', width: '12%' },
+  { left: '13.5%', top: '29%', width: '9.5%' },
+]
+const BACK_TWO = [
+  { left: '17%', top: '42%', width: '13%' },
+  { left: '70%', top: '42%', width: '13%' },
+]
+const BACK_ONE = [{ left: '43.5%', top: '44%', width: '13%' }]
+
+function hangExhibits(count) {
+  // -> array of { wall, style } aligned with exhibit index
+  const back = count >= 6 ? BACK_TWO : BACK_ONE
+  const spots = [
+    ...LEFT_POS.map((style) => ({ wall: 'left', style })),
+    ...back.map((style) => ({ wall: 'back', style })),
+    ...RIGHT_POS.map((style) => ({ wall: 'right', style })),
+  ]
+  return spots.slice(0, count)
+}
+
 export default function Wing({ wing }) {
+  const [open, setOpen] = useState(null)
+
   useEffect(() => {
     document.title = `${wing.title} — The Glyptotek of Samveg`
   }, [wing])
 
+  useEffect(() => setOpen(null), [wing])
+
   const Art = ARTWORKS[wing.art]
   const index = WINGS.findIndex((w) => w.slug === wing.slug)
   const next = WINGS[(index + 1) % WINGS.length]
+  const spots = hangExhibits(wing.exhibits.length)
+  const seedBase = wing.slug.length
+
+  const frameFor = (exhibit, i) => (
+    <WallFrame
+      key={exhibit.title}
+      style={spots[i].style}
+      onClick={() => setOpen(i)}
+      art={<ExhibitArt seed={seedBase + i} />}
+      title={exhibit.title}
+      sub={`№ ${String(i + 1).padStart(2, '0')}`}
+      ariaLabel={`${exhibit.title} — read the label`}
+    />
+  )
+
+  const wallExhibits = (wall) =>
+    wing.exhibits.map((e, i) => (spots[i].wall === wall ? frameFor(e, i) : null))
+
+  const overlay = (
+    <>
+      <nav className="room3d-topbar">
+        <Link to="/" className="smallcaps">← Entrance Hall</Link>
+        <span className="smallcaps room3d-topbar__wordmark">The Glyptotek of Samveg</span>
+        <span className="smallcaps">Wing {wing.numeral}</span>
+      </nav>
+      <p className="room3d-hint smallcaps">Move to look around · Select a work to read its label</p>
+    </>
+  )
 
   return (
     <main className={`wing wing--${wing.theme}`}>
-      <nav className="wing-nav">
-        <Link to="/" className="smallcaps wing-nav__back">← Entrance Hall</Link>
-        <span className="smallcaps wing-nav__wordmark">The Glyptotek of Samveg</span>
-        <span className="smallcaps wing-nav__numeral">Wing {wing.numeral}</span>
-      </nav>
+      {/* the room itself */}
+      <div className="wing-3d">
+        <Room3D
+          overlay={overlay}
+          back={
+            <>
+              <div className="room3d-title" style={{ top: '13%' }}>
+                <p className="smallcaps room3d-title__eyebrow">Wing {wing.numeral} of VII</p>
+                <h1 className="room3d-title__name">{wing.title}</h1>
+                <p className="room3d-title__tagline">{wing.tagline}</p>
+              </div>
+              {wallExhibits('back')}
+            </>
+          }
+          left={wallExhibits('left')}
+          right={wallExhibits('right')}
+        />
+      </div>
 
-      <header className="wing-header">
-        <div className="wing-header__art" aria-hidden="true">
-          <span className="wing-header__frame">
-            <Art />
-          </span>
-          <span className="wing-header__caption smallcaps">
+      {/* the same works, laid flat for narrow doorways */}
+      <div className="wing-flat">
+        <nav className="room3d-topbar room3d-topbar--flat">
+          <Link to="/" className="smallcaps">← Entrance Hall</Link>
+          <span className="smallcaps">Wing {wing.numeral}</span>
+        </nav>
+        <header className="wing-flat__header">
+          <p className="smallcaps room3d-title__eyebrow">Wing {wing.numeral} of VII</p>
+          <h1 className="room3d-title__name">{wing.title}</h1>
+          <p className="room3d-title__tagline">{wing.tagline}</p>
+        </header>
+        <div className="wing-flat__frames">
+          {wing.exhibits.map((exhibit, i) => (
+            <WallFrame
+              key={exhibit.title}
+              onClick={() => setOpen(i)}
+              art={<ExhibitArt seed={seedBase + i} />}
+              title={exhibit.title}
+              sub={`№ ${String(i + 1).padStart(2, '0')}`}
+              ariaLabel={`${exhibit.title} — read the label`}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* curator's text, below the room */}
+      <section className="wing-below">
+        <div className="wing-below__art" aria-hidden="true">
+          <span className="wing-below__frame"><Art /></span>
+          <span className="smallcaps wing-below__caption">
             {wing.artTitle} · {wing.artMedium}
           </span>
         </div>
-        <div className="wing-header__text">
-          <p className="smallcaps wing-header__eyebrow">Wing {wing.numeral} of VII</p>
-          <h1 className="wing-header__title">{wing.title}</h1>
-          <p className="wing-header__tagline">{wing.tagline}</p>
-          <hr className="wing-rule" aria-hidden="true" />
-          <p className="wing-header__intro">{wing.intro}</p>
+        <div>
+          <p className="smallcaps wing-below__eyebrow">From the curator</p>
+          <p className="wing-below__intro">{wing.intro}</p>
         </div>
-      </header>
-
-      <section className="wing-exhibits" aria-label={`Exhibits in the ${wing.title}`}>
-        {wing.exhibits.map((exhibit, i) => (
-          <article className="exhibit" key={exhibit.title}>
-            <p className="smallcaps exhibit__number">{`№ ${String(i + 1).padStart(2, '0')}`}</p>
-            <h2 className="exhibit__title">{exhibit.title}</h2>
-            <p className="exhibit__label">{exhibit.label}</p>
-            <p className="exhibit__text">{exhibit.text}</p>
-          </article>
-        ))}
       </section>
 
       {wing.quote && (
@@ -68,6 +152,15 @@ export default function Wing({ wing }) {
           <Link to="/" className="smallcaps wing-footer__home">Return to the entrance hall</Link>
         </div>
       </footer>
+
+      {open !== null && (
+        <ExhibitModal
+          exhibit={wing.exhibits[open]}
+          number={`${wing.title} · № ${String(open + 1).padStart(2, '0')}`}
+          art={<ExhibitArt seed={seedBase + open} />}
+          onClose={() => setOpen(null)}
+        />
+      )}
     </main>
   )
 }
