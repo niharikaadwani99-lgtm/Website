@@ -46,13 +46,28 @@
   overflow: hidden;
 }
 
-/* works for the painted SVG panorama or a real photograph (<img>) alike */
 .courtyard {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* warms the photograph's edges into the limestone of the room */
+.courtyard-veil {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(240, 232, 216, 0.25), transparent 18%, transparent 82%, rgba(60, 44, 26, 0.3)),
+    radial-gradient(105% 90% at 50% 45%, transparent 62%, rgba(240, 232, 216, 0.32) 100%);
+  box-shadow: inset 0 0 120px rgba(60, 44, 26, 0.25);
+}
+
+/* the far wall is the photograph — no joinery painted over it */
+.hall-room .room3d__wall-back::after {
+  display: none;
 }
 
 /* the back-wall portal floats over the courtyard on its own pale panel */
@@ -254,10 +269,10 @@
     overflow: hidden;
   }
 
-  .hall-flat__courtyard svg {
-    position: static;
+  .hall-flat__courtyard img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
   }
 
   .hall-plaque--flat {

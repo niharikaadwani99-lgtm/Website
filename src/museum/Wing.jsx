@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ARTWORKS } from './artworkMap.js'
 import { WINGS } from './wings.js'
-import Room3D, { WallFrame } from './Room3D.jsx'
+import Room3D, { WallFrame, RoomProp } from './Room3D.jsx'
+import { BenchSvg, PlanterSvg, PedestalSvg } from './Props.jsx'
 import ExhibitArt from './ExhibitArt.jsx'
 import ExhibitModal from './ExhibitModal.jsx'
 import './Wing.css'
@@ -92,6 +93,17 @@ export default function Wing({ wing }) {
           }
           left={wallExhibits('left')}
           right={wallExhibits('right')}
+          floor={<div className="room-rug" aria-hidden="true" />}
+          props={
+            <>
+              <RoomProp x={0} z={-560} width={300}><BenchSvg /></RoomProp>
+              <RoomProp x={-660} z={-1000} width={170}><PlanterSvg /></RoomProp>
+              <RoomProp x={660} z={-1000} width={170}><PlanterSvg /></RoomProp>
+              {wing.exhibits.length < 6 && (
+                <RoomProp x={620} z={-520} width={120}><PedestalSvg /></RoomProp>
+              )}
+            </>
+          }
         />
       </div>
 

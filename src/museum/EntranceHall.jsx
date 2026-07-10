@@ -1,8 +1,10 @@
 import { useEffect } from 'react'
 import { ARTWORKS } from './artworkMap.js'
 import { WINGS, HIDDEN_WING } from './wings.js'
-import Room3D, { WallFrame } from './Room3D.jsx'
-import Courtyard from './Courtyard.jsx'
+import Room3D, { WallFrame, RoomProp } from './Room3D.jsx'
+import { PlanterSvg } from './Props.jsx'
+import gardenPhoto from './assets/winter-garden.jpg'
+import balconyPhoto from './assets/winter-garden-balcony.jpg'
 import './EntranceHall.css'
 
 const MOTES = [
@@ -92,7 +94,9 @@ export default function EntranceHall() {
           overlay={overlay}
           back={
             <>
-              <Courtyard />
+              {/* the Winter Garden itself, seen from the entrance */}
+              <img src={gardenPhoto} alt="" className="courtyard" />
+              <div className="courtyard-veil" aria-hidden="true" />
               <WallFrame
                 to={`/${future.slug}`}
                 className="hall-back-frame"
@@ -126,6 +130,12 @@ export default function EntranceHall() {
               />
             </>
           }
+          props={
+            <>
+              <RoomProp x={-700} z={-420} width={180}><PlanterSvg /></RoomProp>
+              <RoomProp x={700} z={-420} width={180}><PlanterSvg /></RoomProp>
+            </>
+          }
         />
       </div>
 
@@ -135,8 +145,8 @@ export default function EntranceHall() {
           <p className="smallcaps hall-masthead__eyebrow">A cultural institution of one</p>
           <p className="hall-masthead__wordmark">The Glyptotek of Samveg</p>
         </header>
-        <div className="hall-flat__courtyard" aria-hidden="true">
-          <Courtyard />
+        <div className="hall-flat__courtyard">
+          <img src={balconyPhoto} alt="The winter garden of the Glyptotek, seen from the balcony" />
         </div>
         <div className="hall-plaque hall-plaque--flat">
           <span className="hall-plaque__finial" aria-hidden="true">❦</span>

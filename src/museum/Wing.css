@@ -8,6 +8,10 @@
 
 /* room atmospheres — colors plus the 3D surfaces of each room */
 .wing--sound {
+  --trim-dark: rgba(12, 7, 3, 0.55);
+  --trim-light: rgba(212, 162, 78, 0.28);
+  --rug-bg: rgba(140, 60, 30, 0.3);
+  --rug-edge: rgba(212, 162, 78, 0.45);
   --room-bg: linear-gradient(180deg, #241a11 0%, #170f09 100%);
   --room-panel: rgba(58, 42, 26, 0.5);
   --room-line: rgba(212, 162, 78, 0.35);
@@ -26,6 +30,10 @@
 }
 
 .wing--curiosities {
+  --trim-dark: rgba(8, 7, 20, 0.6);
+  --trim-light: rgba(168, 155, 216, 0.3);
+  --rug-bg: rgba(90, 78, 160, 0.24);
+  --rug-edge: rgba(168, 155, 216, 0.45);
   --room-bg: linear-gradient(180deg, #1c1a38 0%, #121026 100%);
   --room-panel: rgba(48, 44, 88, 0.45);
   --room-line: rgba(168, 155, 216, 0.35);
@@ -41,6 +49,10 @@
 }
 
 .wing--founder {
+  --trim-dark: rgba(65, 88, 110, 0.35);
+  --trim-light: rgba(255, 255, 255, 0.7);
+  --rug-bg: rgba(65, 88, 110, 0.16);
+  --rug-edge: rgba(65, 88, 110, 0.4);
   --room-bg: linear-gradient(180deg, #f4f2ec 0%, #e9e7df 100%);
   --room-panel: rgba(255, 255, 255, 0.75);
   --room-line: rgba(65, 88, 110, 0.3);
@@ -58,6 +70,10 @@
 }
 
 .wing--objects {
+  --trim-dark: rgba(120, 96, 58, 0.4);
+  --trim-light: rgba(255, 252, 240, 0.75);
+  --rug-bg: rgba(150, 122, 76, 0.18);
+  --rug-edge: rgba(169, 138, 82, 0.45);
   --room-bg: linear-gradient(180deg, #f6f1e6 0%, #ece4d2 100%);
   --room-panel: rgba(255, 252, 244, 0.8);
   --room-line: rgba(169, 138, 82, 0.4);
@@ -74,6 +90,10 @@
 }
 
 .wing--motion {
+  --trim-dark: rgba(10, 9, 8, 0.6);
+  --trim-light: rgba(200, 68, 58, 0.3);
+  --rug-bg: rgba(200, 68, 58, 0.14);
+  --rug-edge: rgba(200, 68, 58, 0.4);
   --room-bg: linear-gradient(180deg, #282522 0%, #1d1b18 100%);
   --room-panel: rgba(52, 48, 43, 0.55);
   --room-line: rgba(179, 56, 46, 0.45);
@@ -91,6 +111,10 @@
 }
 
 .wing--memory {
+  --trim-dark: rgba(20, 8, 2, 0.6);
+  --trim-light: rgba(242, 140, 40, 0.3);
+  --rug-bg: rgba(242, 140, 40, 0.16);
+  --rug-edge: rgba(242, 140, 40, 0.4);
   --room-bg: linear-gradient(180deg, #3a1c0a 0%, #24100a 100%);
   --room-panel: rgba(90, 46, 18, 0.4);
   --room-line: rgba(242, 140, 40, 0.4);
@@ -108,6 +132,10 @@
 }
 
 .wing--future {
+  --trim-dark: rgba(110, 120, 116, 0.35);
+  --trim-light: rgba(255, 255, 255, 0.75);
+  --rug-bg: rgba(140, 150, 140, 0.18);
+  --rug-edge: rgba(169, 138, 82, 0.4);
   --room-bg: linear-gradient(180deg, #e2e6e4 0%, #f5f2e8 100%);
   --room-panel: rgba(255, 255, 255, 0.68);
   --room-line: rgba(169, 138, 82, 0.4);

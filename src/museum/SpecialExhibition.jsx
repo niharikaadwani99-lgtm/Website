@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { HIDDEN_WING } from './wings.js'
-import Room3D, { WallFrame } from './Room3D.jsx'
+import Room3D, { WallFrame, RoomProp } from './Room3D.jsx'
+import { BenchSvg, PlanterSvg } from './Props.jsx'
 import ExhibitArt from './ExhibitArt.jsx'
 import ExhibitModal from './ExhibitModal.jsx'
 import './SpecialExhibition.css'
@@ -93,6 +94,14 @@ export default function SpecialExhibition() {
           }
           left={onWall('left')}
           right={onWall('right')}
+          floor={<div className="room-rug" aria-hidden="true" />}
+          props={
+            <>
+              <RoomProp x={0} z={-560} width={300}><BenchSvg /></RoomProp>
+              <RoomProp x={-660} z={-1000} width={170}><PlanterSvg /></RoomProp>
+              <RoomProp x={660} z={-1000} width={170}><PlanterSvg /></RoomProp>
+            </>
+          }
         />
       </div>
 

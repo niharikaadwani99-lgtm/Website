@@ -8,6 +8,11 @@
   --wall-side-bg: var(--wall-bg);
   --floor-bg: linear-gradient(180deg, #cfc3a6, #efe6cf);
   --ceiling-bg: radial-gradient(60% 80% at 50% 60%, #fff6dd, #e4d9c0);
+  /* joinery: crown moulding, picture rail, wainscot line, skirting */
+  --trim-dark: rgba(60, 44, 26, 0.5);
+  --trim-light: rgba(255, 250, 235, 0.5);
+  --rug-bg: rgba(120, 90, 60, 0.22);
+  --rug-edge: rgba(169, 138, 82, 0.5);
 }
 
 .room3d {
@@ -46,6 +51,52 @@
   left: 0;
   top: 0;
   backface-visibility: hidden;
+}
+
+/* joinery drawn over every wall: crown, picture rail, wainscot, skirting */
+.room3d__wall::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    /* crown moulding */
+    linear-gradient(180deg, var(--trim-dark) 0 6px, var(--trim-light) 6px 9px, transparent 9px) top / 100% 40px no-repeat,
+    /* picture rail */
+    linear-gradient(180deg, transparent 0 118px, var(--trim-dark) 118px 121px, var(--trim-light) 121px 123px, transparent 123px) top / 100% 140px no-repeat,
+    /* wainscot chair rail */
+    linear-gradient(0deg, transparent 0 298px, var(--trim-light) 298px 300px, var(--trim-dark) 300px 304px, transparent 304px) bottom / 100% 320px no-repeat,
+    /* skirting board */
+    linear-gradient(0deg, var(--trim-dark) 0 34px, var(--trim-light) 34px 37px, transparent 37px) bottom / 100% 60px no-repeat;
+}
+
+.room3d__prop {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+
+.room3d__prop svg {
+  width: 100%;
+  height: auto;
+}
+
+/* a rug laid in the middle of the floor */
+.room-rug {
+  position: absolute;
+  left: 50%;
+  top: 34%;
+  width: 44%;
+  height: 42%;
+  transform: translateX(-50%);
+  background:
+    radial-gradient(60% 60% at 50% 50%, transparent 56%, var(--rug-bg) 100%),
+    var(--rug-bg);
+  border: 3px solid var(--rug-edge);
+  outline: 1px solid var(--rug-edge);
+  outline-offset: 8px;
+  opacity: 0.85;
 }
 
 .room3d__wall-back {
@@ -101,7 +152,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   padding: 0;
   border: none;
   background: none;
@@ -109,13 +160,26 @@
   text-align: center;
   cursor: pointer;
   transition: transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1), filter 0.9s ease;
-  filter: drop-shadow(0 22px 26px rgba(20, 14, 8, 0.35));
+  filter: drop-shadow(0 14px 18px rgba(20, 14, 8, 0.28));
+}
+
+/* a quiet pool of gallery light washing down over each work */
+.wall-frame::before {
+  content: '';
+  position: absolute;
+  bottom: 88%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 165%;
+  height: 90px;
+  background: radial-gradient(52% 100% at 50% 100%, rgba(255, 240, 200, 0.16), transparent 72%);
+  pointer-events: none;
 }
 
 .wall-frame:hover,
 .wall-frame:focus-visible {
-  transform: translateY(-6px);
-  filter: drop-shadow(0 30px 34px rgba(20, 14, 8, 0.4)) drop-shadow(0 0 26px rgba(212, 175, 106, 0.35));
+  transform: translateY(-4px);
+  filter: drop-shadow(0 20px 24px rgba(20, 14, 8, 0.32)) drop-shadow(0 0 18px rgba(212, 175, 106, 0.25));
 }
 
 .wall-frame__frame {
@@ -124,13 +188,13 @@
   padding: clamp(7px, 0.8vw, 13px);
   background: linear-gradient(135deg, #6b4e33 0%, #4a3526 42%, #33241a 100%);
   border: 1px solid #241a11;
-  box-shadow: inset 0 0 0 2px rgba(212, 175, 106, 0.55);
+  box-shadow: inset 0 0 0 2px rgba(212, 175, 106, 0.22);
   transition: box-shadow 0.9s ease;
 }
 
 .wall-frame:hover .wall-frame__frame,
 .wall-frame:focus-visible .wall-frame__frame {
-  box-shadow: inset 0 0 0 2px rgba(212, 175, 106, 0.95);
+  box-shadow: inset 0 0 0 2px rgba(212, 175, 106, 0.75);
 }
 
 .wall-frame__mat {
@@ -145,6 +209,7 @@
   height: auto;
 }
 
+/* the brass plate only reveals itself when the visitor steps close */
 .wall-frame__plate {
   display: flex;
   flex-direction: column;
@@ -155,6 +220,23 @@
   border: 1px solid #6f5731;
   color: #2d2016;
   max-width: 100%;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.wall-frame:hover .wall-frame__plate,
+.wall-frame:focus-visible .wall-frame__plate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* flat fallbacks have no hover to discover — keep the plates visible */
+.hall-flat .wall-frame__plate,
+.wing-flat .wall-frame__plate,
+.sx-flat .wall-frame__plate {
+  opacity: 1;
+  transform: none;
 }
 
 .wall-frame__title {

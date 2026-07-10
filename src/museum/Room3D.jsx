@@ -6,7 +6,7 @@ import './Room3D.css'
  * A walkable museum room built from CSS 3D planes: back wall, two side
  * walls, floor, and ceiling. Moving the pointer looks around the room.
  */
-export default function Room3D({ back, left, right, overlay, className = '' }) {
+export default function Room3D({ back, left, right, floor, props, overlay, className = '' }) {
   const ref = useRef(null)
 
   useEffect(() => {
@@ -35,14 +35,31 @@ export default function Room3D({ back, left, right, overlay, className = '' }) {
   return (
     <div className={`room3d ${className}`} ref={ref}>
       <div className="room3d__space">
-        <div className="room3d__plane room3d__wall-back">{back}</div>
-        <div className="room3d__plane room3d__wall-left">{left}</div>
-        <div className="room3d__plane room3d__wall-right">{right}</div>
-        <div className="room3d__plane room3d__floor" />
+        <div className="room3d__plane room3d__wall room3d__wall-back">{back}</div>
+        <div className="room3d__plane room3d__wall room3d__wall-left">{left}</div>
+        <div className="room3d__plane room3d__wall room3d__wall-right">{right}</div>
+        <div className="room3d__plane room3d__floor">{floor}</div>
         <div className="room3d__plane room3d__ceiling" />
+        {props}
       </div>
       <div className="room3d__vignette" aria-hidden="true" />
       {overlay}
+    </div>
+  )
+}
+
+/*
+ * A piece of furniture or greenery standing on the floor of the room —
+ * a flat billboard at (x, z), feet on the ground, facing the visitor.
+ */
+export function RoomProp({ x = 0, z = 0, width = 260, children }) {
+  return (
+    <div
+      className="room3d__prop"
+      aria-hidden="true"
+      style={{ width: `${width}px`, transform: `translate(-50%, -100%) translate3d(${x}px, 500px, ${z}px)` }}
+    >
+      {children}
     </div>
   )
 }

@@ -10,6 +10,10 @@
 }
 
 .sx .room3d {
+  --trim-dark: rgba(12, 6, 4, 0.6);
+  --trim-light: rgba(212, 147, 138, 0.3);
+  --rug-bg: rgba(212, 147, 138, 0.14);
+  --rug-edge: rgba(212, 147, 138, 0.4);
   --wall-bg:
     radial-gradient(46% 56% at 50% 40%, rgba(214, 150, 118, 0.14), transparent),
     linear-gradient(180deg, #2c201a 0%, #1e1512 70%, #16100d 100%);
