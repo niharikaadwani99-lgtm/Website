@@ -14,9 +14,10 @@
   --stone-text: #5d5342;
   --stone-faint: #8a7e68;
 
-  --serif: 'Cormorant Garamond', 'Times New Roman', serif;
-  --display: 'Italiana', 'Cormorant Garamond', serif;
-  --sans: 'Jost', 'Futura', system-ui, sans-serif;
+  /* deep fallback stacks: the artifact build cannot reach font CDNs */
+  --serif: 'Cormorant Garamond', Garamond, Georgia, 'Times New Roman', serif;
+  --display: 'Italiana', Didot, 'Bodoni MT', 'Playfair Display', Georgia, serif;
+  --sans: 'Jost', 'Avenir Next', Futura, 'Century Gothic', system-ui, sans-serif;
 
   color-scheme: light;
   font-synthesis: none;
