@@ -17,28 +17,45 @@ export const WINGS = [
       'Enter slowly. The walls here are dark walnut, the light is low and amber, and somewhere a needle is always finding its groove. This wing holds the sounds Samveg returns to — not merely songs, but rooms he has lived inside. Visitors are encouraged to sit at the listening stations and stay longer than planned.',
     exhibits: [
       {
-        title: 'Innerbloom',
-        label: 'RÜFÜS DU SOL · Listening Station 01',
+        title: 'Our Songs',
+        label: 'Combined collection · Listening Station 01 · Two curators of record',
+        artVariant: 0,
         text:
-          'Nine minutes and thirty-eight seconds, and somehow never long enough. The centrepiece of the collection. Played at dawn, at midnight, on trains, on rooftops — a song that behaves less like music and more like a place. The subject has described it as “going home without moving.” Conservation note: this recording shows heavy wear from repeat listening. It is structurally sound.',
+          'The only work in this museum with two curators. A collection assembled from both sides — songs that remind him of her, songs that remind her of him, filed jointly under “us.” Some were chosen deliberately; most simply attached themselves to a moment and refused to leave. Conservation note: still growing. Neither curator has any intention of completing it.',
+        links: [
+          { label: 'Listen · Our Songs', url: 'https://open.spotify.com/playlist/39myOtaec9u73Q9oQGpQnP' },
+        ],
       },
       {
-        title: 'Nightwhisper',
-        label: 'Jody Wisternoff · Listening Station 02',
+        title: 'The Intimate Collection',
+        label: 'Vols. I & II · Restricted access · Listening Station 02',
+        artVariant: 4,
         text:
-          'Progressive house in its gentlest register — the sound of driving at 2 a.m. with nowhere urgent to be. Acquired during a season of late nights; retained for every season since. Best experienced with headphones and a window showing city lights.',
-      },
-      {
-        title: 'Come Together',
-        label: 'The Beatles, Abbey Road · Listening Station 03',
-        text:
-          'The oldest work in this hall and the loosest. That bassline enters like someone who knows they are welcome. Proof, held in the permanent collection, that a groove recorded half a century ago can still rearrange a room.',
+          'Two volumes, kept behind the curtain of this hall and catalogued with deliberate vagueness. The museum can confirm only that they exist, that they are played with the lights low, and that no further questions will be taken at this time. Headphones are mandatory. Discretion is assumed.',
+        links: [
+          { label: 'Vol. I', url: 'https://open.spotify.com/playlist/6XvkWL2E8LnplbtWr2yuhW' },
+          { label: 'Vol. II', url: 'https://open.spotify.com/playlist/43oVDMtacQa6fj1A7UcbCO' },
+        ],
       },
       {
         title: 'The Record Bar',
         label: 'Architectural exhibit · Dark wood, one turntable, no talking during side A',
+        artVariant: 5,
         text:
-          'A study of the world’s most civilized invention: the listening bar. Tokyo perfected them — small rooms of walnut and vinyl where the bartender is also the selector and the volume is set exactly right. Samveg’s ambition to build one someday is on record. This museum considers the ambition legally binding.',
+          'A study of the world’s most civilized invention: the listening bar. Tokyo perfected them — small rooms of walnut and vinyl where the bartender is also the selector and the volume is set exactly right. Samveg’s ambition to build one someday is on record; this museum considers the ambition legally binding. Exhibited alongside: the opening night’s programme — a listening-bar set curated for the proprietor by the lender, jazz in exactly the right order.',
+        links: [
+          { label: 'Listen · The Record Bar Set', url: 'https://open.spotify.com/playlist/495QuOl19C8xfXxPHoMmAK' },
+        ],
+      },
+      {
+        title: 'The Top Three, of All Time',
+        label: 'The summit of the collection · Listening Station 04',
+        artVariant: 1,
+        text:
+          'Every collection has its summit; this one has three. Innerbloom — nine minutes and thirty-eight seconds of going home without moving, worn structurally thin from repeat listening. Nightwhisper — the sound of driving at 2 a.m. with nowhere urgent to be. And Come Together, whose bassline enters like someone who knows they are welcome. Ranked in no particular order, because the subject refuses to choose. The museum has stopped asking.',
+        links: [
+          { label: 'Listen · The Top Three', url: 'https://open.spotify.com/playlist/6jKy7ZPdUtkYXNcLhH6sUk' },
+        ],
       },
       {
         title: 'Jazz',

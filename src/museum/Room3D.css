@@ -434,6 +434,56 @@
   color: var(--brass);
 }
 
+/* listening-station links on a label card */
+.exhibit-modal__links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.exhibit-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 20px;
+  border: 1px solid var(--brass);
+  border-radius: 999px;
+  color: var(--walnut-deep);
+  background: linear-gradient(160deg, rgba(212, 175, 106, 0.22), rgba(169, 138, 82, 0.12));
+  transition: background 0.5s ease, box-shadow 0.5s ease, transform 0.5s ease;
+}
+
+.exhibit-link:hover,
+.exhibit-link:focus-visible {
+  background: linear-gradient(160deg, #d9bc80, #a98a52);
+  box-shadow: 0 8px 20px rgba(120, 90, 40, 0.35);
+  transform: translateY(-2px);
+}
+
+.exhibit-link__icon {
+  font-size: 0.6rem;
+  color: var(--brass-dim);
+}
+
+.exhibit-link:hover .exhibit-link__icon {
+  color: var(--walnut-deep);
+}
+
+.exhibit-link .smallcaps {
+  font-size: 0.6rem;
+  letter-spacing: 0.24em;
+}
+
+.exhibit-modal__links-note {
+  flex-basis: 100%;
+  margin-top: 4px;
+  font-style: italic;
+  font-size: 0.88rem;
+  color: var(--stone-faint);
+}
+
 .exhibit-modal__close {
   position: absolute;
   top: 14px;

@@ -47,6 +47,23 @@ export default function ExhibitModal({ exhibit, number, art, onClose }) {
               ))}
             </ul>
           )}
+          {exhibit.links && (
+            <div className="exhibit-modal__links">
+              {exhibit.links.map((link) => (
+                <a
+                  key={link.url}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="exhibit-link"
+                >
+                  <span className="exhibit-link__icon" aria-hidden="true">▶</span>
+                  <span className="smallcaps">{link.label}</span>
+                </a>
+              ))}
+              <p className="exhibit-modal__links-note">Plays on Spotify · headphones recommended</p>
+            </div>
+          )}
         </div>
         <button type="button" ref={closeRef} className="exhibit-modal__close" onClick={onClose}>
           Close ✕

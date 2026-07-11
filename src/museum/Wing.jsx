@@ -49,14 +49,17 @@ export default function Wing({ wing }) {
   const spots = hangExhibits(wing.exhibits.length)
   const seedBase = wing.slug.length
 
+  const subFor = (exhibit, i) =>
+    `№ ${String(i + 1).padStart(2, '0')}${exhibit.links ? ' · ♪' : ''}`
+
   const frameFor = (exhibit, i) => (
     <WallFrame
       key={exhibit.title}
       style={spots[i].style}
       onClick={() => setOpen(i)}
-      art={<ExhibitArt seed={seedBase + i} />}
+      art={<ExhibitArt seed={seedBase + i} variant={exhibit.artVariant} />}
       title={exhibit.title}
-      sub={`№ ${String(i + 1).padStart(2, '0')}`}
+      sub={subFor(exhibit, i)}
       ariaLabel={`${exhibit.title} — read the label`}
     />
   )
@@ -123,9 +126,9 @@ export default function Wing({ wing }) {
             <WallFrame
               key={exhibit.title}
               onClick={() => setOpen(i)}
-              art={<ExhibitArt seed={seedBase + i} />}
+              art={<ExhibitArt seed={seedBase + i} variant={exhibit.artVariant} />}
               title={exhibit.title}
-              sub={`№ ${String(i + 1).padStart(2, '0')}`}
+              sub={subFor(exhibit, i)}
               ariaLabel={`${exhibit.title} — read the label`}
             />
           ))}
@@ -169,7 +172,7 @@ export default function Wing({ wing }) {
         <ExhibitModal
           exhibit={wing.exhibits[open]}
           number={`${wing.title} · № ${String(open + 1).padStart(2, '0')}`}
-          art={<ExhibitArt seed={seedBase + open} />}
+          art={<ExhibitArt seed={seedBase + open} variant={wing.exhibits[open].artVariant} />}
           onClose={() => setOpen(null)}
         />
       )}
