@@ -255,52 +255,15 @@ export const WINGS = [
     slug: 'memory-archive',
     theme: 'memory',
     numeral: 'VI',
-    title: 'Memory Archive',
+    title: 'The Nostalgia Wing',
     art: 'memory',
     artTitle: 'The Orange Wrapper',
     artMedium: 'Glow and recollection on board',
     artYear: 'Childhood, exact date unrecorded',
-    tagline: 'The permanent collection. Everything else was built on this.',
+    tagline: 'Some things are valuable not because of what they are, but because of who was there when they happened.',
     intro:
-      'Mind the low light — some of these works are delicate. This archive holds the earliest acquisitions: tastes, kitchens, afternoons. Most museums keep their oldest works in the basement. This one keeps them at its heart.',
-    exhibits: [
-      {
-        title: 'Milkybar',
-        label: 'Acquisition VI-01 · White chocolate, small hands',
-        text:
-          'The first great luxury. A bar of white chocolate held like treasure, eaten in a strategy of small bites to make it last. The archive preserves not the chocolate — that vanished decades ago in under four minutes — but the exact feeling of being handed one.',
-      },
-      {
-        title: 'Cadbury Tiffins',
-        label: 'Acquisition VI-02 · The orange wrapper itself',
-        text:
-          'The work that inspired the painting at this archive’s door. Chocolate, biscuit, raisins — engineering, frankly. But the wrapper is the artifact: that particular orange, the crinkle of the foil, the ceremony of opening it slowly. Some colours stay filed under happiness forever. This is one.',
-      },
-      {
-        title: 'Mom’s Yellow Dal',
-        label: 'Acquisition VI-03 · The colour of home',
-        text:
-          'The masterpiece of the archive. Turmeric-gold, tempered with ghee and cumin, served over rice by someone who never once measured anything. Restaurants have attempted reproductions; the archive rules them all inauthentic. The original hangs in memory, permanently on loan from her kitchen.',
-      },
-      {
-        title: 'Mom’s Aloo Sabji',
-        label: 'Acquisition VI-04 · Recipe without measurements',
-        text:
-          'Companion piece to the dal, and equally impossible to forge. Potatoes that somehow taste like a specific house at a specific hour of the evening. The recipe exists nowhere on paper. The archive has confirmed that this is deliberate, and that asking for exact quantities receives the answer “andaaz se” — by feel.',
-      },
-      {
-        title: 'Poha',
-        label: 'Acquisition VI-05 · Breakfast, definitive edition',
-        text:
-          'Flattened rice, mustard seeds, curry leaves, lemon — and over the top, sev, without which the dish is legally incomplete. Exhibited as the taste of unhurried mornings. The archive notes that no hotel breakfast buffet, however elaborate, has ever displaced it.',
-      },
-      {
-        title: 'Family Memories',
-        label: 'Acquisition VI-06 · The founding collection',
-        text:
-          'The rest of the archive, uncatalogued and priceless: festival mornings, power-cut evenings, everyone in one room and the television arguing with itself. Every other wing of this museum — the music, the ambition, the taste — traces its provenance here. The founding donors are thanked on every wall, whether named or not.',
-      },
-    ],
+      'The warmest room in the museum, kept a few degrees softer than the rest. Wood floors, golden light, photographs that were never meant for galleries. This wing is not a timeline and it is not a biography — it is a collection of moments, objects, and feelings that made him who he is. Five artifacts stand in the room. Step up to any of them. It should feel like walking into a memory that is glad to see you.',
+    exhibits: [],
   },
   {
     slug: 'future-wing',

@@ -857,11 +857,13 @@ export default function FutureWing() {
           }
           floor={<div className="fw-projection" aria-hidden="true" />}
           props={
+            /* painter's order: deepest first — sibling 3D billboards with
+               filters paint in DOM order, not depth order */
             <>
-              {installButton('house', { x: -560, z: -620, width: 270 }, <HouseModelSvg />)}
-              {installButton('factory', { x: 560, z: -640, width: 290, floating: true, y: -60 }, <ProductWallSvg />)}
               {installButton('dream', { x: -620, y: -180, z: -950, width: 210, floating: true }, <DreamMoonSvg />)}
               {installButton('museum', { x: 90, z: -900, width: 430 }, <MuseumModelSvg showDoor={allVisited} />)}
+              {installButton('factory', { x: 560, z: -640, width: 290, floating: true, y: -60 }, <ProductWallSvg />)}
+              {installButton('house', { x: -560, z: -620, width: 270 }, <HouseModelSvg />)}
               <RoomProp x={-40} z={-430} width={280}><BenchSvg /></RoomProp>
             </>
           }

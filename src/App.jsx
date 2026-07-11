@@ -3,6 +3,7 @@ import { Route, Routes, useLocation } from 'react-router-dom'
 import EntranceHall from './museum/EntranceHall.jsx'
 import Wing from './museum/Wing.jsx'
 import FutureWing from './museum/FutureWing.jsx'
+import NostalgiaWing from './museum/NostalgiaWing.jsx'
 import SpecialExhibition from './museum/SpecialExhibition.jsx'
 import Ambience from './museum/Ambience.jsx'
 import { WINGS } from './museum/wings.js'
@@ -24,13 +25,12 @@ function App() {
       <div className="room" key={location.pathname}>
         <Routes location={location}>
           <Route path="/" element={<EntranceHall />} />
-          {WINGS.map((wing) => (
-            <Route
-              key={wing.slug}
-              path={`/${wing.slug}`}
-              element={wing.slug === 'future-wing' ? <FutureWing /> : <Wing wing={wing} />}
-            />
-          ))}
+          {WINGS.map((wing) => {
+            let element = <Wing wing={wing} />
+            if (wing.slug === 'future-wing') element = <FutureWing />
+            if (wing.slug === 'memory-archive') element = <NostalgiaWing />
+            return <Route key={wing.slug} path={`/${wing.slug}`} element={element} />
+          })}
           <Route path="/special-exhibition" element={<SpecialExhibition />} />
           <Route path="*" element={<EntranceHall />} />
         </Routes>
