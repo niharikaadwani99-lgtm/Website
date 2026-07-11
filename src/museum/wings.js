@@ -291,55 +291,7 @@ export const HIDDEN_WING = {
   artTitle: 'Study of Light on a Windowsill',
   artMedium: 'Artist unknown',
   artYear: 'Unlabelled',
-  intro:
-    'You found the door. This room is not on the museum map, and the works in it are not for sale, not for tour, and not entirely for explaining. They are on loan from someone who has spent years observing the subject at close range — and who submitted this collection with the note: “handle with care, he pretends not to be sentimental.”',
-  pieces: [
-    {
-      kind: 'note',
-      title: 'Observation No. 1',
-      text: 'He listens to Innerbloom the way other people go home. The lender has confirmed the song’s length is nine minutes and thirty-eight seconds — he cited it from memory, unprompted, twice.',
-    },
-    {
-      kind: 'photo',
-      title: 'Untitled (A Good Day)',
-      caption: 'Photograph, withheld at the lender’s request. The lender remembers this day perfectly; the subject also claims to, but gets the weather wrong every time he tells it. The dispute is ongoing and neither party wants it resolved.',
-    },
-    {
-      kind: 'note',
-      title: 'Field Notes, Assorted',
-      list: [
-        'Reads the entire plaque in museums. All of it. Every museum.',
-        'Counts stairs without noticing he is doing it.',
-        'Redesigns the queue while standing in the queue.',
-        'Still compares every yellow dal to his mother’s. It never quite matches. He finishes it anyway.',
-        'Says "one more song" in the exact tone of a man who means four.',
-      ],
-    },
-    {
-      kind: 'vitrine',
-      title: 'Vitrine of Small Evidence',
-      list: [
-        'One ticket stub, kept for reasons unstated',
-        'A playlist made for an audience of one — see Hall of Sound, open stacks',
-        'The good pen, which is never lent out, which was lent out once',
-        'An inside joke, catalogued as No. ∞ — label reads only: “you had to be there.” The lender was there.',
-      ],
-    },
-    {
-      kind: 'note',
-      title: 'Observation No. 2',
-      text: 'For a systems thinker, he is remarkably unoptimized about the people he loves. He will reroute an entire day for them and call it "on the way." The lender has checked the map. It is never on the way.',
-    },
-    {
-      kind: 'text',
-      title: 'Closing Wall Text',
-      text: 'Every museum is an argument that something mattered. Most take committees, centuries, marble. This one took only paying attention to one person for a long time — the music he replays, the food he misses, the cities he sketches, the futures he is quietly building. The lender wishes to state, for the permanent record: it was the easiest argument ever made.',
-    },
-    {
-      kind: 'guestbook',
-      text: '— with love, the lender. (The collection remains on loan indefinitely. The interest is compounding.)',
-    },
-  ],
+  plaque: 'A collection of moments observed by one person.',
 }
 
 export const ALL_ROOMS = [...WINGS, HIDDEN_WING]
