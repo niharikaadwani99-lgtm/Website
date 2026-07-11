@@ -1,0 +1,756 @@
+/* ————— Wing VII: the vision lab ————— */
+
+/* the room reads architectural: drafting grid over the pale walls */
+.fw .room3d {
+  --wall-bg:
+    repeating-linear-gradient(90deg, rgba(65, 88, 110, 0.06) 0 1px, transparent 1px 120px),
+    repeating-linear-gradient(0deg, rgba(65, 88, 110, 0.06) 0 1px, transparent 1px 120px),
+    linear-gradient(0deg, rgba(236, 234, 223, 0.9) 0%, rgba(236, 234, 223, 0) 46%),
+    linear-gradient(180deg, #dfe4e2 0%, #eceade 100%);
+  --wall-side-bg: var(--wall-bg);
+}
+
+/* an ambient projection pooled on the floor beneath the centerpiece */
+.fw-projection {
+  position: absolute;
+  left: 50%;
+  top: 24%;
+  width: 46%;
+  height: 46%;
+  transform: translateX(-46%);
+  border-radius: 50%;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(255, 223, 138, 0.3), rgba(255, 223, 138, 0.06) 60%, transparent 75%);
+  animation: fw-projection-breathe 9s ease-in-out infinite;
+}
+
+@keyframes fw-projection-breathe {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+/* working drawings pinned to the walls */
+.fw-pin {
+  position: absolute;
+  transform: rotate(var(--tilt, 0deg));
+  filter: drop-shadow(0 6px 8px rgba(40, 40, 30, 0.25));
+  pointer-events: none;
+}
+
+/* ————— the installations standing in the room ————— */
+
+.fw-install {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.fw-install__art {
+  display: block;
+  transition: filter 0.9s ease, transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1);
+  filter: drop-shadow(0 18px 22px rgba(30, 34, 30, 0.3));
+}
+
+.fw-install:hover .fw-install__art,
+.fw-install:focus-visible .fw-install__art {
+  transform: translateY(-5px);
+  filter: drop-shadow(0 24px 30px rgba(30, 34, 30, 0.34)) drop-shadow(0 0 30px rgba(255, 217, 138, 0.5));
+}
+
+.fw-install--floating .fw-install__art {
+  animation: fw-float 7s ease-in-out infinite;
+}
+
+@keyframes fw-float {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -14px; }
+}
+
+.fw-install__label {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 0.56rem;
+  color: var(--room-muted);
+  background: rgba(255, 255, 255, 0.55);
+  padding: 5px 12px;
+  border: 1px solid var(--room-line);
+  transition: color 0.6s ease, border-color 0.6s ease;
+}
+
+.fw-install:hover .fw-install__label,
+.fw-install:focus-visible .fw-install__label {
+  color: var(--room-accent);
+  border-color: var(--room-accent);
+}
+
+.fw-install__seen {
+  color: var(--room-accent);
+}
+
+/* ————— overlays: inside the installations ————— */
+
+.fw-ov {
+  position: fixed;
+  inset: 0;
+  z-index: 95;
+  overflow-y: auto;
+  color: var(--ov-ink, #2b241b);
+  background: var(--ov-bg, #f2efe6);
+  animation: fw-ov-enter 0.9s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@keyframes fw-ov-enter {
+  from { opacity: 0; transform: scale(1.015); filter: brightness(1.1); }
+  to { opacity: 1; transform: scale(1); filter: brightness(1); }
+}
+
+.fw-ov--house {
+  --ov-bg:
+    repeating-linear-gradient(90deg, rgba(65, 88, 110, 0.05) 0 1px, transparent 1px 90px),
+    repeating-linear-gradient(0deg, rgba(65, 88, 110, 0.05) 0 1px, transparent 1px 90px),
+    linear-gradient(180deg, #f4f1e8, #eae6d8);
+  --ov-ink: #2a2e33;
+  --ov-accent: #41586e;
+  --ov-muted: #6e7780;
+  --ov-panel: rgba(255, 255, 255, 0.72);
+  --ov-line: rgba(65, 88, 110, 0.35);
+}
+
+.fw-ov--factory {
+  --ov-bg: linear-gradient(180deg, #272a2e 0%, #1d2023 100%);
+  --ov-ink: #ece7da;
+  --ov-accent: #d4af6a;
+  --ov-muted: #9aa0a6;
+  --ov-panel: rgba(255, 255, 255, 0.05);
+  --ov-line: rgba(212, 175, 106, 0.35);
+}
+
+.fw-ov--dream {
+  --ov-bg: radial-gradient(80% 55% at 50% 0%, #232045 0%, #14122b 60%, #0e0d1f 100%);
+  --ov-ink: #e7e3f4;
+  --ov-accent: #cfc08a;
+  --ov-muted: #9a93bd;
+  --ov-panel: rgba(58, 54, 104, 0.3);
+  --ov-line: rgba(168, 155, 216, 0.35);
+}
+
+.fw-ov--museum {
+  --ov-bg: linear-gradient(180deg, #e6e9e6 0%, #f4f1e6 100%);
+  --ov-ink: #2f3436;
+  --ov-accent: #a98a52;
+  --ov-muted: #78807d;
+  --ov-panel: rgba(255, 255, 255, 0.72);
+  --ov-line: rgba(169, 138, 82, 0.4);
+}
+
+.fw-ov__inner {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: clamp(56px, 8vw, 90px) clamp(22px, 5vw, 48px) 90px;
+}
+
+.fw-ov__x {
+  position: fixed;
+  top: 20px;
+  right: 26px;
+  z-index: 3;
+  border: none;
+  background: none;
+  color: var(--ov-muted);
+  padding: 8px;
+  transition: color 0.4s ease;
+}
+
+.fw-ov__x:hover {
+  color: var(--ov-accent);
+}
+
+.fw-ov__head {
+  text-align: center;
+  margin-bottom: clamp(36px, 5vw, 56px);
+}
+
+.fw-ov__eyebrow {
+  color: var(--ov-accent);
+}
+
+.fw-ov__title {
+  margin-top: 14px;
+  font-family: var(--display);
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  letter-spacing: 0.06em;
+}
+
+.fw-ov__subtitle {
+  margin-top: 10px;
+  font-style: italic;
+  color: var(--ov-muted);
+  font-size: 1.1rem;
+}
+
+.fw-ov__lede {
+  max-width: 56ch;
+  margin: 0 auto clamp(30px, 4vw, 44px);
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.75;
+}
+
+.fw-ov__section {
+  margin-top: clamp(40px, 6vw, 64px);
+}
+
+.fw-ov__label {
+  color: var(--ov-accent);
+  margin-bottom: 20px;
+}
+
+.fw-ov__aside {
+  margin-top: 18px;
+  font-style: italic;
+  color: var(--ov-muted);
+}
+
+.fw-ov__back {
+  display: block;
+  margin: clamp(48px, 7vw, 72px) auto 0;
+  border: 1px solid var(--ov-line);
+  background: none;
+  color: var(--ov-muted);
+  padding: 12px 26px;
+  border-radius: 999px;
+  transition: color 0.5s ease, border-color 0.5s ease;
+}
+
+.fw-ov__back:hover {
+  color: var(--ov-accent);
+  border-color: var(--ov-accent);
+}
+
+/* ————— installation I: the hacker house ————— */
+
+.fw-manifesto {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: creed;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.fw-manifesto li {
+  counter-increment: creed;
+  padding: 18px 20px 18px 58px;
+  position: relative;
+  background: var(--ov-panel);
+  border: 1px solid var(--ov-line);
+  font-size: 1.12rem;
+  font-style: italic;
+}
+
+.fw-manifesto li::before {
+  content: counter(creed, upper-roman);
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--ov-accent);
+}
+
+.fw-house {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(240px, 1fr);
+  gap: clamp(20px, 3vw, 36px);
+  align-items: start;
+}
+
+@media (max-width: 720px) {
+  .fw-house {
+    grid-template-columns: 1fr;
+  }
+}
+
+.fw-plan {
+  width: 100%;
+  height: auto;
+  color: var(--ov-accent);
+}
+
+.fw-plan__room {
+  cursor: pointer;
+}
+
+.fw-plan__room rect {
+  fill: rgba(255, 255, 255, 0.25);
+  stroke: currentColor;
+  stroke-width: 1.6;
+  transition: fill 0.5s ease;
+}
+
+.fw-plan__room text {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  fill: var(--ov-muted);
+  pointer-events: none;
+  transition: fill 0.5s ease;
+}
+
+.fw-plan__room:hover rect {
+  fill: rgba(212, 175, 106, 0.14);
+}
+
+.fw-plan__room--on rect {
+  fill: rgba(212, 175, 106, 0.26);
+}
+
+.fw-plan__room--on text {
+  fill: var(--ov-ink);
+}
+
+.fw-house__panel {
+  padding: 26px 26px 30px;
+  background: var(--ov-panel);
+  border: 1px solid var(--ov-line);
+}
+
+.fw-house__room {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.fw-house__note {
+  margin-top: 6px;
+  font-style: italic;
+  color: var(--ov-muted);
+}
+
+.fw-house__points {
+  margin: 16px 0 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  line-height: 1.55;
+}
+
+.fw-house__points li::marker {
+  color: var(--ov-accent);
+}
+
+/* ————— installation II: the product factory ————— */
+
+.fw-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.fw-card {
+  perspective: 900px;
+  border: none;
+  background: none;
+  padding: 0;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  min-height: 250px;
+}
+
+.fw-card__inner {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 250px;
+  transform-style: preserve-3d;
+  transition: transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.fw-card--flipped .fw-card__inner {
+  transform: rotateY(180deg);
+}
+
+.fw-card__face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 22px 22px 20px;
+  backface-visibility: hidden;
+  border: 1px solid var(--ov-line);
+  background: var(--ov-panel);
+}
+
+.fw-card__front {
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+}
+
+.fw-card__back {
+  transform: rotateY(180deg);
+  justify-content: center;
+  gap: 12px;
+  background: rgba(212, 175, 106, 0.08);
+}
+
+.fw-card__num {
+  color: var(--ov-accent);
+  font-size: 0.56rem;
+}
+
+.fw-card__name {
+  font-family: var(--serif);
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+.fw-card__tag {
+  font-style: italic;
+  color: var(--ov-muted);
+  line-height: 1.4;
+}
+
+.fw-card__hint {
+  margin-top: 12px;
+  font-size: 0.5rem;
+  color: var(--ov-muted);
+  opacity: 0.7;
+}
+
+.fw-card__field {
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.fw-card__field strong {
+  color: var(--ov-accent);
+  font-weight: 500;
+}
+
+.fw-motto {
+  margin: clamp(44px, 6vw, 64px) auto 0;
+  max-width: 560px;
+  padding: 34px 30px;
+  text-align: center;
+  border: 1px solid var(--ov-line);
+  outline: 1px solid var(--ov-line);
+  outline-offset: 5px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.fw-motto span {
+  display: block;
+  color: var(--ov-accent);
+  font-size: 1.4rem;
+  margin-bottom: 6px;
+}
+
+/* ————— installation III: the dream archive ————— */
+
+.fw-journal {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.fw-journal__page {
+  padding: 26px 24px;
+  background: rgba(247, 244, 236, 0.92);
+  color: #3a3552;
+  font-style: italic;
+  line-height: 1.7;
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.4);
+  transform: rotate(var(--tilt, 0deg));
+  background-image: repeating-linear-gradient(0deg, transparent 0 27px, rgba(120, 110, 160, 0.18) 27px 28px);
+}
+
+.fw-books {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  line-height: 1.6;
+}
+
+.fw-books li::marker {
+  color: var(--ov-accent);
+}
+
+.fw-experiments {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.fw-experiment {
+  padding: 24px 24px 26px;
+  background: var(--ov-panel);
+  border: 1px solid var(--ov-line);
+  text-align: center;
+}
+
+.fw-experiment__q {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-style: italic;
+}
+
+.fw-experiment__note {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: var(--ov-muted);
+  line-height: 1.6;
+}
+
+.fw-dreamgallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+}
+
+.fw-dreampiece {
+  margin: 0;
+}
+
+.fw-dreampiece__frame {
+  display: block;
+  padding: 8px;
+  background: linear-gradient(135deg, #4a4270, #2a2548);
+  box-shadow: inset 0 0 0 1px rgba(207, 192, 138, 0.4), 0 18px 34px rgba(0, 0, 0, 0.45);
+}
+
+.fw-dreampiece figcaption {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.fw-dreampiece__title {
+  display: block;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+.fw-dreampiece__caption {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.88rem;
+  color: var(--ov-muted);
+}
+
+/* ————— installation IV: the future glyptotek ————— */
+
+.fw-wings {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 22px;
+}
+
+.fw-wing-card {
+  margin: 0;
+}
+
+.fw-wing-card__art {
+  display: block;
+  border: 1px solid var(--ov-line);
+  box-shadow: 0 14px 28px rgba(60, 56, 40, 0.14);
+}
+
+.fw-wing-card figcaption {
+  margin-top: 12px;
+}
+
+.fw-wing-card__name {
+  display: block;
+  color: var(--ov-accent);
+  font-size: 0.6rem;
+}
+
+.fw-wing-card__caption {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--ov-muted);
+}
+
+.fw-plaque {
+  margin: clamp(44px, 6vw, 64px) auto 0;
+  max-width: 620px;
+  padding: 34px 36px;
+  text-align: center;
+  background: linear-gradient(160deg, #f3ecdb, #e2d8c2);
+  border: 1px solid rgba(169, 138, 82, 0.55);
+  outline: 3px solid rgba(45, 32, 22, 0.85);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 3px var(--brass), 0 22px 44px rgba(60, 48, 30, 0.25);
+}
+
+.fw-plaque__text {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.2rem, 2.4vw, 1.5rem);
+  line-height: 1.55;
+  color: var(--walnut-deep);
+}
+
+.fw-legacy__intro {
+  max-width: 52ch;
+  line-height: 1.7;
+}
+
+.fw-legacy {
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 14px;
+}
+
+.fw-legacy li {
+  padding: 20px 18px;
+  text-align: center;
+  border: 1px solid var(--ov-line);
+  background: var(--ov-panel);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.15rem;
+}
+
+/* the door, and what waits behind it */
+.fw-doorway {
+  margin-top: clamp(48px, 7vw, 72px);
+  text-align: center;
+}
+
+.fw-doorway__hint {
+  margin-top: clamp(48px, 7vw, 72px);
+  text-align: center;
+  font-style: italic;
+  color: var(--ov-muted);
+}
+
+.fw-doorway__hint .smallcaps {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.55rem;
+}
+
+.fw-door {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  border: none;
+  background: none;
+  color: var(--ov-accent);
+  cursor: pointer;
+  padding: 10px;
+}
+
+.fw-door svg {
+  width: 58px;
+  filter: drop-shadow(0 0 18px rgba(255, 217, 138, 0.6));
+  animation: fw-door-glow 3s ease-in-out infinite;
+}
+
+@keyframes fw-door-glow {
+  0%, 100% { filter: drop-shadow(0 0 10px rgba(255, 217, 138, 0.4)); }
+  50% { filter: drop-shadow(0 0 24px rgba(255, 217, 138, 0.8)); }
+}
+
+.fw-door .smallcaps {
+  font-size: 0.56rem;
+}
+
+.fw-foundation {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: clamp(36px, 5vw, 56px) clamp(26px, 4vw, 44px);
+  text-align: center;
+  background: linear-gradient(180deg, #33302c, #23211d);
+  color: #efe7d5;
+  border: 1px solid rgba(212, 175, 106, 0.4);
+  outline: 1px solid rgba(212, 175, 106, 0.25);
+  outline-offset: 6px;
+  box-shadow: 0 34px 70px rgba(20, 18, 12, 0.4);
+  animation: fw-ov-enter 1.1s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.fw-foundation__eyebrow {
+  color: #d4af6a;
+}
+
+.fw-foundation__plaque {
+  margin-top: 20px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  line-height: 1.45;
+}
+
+.fw-foundation__note {
+  margin-top: 30px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: #e3d7bf;
+}
+
+.fw-foundation__note strong {
+  color: #f0d9a2;
+  font-weight: 500;
+}
+
+.fw-foundation__sign {
+  font-style: italic;
+  color: #c2ab86;
+  text-align: right;
+}
+
+/* ————— flat fallback ————— */
+
+@media (max-width: 880px) {
+  .fw-flat__installs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 34px;
+    max-width: 560px;
+    margin: 36px auto 0;
+  }
+
+  .fw-flat__install {
+    position: relative;
+    border: 1px solid var(--room-line);
+    background: var(--room-panel);
+    padding: 20px 16px 42px;
+    cursor: pointer;
+    color: inherit;
+  }
+
+  .fw-flat__install .fw-install__label {
+    top: auto;
+    bottom: 12px;
+  }
+}

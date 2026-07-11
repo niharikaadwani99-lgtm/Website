@@ -311,42 +311,10 @@ export const WINGS = [
     artTitle: 'The Museum in the Mist',
     artMedium: 'Oil and morning fog',
     artYear: 'Forthcoming',
-    tagline: 'The only wing still under construction. It always will be.',
+    tagline: 'A collection of things not yet built.',
     intro:
-      'The mist in this room is intentional. These exhibits describe what does not exist yet — collections unassembled, buildings undrawn, communities ungathered. Visitors should treat every label here as a promissory note. The museum intends to honour all of them.',
-    quote: 'Build places where ideas, people, and beauty can live together.',
-    exhibits: [
-      {
-        title: 'The Future Collection',
-        label: 'Forthcoming VII-01 · Art not yet found',
-        text:
-          'Somewhere there are paintings, records, and objects that belong in this museum and have not been met yet. This exhibit reserves the wall space. The collector’s only acquisition criterion is unchanged: it must be impossible to walk past.',
-      },
-      {
-        title: 'The Dream Museum',
-        label: 'Forthcoming VII-02 · This building, made of stone',
-        text:
-          'What you are walking through is the maquette. The full-scale version — real limestone, real daylight, a real dome with real dust in the light — is filed under someday. A place where the Hall of Sound has actual turntables and the greenery needs actual watering. The plans are early. The intent is not.',
-      },
-      {
-        title: 'Hacker Houses',
-        label: 'Forthcoming VII-03 · The next chapter',
-        text:
-          'The Founder Wing documents the fascination; this exhibit documents the plan. Houses that make builders out of tenants. Rooms where the rent is paid in ambition. To be constructed in whatever city holds still long enough.',
-      },
-      {
-        title: 'Founder Communities',
-        label: 'Forthcoming VII-04 · Institutions that outlive their founders',
-        text:
-          'The long game: not a company but a commons. Networks of people who build things, held together by something sturdier than a group chat. The blueprint calls for the warmth of a family kitchen and the throughput of an incubator. Both, or it does not count.',
-      },
-      {
-        title: 'Legacy Projects',
-        label: 'Forthcoming VII-05 · What remains',
-        text:
-          'The final exhibit in the museum, left mostly empty on purpose. Legacy, the label suggests, is just curation at the scale of a lifetime — choosing what to build, whom to build it with, and what to leave behind on the walls. This wing will be the last one finished. That is the correct order.',
-      },
-    ],
+      'The last wing is not an exhibition; it is a workshop. Four installations stand here — a house, a factory, an archive of dreams, and a museum in miniature — each one a thing that does not exist yet, displayed as though it already does. The sketches on the walls are working drawings, not relics. Nothing in this room is finished, and nothing in this room is nostalgia. Step close to any model and it will let you in.',
+    exhibits: [],
   },
 ]
 
