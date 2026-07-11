@@ -26,28 +26,16 @@ const LETTER = {
 }
 
 const OBSERVATIONS = [
-  'You read the entire plaque. Every museum. All of it.',
-  'You cite the length of Innerbloom from memory — nine minutes, thirty-eight seconds — and then check anyway.',
-  'You order khow suey for the toppings as much as the noodles.',
-  'You redesign the queue while standing in the queue.',
-  'You say “one more song” in the tone of a man who means four.',
-  'You defend raisins in chocolate like a lawyer with a strong case.',
-  'You care more about the story behind an object than the object itself.',
-  'You slow down at watch-shop windows and pretend you haven’t.',
-  'You have never left a whiteboard the way you found it.',
-  'You give reassurance the way other people give directions — freely, and before being asked.',
-  'You can spend twenty minutes explaining a watch nobody else noticed.',
-  'You keep playlists like diaries and insist they are not diaries.',
-  'You explain race strategy to people who did not ask, and they leave grateful.',
-  'You compare every yellow dal to your mother’s, rule it inauthentic, and finish it anyway.',
-  'You count stairs without noticing you are doing it.',
-  'You treat future dreams as if they already have a physical address.',
-  'You say “it’s on the way.” It has never once been on the way.',
-  'You treat LEGO instructions as suggestions, and then, quietly, as law.',
-  'You whisper match predictions at 3 a.m. and refuse to elaborate.',
-  'You remember what people said months ago, word for word, at exactly the right moment.',
-  'You test a fragrance twice — once for yourself, once to describe it properly.',
-  'You optimize everything except the time you spend on people you love. There, you are gloriously inefficient.',
+  'You make me feel chosen, even on the most ordinary days.',
+  'I’ve never met someone who pays attention to the little things the way you do.',
+  'You make me feel safe enough to be completely myself.',
+  'Your thoughtfulness isn’t something you do, it’s who you are.',
+  'You make difficult conversations feel like we’re on the same team.',
+  'I admire how deeply you care about becoming a better person.',
+  'You have a way of making me feel important without ever having to say it.',
+  'You make life feel lighter, funnier, and much less lonely.',
+  'I love how much intention you bring to the people and things you care about.',
+  'Being loved by you has shown me how good love can actually feel.',
 ]
 
 const SMALL_THINGS = [
@@ -233,8 +221,8 @@ export default function SpecialExhibition() {
         {/* III — The Observation Wall */}
         <Exhibit numeral="III" name="The Observation Wall">
           <p className="sx-lede">
-            Not compliments. Observations. Collected the way this museum collects everything — slowly,
-            closely, and on small labels.
+            Ten labels, written from close range. Collected the way this museum collects everything —
+            slowly, honestly, and in her hand.
           </p>
           <div className="sx-observations">
             {OBSERVATIONS.map((text, i) => (
