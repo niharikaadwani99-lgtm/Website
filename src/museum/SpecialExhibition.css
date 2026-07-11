@@ -353,6 +353,95 @@
   color: #bd9a7c;
 }
 
+.sx-thing__line {
+  display: block;
+}
+
+.sx-thing__line + .sx-thing__line {
+  margin-top: 4px;
+}
+
+/* ————— the joke: a little brass timer ————— */
+
+.sx-timer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.sx-timer__bells {
+  width: 46px;
+  height: 10px;
+  background:
+    radial-gradient(7px 7px at 10px 8px, #d9bc80 60%, transparent 61%),
+    radial-gradient(7px 7px at 36px 8px, #d9bc80 60%, transparent 61%);
+}
+
+.sx-timer__face {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 96px;
+  padding: 18px 20px;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  background: radial-gradient(circle at 34% 30%, #f3e3bd, #d9bc80 55%, #a98a52);
+  border: 2px solid #6f5731;
+  box-shadow: inset 0 -4px 8px rgba(60, 40, 20, 0.35), 0 10px 22px rgba(0, 0, 0, 0.45);
+  color: #43301c;
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  letter-spacing: 0.1em;
+}
+
+.sx-timer--rung .sx-timer__face,
+.sx-timer--rung .sx-timer__bells {
+  animation: sx-timer-ring 0.55s ease-in-out 3;
+}
+
+@keyframes sx-timer-ring {
+  0%, 100% { transform: translateX(0) rotate(0); }
+  25% { transform: translateX(-3px) rotate(-4deg); }
+  75% { transform: translateX(3px) rotate(4deg); }
+}
+
+.sx-timer__wind {
+  border: 1px solid rgba(212, 147, 138, 0.4);
+  background: none;
+  color: #c8a888;
+  padding: 8px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.52rem;
+  transition: color 0.5s ease, border-color 0.5s ease;
+}
+
+.sx-timer__wind:hover:not(:disabled) {
+  color: #f0b9ae;
+  border-color: #d4938a;
+}
+
+.sx-timer__wind:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.sx-timer__punchline {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: #f0e2d2;
+  animation: sx-punchline-in 0.8s ease both;
+}
+
+@keyframes sx-punchline-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 /* the little brass plaques */
 .sx-plaque {
   max-width: 480px;

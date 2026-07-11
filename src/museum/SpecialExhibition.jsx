@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { HIDDEN_WING } from './wings.js'
 import photograph01 from './assets/photograph-01.jpg'
@@ -42,20 +42,24 @@ const SMALL_THINGS = [
   {
     kind: 'screenshot',
     title: 'Song recommendation, item 01',
-    body: '“trust me on this one.” — 11:52 p.m.',
-    caption: 'He was right. He is aware that he was right.',
+    body: '“Human Nature” — Michael Jackson',
+    caption: 'Sent with no explanation, because none was needed. Plays in this room on a loop only the two of them can hear.',
   },
   {
     kind: 'phrase',
     title: 'A phrase, said often',
-    body: '“Okay — hear me out.”',
-    caption: 'Catalogued because what follows is, invariably, worth hearing out.',
+    lines: [
+      '“It’s over” aayenge jayenge,',
+      'magar “we’re so back” hote rehna chahiye,',
+      '“fuck it, we ball” hote rehna chahiye.',
+    ],
+    caption: 'A complete philosophy in three lines. Adopted by this museum as official policy.',
   },
   {
     kind: 'film',
     title: 'One film recommendation',
-    body: 'Status: on hold',
-    caption: 'To be watched properly, together, as intended. The museum respects the hold.',
+    body: 'Indiana Jones',
+    caption: 'Status: on hold. To be watched properly, together, as intended. The museum respects the hold.',
   },
   {
     kind: 'clue',
@@ -66,10 +70,77 @@ const SMALL_THINGS = [
   {
     kind: 'joke',
     title: 'A joke',
-    body: '№ ∞',
-    caption: 'Not funny to anyone else. Funnier every time.',
+    caption: 'Not funny to anyone else. Funnier every time. Wind it and see.',
   },
 ]
+
+/* the joke is a timer. of course it is. */
+function ringBell() {
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)()
+    const gain = ctx.createGain()
+    gain.gain.value = 0
+    gain.connect(ctx.destination)
+    const osc = ctx.createOscillator()
+    osc.type = 'triangle'
+    osc.frequency.value = 1720
+    osc.connect(gain)
+    osc.start()
+    const t = ctx.currentTime
+    for (let i = 0; i < 4; i++) {
+      gain.gain.setValueAtTime(0.07, t + i * 0.18)
+      gain.gain.setValueAtTime(0, t + i * 0.18 + 0.09)
+    }
+    osc.stop(t + 0.9)
+    setTimeout(() => ctx.close(), 1200)
+  } catch {
+    // the bell rings silently in unsupported browsers
+  }
+}
+
+function JokeTimer() {
+  const [phase, setPhase] = useState('idle') // idle → ticking → rung
+  const [left, setLeft] = useState(5)
+  const intervalRef = useRef(null)
+
+  useEffect(() => () => clearInterval(intervalRef.current), [])
+
+  const wind = () => {
+    if (phase === 'ticking') return
+    setPhase('ticking')
+    setLeft(5)
+    clearInterval(intervalRef.current)
+    intervalRef.current = setInterval(() => {
+      setLeft((s) => {
+        if (s <= 1) {
+          clearInterval(intervalRef.current)
+          setPhase('rung')
+          ringBell()
+          return 0
+        }
+        return s - 1
+      })
+    }, 1000)
+  }
+
+  return (
+    <div className={`sx-timer ${phase === 'rung' ? 'sx-timer--rung' : ''}`} aria-live="polite">
+      <span className="sx-timer__bells" aria-hidden="true" />
+      <span className="sx-timer__face">
+        {phase === 'idle' && '№ ∞'}
+        {phase === 'ticking' && `00:0${left}`}
+        {phase === 'rung' && '!!!'}
+      </span>
+      {phase === 'rung' ? (
+        <p className="sx-timer__punchline">It went off. It always goes off.</p>
+      ) : (
+        <button type="button" className="sx-timer__wind smallcaps" onClick={wind} disabled={phase === 'ticking'}>
+          {phase === 'ticking' ? 'ticking…' : 'Wind the timer'}
+        </button>
+      )}
+    </div>
+  )
+}
 
 /* the sealed second letter */
 function SealedLetterSvg() {
@@ -241,7 +312,17 @@ export default function SpecialExhibition() {
             {SMALL_THINGS.map((thing) => (
               <div className={`sx-thing sx-thing--${thing.kind}`} key={thing.title}>
                 <p className="smallcaps sx-thing__title">{thing.title}</p>
-                <p className="sx-thing__body">{thing.body}</p>
+                {thing.kind === 'joke' ? (
+                  <JokeTimer />
+                ) : thing.lines ? (
+                  <p className="sx-thing__body">
+                    {thing.lines.map((line) => (
+                      <span className="sx-thing__line" key={line}>{line}</span>
+                    ))}
+                  </p>
+                ) : (
+                  <p className="sx-thing__body">{thing.body}</p>
+                )}
                 <p className="sx-thing__caption">{thing.caption}</p>
               </div>
             ))}
