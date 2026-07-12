@@ -7,9 +7,20 @@ import { BenchSvg, PlanterSvg, PedestalSvg } from './Props.jsx'
 import ExhibitArt from './ExhibitArt.jsx'
 import { BottleArt, SpinningRecordArt, LegoArt, PuzzleArt } from './ObjectsArt.jsx'
 import ExhibitModal from './ExhibitModal.jsx'
+import firstSalePhoto from './assets/first-sale.jpg'
 import './Wing.css'
 
-const CUSTOM_ARTS = { bottle: BottleArt, record: SpinningRecordArt, lego: LegoArt, puzzle: PuzzleArt }
+function FirstSaleArt() {
+  return (
+    <img
+      src={firstSalePhoto}
+      className="exhibit-photo"
+      alt="A photograph of the email confirming the first sale of his product — order total $49"
+    />
+  )
+}
+
+const CUSTOM_ARTS = { bottle: BottleArt, record: SpinningRecordArt, lego: LegoArt, puzzle: PuzzleArt, sale: FirstSaleArt }
 
 /* hanging plans — where works sit on each wall, receding with the room */
 const LEFT_POS = [

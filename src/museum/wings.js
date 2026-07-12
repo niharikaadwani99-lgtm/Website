@@ -146,16 +146,11 @@ export const WINGS = [
           'One of our first dates was a jigsaw puzzle of an astronaut that he had been failing to finish for years. Years. A man who optimizes everything, out-stubborned by cardboard. Then we sat down at it together and it was done by evening. I am not saying I am the missing piece. I am just saying the puzzle is finished and I am still here.',
       },
       {
-        title: 'Indie Fashion',
-        label: 'Small labels, quiet clothes \u00b7 Exhibit III-05',
+        title: 'The First Sale',
+        label: 'Order total: $49 \u00b7 Framed the moment it happened \u00b7 Exhibit III-05',
+        customArt: 'sale',
         text:
-          'A wardrobe from makers rather than logos \u2014 honest fabrics, quiet cuts that will still look right in twenty years. The style equivalent of listening to the B-side first. He dresses like someone with nothing to prove, which, devastatingly, proves quite a lot. I have opinions about the blue shirt. All of them favourable.',
-      },
-      {
-        title: 'The Collector\u2019s Instinct',
-        label: 'On keeping beautiful things \u00b7 Exhibit III-06',
-        text:
-          'Collecting, done properly, is editing: one in, and it must matter. He assembles his life\u2019s objects as if each might someday hang in a museum. As it happens, they now do. And so does he. Curated by me, with bias, forever.',
+          'Forty-nine dollars. Somewhere on the other side of the world, a stranger decided that a thing my boyfriend built was worth paying for \u2014 and the internet quietly changed category for him: from a place he ships things into, to a place that ships something back. I have watched him win at many things. I have never seen him look at anything the way he looked at this email. The museum acquired the screenshot immediately. The frame cost more than the order. Worth it.',
       },
     ],
   },

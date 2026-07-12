@@ -204,7 +204,9 @@
   box-shadow: inset 0 0 10px rgba(60, 48, 30, 0.25);
 }
 
-.wall-frame__mat svg {
+.wall-frame__mat svg,
+.wall-frame__mat img {
+  display: block;
   width: 100%;
   height: auto;
 }
@@ -393,6 +395,12 @@
   display: block;
   padding: 9px;
   background: #efe9da;
+}
+
+.exhibit-modal__art img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .exhibit-modal__number {
