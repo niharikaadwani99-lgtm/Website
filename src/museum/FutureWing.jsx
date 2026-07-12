@@ -7,9 +7,9 @@ import { BenchSvg } from './Props.jsx'
 import './FutureWing.css'
 
 /*
- * Wing VII — the vision lab. Four installations of things not yet built:
- * a house, a factory, an archive of dreams, and this museum in miniature.
- * Visit all four and the museum model grows a door.
+ * Wing VI — the vision lab. Three installations of things not yet built:
+ * a house, a factory, and this museum in miniature.
+ * Visit all three and the museum model grows a door.
  */
 
 const VISITED_KEY = 'glyptotek-future-visited'
@@ -75,7 +75,7 @@ const PRODUCTS = [
     tag: 'For dreams that vanish on waking',
     problem: 'Dreams evaporate faster than they can be written down.',
     why: 'The subconscious does its best work unsupervised — losing it to the snooze button is a rounding error against the soul.',
-    inspired: 'A dream journal with seventeen half-finished entries. See Installation III.',
+    inspired: 'A dream journal with seventeen half-finished entries, kept on the nightstand.',
   },
   {
     num: '002',
@@ -125,28 +125,6 @@ const PRODUCTS = [
     why: 'Progress is a feedback loop, not a wish. Instrument the loop.',
     inspired: 'The subject’s clinical inability to leave a process unoptimized.',
   },
-]
-
-/* ————— the dream archive ————— */
-
-const JOURNAL = [
-  'Entry, undated — The staircase again. It goes up for exactly as long as I climb it and not one step further. Tonight I noticed the banister was warm, which means someone had been ahead of me.',
-  'Entry, 4:12 a.m. — Knew I was dreaming inside the dream. Counted my fingers twice, got six, laughed, and chose to stay. Flew low over a city that was all courtyards.',
-  'Entry, fragment — A door ajar in a field of stars. Did not go through. Woke furious with myself. Next time.',
-]
-
-const LIBRARY = [
-  'Exploring the World of Lucid Dreaming — Stephen LaBerge. Spine broken at chapter four.',
-  'Why We Sleep — Matthew Walker. Read, ironically, very late at night.',
-  'When Brains Dream — Zadra & Stickgold. Margins full.',
-  'The Interpretation of Dreams — Freud. Kept mostly for arguments.',
-  'One ruled journal, kept on the nightstand. Handwriting degrades sharply after 3 a.m.',
-]
-
-const EXPERIMENTS = [
-  { q: 'Why do we dream?', note: 'The mind builds elaborate architecture every night and burns the blueprints every morning. The archive would like to know why.' },
-  { q: 'Can consciousness be trained?', note: 'Reality checks, dream signs, the discipline of doubting one’s own daylight. Early results: promising, unrepeatable, addictive.' },
-  { q: 'What happens when we become aware inside a dream?', note: 'The dream does not end. It negotiates. Standing research question of this entire archive.' },
 ]
 
 /* ————— svg: the objects in the room ————— */
@@ -216,37 +194,6 @@ function ProductWallSvg() {
           <rect x="8" y="40" width="16" height="6" rx="3" fill={i === 4 ? '#d4af6a' : '#dedacb'} />
         </g>
       ))}
-    </svg>
-  )
-}
-
-function DreamMoonSvg() {
-  return (
-    <svg viewBox="0 0 260 250" aria-hidden="true">
-      <defs>
-        <filter id="fw-glow-m" x="-50%" y="-50%" width="200%" height="200%">
-          <feGaussianBlur stdDeviation="12" />
-        </filter>
-      </defs>
-      <circle cx="130" cy="112" r="66" fill="#e9e4f2" opacity="0.4" filter="url(#fw-glow-m)" />
-      <circle cx="130" cy="112" r="54" fill="#efeaf6" />
-      <g fill="#cfc7de">
-        <circle cx="110" cy="94" r="9" /><circle cx="150" cy="120" r="6" />
-        <circle cx="126" cy="140" r="5" /><circle cx="146" cy="88" r="4" />
-      </g>
-      {/* floating journal pages */}
-      {[[26, 60, -14], [206, 52, 12], [40, 168, 10], [196, 170, -8], [118, 8, 4]].map(([x, y, rot]) => (
-        <g key={`${x}-${y}`} transform={`translate(${x} ${y}) rotate(${rot})`}>
-          <rect width="34" height="44" rx="2" fill="#f7f4ec" stroke="#b9b2cf" strokeWidth="0.8" />
-          {[8, 14, 20, 26, 32].map((ly) => (
-            <line key={ly} x1="5" y1={ly} x2={ly % 3 ? 29 : 21} y2={ly} stroke="#a89fc4" strokeWidth="1" opacity="0.7" />
-          ))}
-        </g>
-      ))}
-      <g fill="#efeaf6">
-        <circle cx="18" cy="120" r="1.6" /><circle cx="242" cy="118" r="1.4" />
-        <circle cx="70" cy="26" r="1.2" /><circle cx="196" cy="16" r="1.6" /><circle cx="130" cy="226" r="1.4" />
-      </g>
     </svg>
   )
 }
@@ -402,68 +349,6 @@ const EMPTY_WINGS = [
   { name: 'Design Collection', Svg: EmptyCasesSvg, caption: 'Display cases, dusted weekly. Contents forthcoming.' },
   { name: 'Founder Archive', Svg: ReservedPlinthSvg, caption: 'Reserved: the stories of builders not yet met.' },
   { name: 'Music Archive', Svg: EmptyShelvesSvg, caption: 'Shelving for records not yet pressed. The Hall of Sound has agreed to lend the first one.' },
-]
-
-/* ————— svg: the dream gallery ————— */
-
-function DreamStairsSvg() {
-  return (
-    <svg viewBox="0 0 200 150" aria-hidden="true">
-      <rect width="200" height="150" fill="#14122b" />
-      <g stroke="#8d82bd" strokeWidth="1.6" fill="none">
-        <path d="M30 132 h26 v-14 h26 v-14 h26 v-14 h26 v-14 h26" />
-        <path d="M30 118 h20" opacity="0.4" />
-      </g>
-      <rect x="152" y="46" width="26" height="40" rx="13" fill="#f2e2b8" opacity="0.9" />
-      {[[26, 30], [70, 18], [120, 32], [170, 20], [44, 60]].map(([x, y]) => (
-        <circle key={`${x}-${y}`} cx={x} cy={y} r="1.3" fill="#e8e2f5" />
-      ))}
-    </svg>
-  )
-}
-
-function DreamDoorSvg() {
-  return (
-    <svg viewBox="0 0 200 150" aria-hidden="true">
-      <rect width="200" height="150" fill="#100f22" />
-      {[[20, 26], [58, 14], [96, 40], [138, 18], [176, 34], [30, 92], [166, 104], [78, 118]].map(([x, y]) => (
-        <circle key={`${x}-${y}`} cx={x} cy={y} r="1.4" fill="#e8e2f5" opacity="0.85" />
-      ))}
-      <rect x="84" y="44" width="34" height="66" fill="none" stroke="#bfb4e2" strokeWidth="1.6" />
-      <polygon points="118,44 130,52 130,118 118,110" fill="#1c1a38" stroke="#bfb4e2" strokeWidth="1" />
-      <polygon points="84,110 118,110 96,132 66,132" fill="#f2e2b8" opacity="0.55" />
-      <circle cx="112" cy="78" r="1.8" fill="#f2e2b8" />
-    </svg>
-  )
-}
-
-function DreamCourtyardsSvg() {
-  return (
-    <svg viewBox="0 0 200 150" aria-hidden="true">
-      <rect width="200" height="150" fill="#171533" />
-      <g stroke="#6d5aa8" strokeWidth="1" fill="none" opacity="0.8">
-        {[0, 1, 2].map((r) =>
-          [0, 1, 2, 3].map((c) => (
-            <rect key={`${r}${c}`} x={18 + c * 44} y={16 + r * 42} width="36" height="34" />
-          ))
-        )}
-      </g>
-      <g fill="#2a2148">
-        {[0, 1, 2].map((r) =>
-          [0, 1, 2, 3].map((c) => (
-            <rect key={`${r}${c}`} x={28 + c * 44} y={26 + r * 42} width="16" height="14" />
-          ))
-        )}
-      </g>
-      <rect x="116" y="68" width="16" height="14" fill="#f2e2b8" opacity="0.9" />
-    </svg>
-  )
-}
-
-const DREAM_GALLERY = [
-  { title: 'The Recurring Staircase', Svg: DreamStairsSvg, caption: 'Goes up exactly as long as it is climbed. Banister reportedly warm.' },
-  { title: 'The Door Ajar', Svg: DreamDoorSvg, caption: 'Not yet entered. The archive considers this unfinished business.' },
-  { title: 'The City of Courtyards', Svg: DreamCourtyardsSvg, caption: 'As surveyed from above, altitude: lucid. One courtyard was lit.' },
 ]
 
 /* ————— the hacker house floor plan ————— */
@@ -640,56 +525,10 @@ function ProductCard({ p }) {
   )
 }
 
-function DreamView({ onClose }) {
-  return (
-    <Overlay id="dream" eyebrow="Installation III" title="The Dream Archive" subtitle="Lucid Dream Research Center · Please whisper" onClose={onClose}>
-      <section className="fw-ov__section">
-        <h3 className="smallcaps fw-ov__label">Dream Journal · recovered pages</h3>
-        <div className="fw-journal">
-          {JOURNAL.map((entry, i) => (
-            <p className="fw-journal__page" style={{ '--tilt': `${(i - 1) * 1.4}deg` }} key={entry}>{entry}</p>
-          ))}
-        </div>
-      </section>
-      <section className="fw-ov__section">
-        <h3 className="smallcaps fw-ov__label">The Library</h3>
-        <ul className="fw-books">
-          {LIBRARY.map((b) => <li key={b}>{b}</li>)}
-        </ul>
-      </section>
-      <section className="fw-ov__section">
-        <h3 className="smallcaps fw-ov__label">Experiments · open questions</h3>
-        <div className="fw-experiments">
-          {EXPERIMENTS.map((e) => (
-            <div className="fw-experiment" key={e.q}>
-              <p className="fw-experiment__q">{e.q}</p>
-              <p className="fw-experiment__note">{e.note}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-      <section className="fw-ov__section">
-        <h3 className="smallcaps fw-ov__label">Dream Gallery · recurring themes</h3>
-        <div className="fw-dreamgallery">
-          {DREAM_GALLERY.map(({ title, Svg, caption }) => (
-            <figure className="fw-dreampiece" key={title}>
-              <span className="fw-dreampiece__frame"><Svg /></span>
-              <figcaption>
-                <span className="fw-dreampiece__title">{title}</span>
-                <span className="fw-dreampiece__caption">{caption}</span>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
-      </section>
-    </Overlay>
-  )
-}
-
 function MuseumView({ onClose, allVisited, visitedCount }) {
   const [doorOpen, setDoorOpen] = useState(false)
   return (
-    <Overlay id="museum" eyebrow="Installation IV · The centerpiece" title="The Future Glyptotek" subtitle="Four wings, currently empty on purpose" onClose={onClose}>
+    <Overlay id="museum" eyebrow="Installation III · The centerpiece" title="The Future Glyptotek" subtitle="Four wings, currently empty on purpose" onClose={onClose}>
       <p className="fw-ov__lede">
         The model shows the museum as it will open: not finished, but ready to receive.
         Every wing below is empty, and every wing below is spoken for.
@@ -738,13 +577,12 @@ function MuseumView({ onClose, allVisited, visitedCount }) {
               <p className="fw-foundation__plaque">“Every institution begins as a conversation.”</p>
               <div className="fw-foundation__note">
                 <p>
-                  You have already started building all four of these, whether you noticed or not — the house you
-                  sketch over dinner, the products you pitch me at midnight as though I were an investor, the dreams
-                  you narrate before you are fully awake, and this museum, which exists in the way you slow down in
-                  every room you enter.
+                  You have already started building all three of these, whether you noticed or not — the house you
+                  sketch over dinner, the products you pitch me at midnight as though I were an investor, and this
+                  museum, which exists in the way you slow down in every room you enter.
                 </p>
                 <p>
-                  They are one dream wearing four costumes: <strong>creating places where ideas can live longer than
+                  They are one dream wearing three costumes: <strong>creating places where ideas can live longer than
                   the people who first imagined them.</strong>
                 </p>
                 <p>
@@ -761,7 +599,7 @@ function MuseumView({ onClose, allVisited, visitedCount }) {
       ) : (
         <p className="fw-doorway__hint">
           The model feels incomplete — as though it were missing a door.
-          <span className="smallcaps"> {visitedCount} of 4 installations visited</span>
+          <span className="smallcaps"> {visitedCount} of 3 installations visited</span>
         </p>
       )}
     </Overlay>
@@ -773,8 +611,7 @@ function MuseumView({ onClose, allVisited, visitedCount }) {
 const INSTALLS = [
   { id: 'house', roman: 'I', label: 'House 01' },
   { id: 'factory', roman: 'II', label: 'The Product Factory' },
-  { id: 'dream', roman: 'III', label: 'The Dream Archive' },
-  { id: 'museum', roman: 'IV', label: 'The Future Glyptotek' },
+  { id: 'museum', roman: 'III', label: 'The Future Glyptotek' },
 ]
 
 export default function FutureWing() {
@@ -822,7 +659,7 @@ export default function FutureWing() {
         <span className="smallcaps">Wing VI</span>
       </nav>
       <p className="room3d-hint smallcaps">
-        {allVisited ? 'A door has appeared in the museum model' : 'Four installations · Step up to any model'}
+        {allVisited ? 'A door has appeared in the museum model' : 'Three installations · Step up to any model'}
       </p>
     </>
   )
@@ -860,7 +697,6 @@ export default function FutureWing() {
             /* painter's order: deepest first — sibling 3D billboards with
                filters paint in DOM order, not depth order */
             <>
-              {installButton('dream', { x: -620, y: -180, z: -950, width: 210, floating: true }, <DreamMoonSvg />)}
               {installButton('museum', { x: 90, z: -900, width: 430 }, <MuseumModelSvg showDoor={allVisited} />)}
               {installButton('factory', { x: 560, z: -640, width: 290, floating: true, y: -60 }, <ProductWallSvg />)}
               {installButton('house', { x: -560, z: -620, width: 270 }, <HouseModelSvg />)}
@@ -887,7 +723,6 @@ export default function FutureWing() {
               <span className="fw-flat__art">
                 {id === 'house' && <HouseModelSvg />}
                 {id === 'factory' && <ProductWallSvg />}
-                {id === 'dream' && <DreamMoonSvg />}
                 {id === 'museum' && <MuseumModelSvg showDoor={allVisited} />}
               </span>
               <span className="smallcaps fw-install__label">
@@ -924,9 +759,8 @@ export default function FutureWing() {
 
       {open === 'house' && <HackerHouseView onClose={() => setOpen(null)} />}
       {open === 'factory' && <FactoryView onClose={() => setOpen(null)} />}
-      {open === 'dream' && <DreamView onClose={() => setOpen(null)} />}
       {open === 'museum' && (
-        <MuseumView onClose={() => setOpen(null)} allVisited={allVisited} visitedCount={visited.length} />
+        <MuseumView onClose={() => setOpen(null)} allVisited={allVisited} visitedCount={INSTALLS.filter((i) => visited.includes(i.id)).length} />
       )}
     </main>
   )
