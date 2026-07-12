@@ -90,9 +90,9 @@ const DRAWERS = [
       'A note in my handwriting: \u201cI love you more.\u201d Filed as fact, not opinion. The museum has reviewed his counter-claims and dismissed them all. Appeals may be submitted in person, at the kitchen table, indefinitely.',
   },
   {
-    label: 'Sauvage',
+    label: 'Caution',
     text:
-      'One bottle of Dior Sauvage. Nobody will admit to knowing how it got in here. Our shared hatred of it was one of the earliest and strongest compatibility signals on record \u2014 some couples have a song; we have an enemy. Displayed as a warning, not a fragrance. Drawer kept closed for everyone\u2019s safety.',
+      'One bottle of Dior Sauvage. Nobody will admit to knowing how it got in here. Our shared hatred of it was one of the earliest and strongest compatibility signals on record \u2014 some couples have a song; we have an enemy. Displayed as a warning, not a fragrance. Now you know why the drawer was labelled the way it was. Close it slowly.',
   },
   {
     label: 'Evidence',
