@@ -146,12 +146,20 @@ function JokeTimer() {
 const SEAL_WORD = 'time'
 
 const LETTER_TWO = {
+  title: 'A Choice I Make Every Day',
   greeting: 'Dear Sam,',
   paragraphs: [
-    'The seal works. The letter does not exist yet — it is still being written by hand, the slow way, which feels right given the word that opened it.',
-    'You found the word. The words will find you shortly.',
+    'The last few weeks with you have been undeniably amazing. I think what has surprised me the most is that the more time I spend with you, the more I want. Before we started dating, I thought seeing someone every day would feel excessive. Now I somehow see you once, twice, sometimes three times a day and still find myself wishing for one more hug, one more 5 minute timer, one more peck at the door before I leave. The timer always seems to be ticking and no amount of time ever feels like enough and I can’t wait for the day we don’t have to keep looking at the clock.',
+    'I also can’t believe how quickly you’ve become such an important part of my everyday life. Not in the big dramatic moments, but in all the tiny ones. You’re the first person I want to tell things to. The first person I want to call when something exciting happens. The person I send random thoughts, screenshots, observations and completely useless information to throughout the day because somehow all of it feels more fun when I share it with you.',
+    'The funny thing is that I still don’t think I’ve fully processed that we’re actually together. For so long you were my friend. My favorite person to talk to. My favorite person to annoy. My favorite person to share things with. Somewhere along the way, without me even realizing it, you became so much more than that. Sometimes I’ll be sitting next to you and I’ll have one of those moments where I look at you and think, how are we actually dating? And then I remember all the things that led us here. The way we slowly became part of each other’s lives before either of us was willing to admit how much the other person mattered. And suddenly it makes perfect sense.',
+    'The more I get to know you, the more I admire you. I admire how deeply you care about people. I admire how seriously you take your responsibilities. I admire how much thought you put into everything you do. I admire your ambition, your discipline, your curiosity, your ridiculous ability to turn absolutely anything into an optimization problem. I even admire the parts of you that frustrate you. Your tendency to overthink. Your need to understand everything. The way your brain constantly wants to solve every problem before it exists. Because underneath all of that is someone who cares so deeply about doing the right thing and becoming a better version of himself. And I don’t think you give yourself enough credit for that.',
+    'One of my favorite things lately has been therapy. Not because it’s easy. Actually, because it isn’t. Watching you share your fears and insecurities has only made me feel closer to you. It would be much easier to hide behind certainty, but instead you keep showing up honestly. You keep asking difficult questions. You keep trying to understand yourself better. I know sometimes you worry that being in your head is a flaw. But I think one of the most beautiful things about you is that even when you’re in your head, your heart always finds its way back into the conversation.',
+    'You are so much softer than you give yourself credit for. At least with me and I appreciate that so much.',
+    'I also need to talk about Nix Arcade because honestly, I still haven’t recovered. I don’t think you realize how loved those little things make me feel. The flowers. The recreated first date. The custom Connections puzzle. The way you remember tiny things I mention once and somehow bring them back weeks later. I’ve always thought of myself as a thoughtful person, but sometimes you leave me completely speechless. You make me feel seen in ways I didn’t even know I wanted to be seen.',
+    'Glyptotek is my attempt to do the same for you. It’ll never be finished because neither are you (But also because my Claude subscription is expiring). There will always be another story to uncover, another memory to add, another dream to archive, another weird obsession to document. It’s a collection of the things that make you you. The things that shaped you. The things you love. The people who matter to you. The life you’ve lived and the life you’re building. A little museum dedicated to one of my favorite people.',
+    'The truth is, when I started writing this, I wanted to write about how wonderful the last few weeks have been. But what I really want to say is thank you. Thank you for choosing me. Thank you for letting me choose you. Thank you for making everyday life feel a little brighter, a little softer and a lot more fun.',
   ],
-  signoff: 'Soon,',
+  signoff: 'Much love,',
   signature: 'Nix',
 }
 
@@ -189,7 +197,8 @@ function SealedLetter() {
       <div className="sx-sealed sx-sealed--open">
         <span className="sx-sealed__env"><UnsealedLetterSvg /></span>
         <article className="sx-letter__paper sx-letter__paper--second">
-          <p className="smallcaps sx-letter__date">Seal broken by the intended recipient</p>
+          <p className="smallcaps sx-letter__date">Letter 2 · Seal broken by the intended recipient</p>
+          <p className="sx-letter__title2">{LETTER_TWO.title}</p>
           <p className="sx-letter__greeting">{LETTER_TWO.greeting}</p>
           {LETTER_TWO.paragraphs.map((para) => (
             <p className="sx-letter__para" key={para.slice(0, 24)}>{para}</p>

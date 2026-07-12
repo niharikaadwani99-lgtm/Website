@@ -302,12 +302,21 @@
 }
 
 .sx-letter__paper--second {
-  max-width: 480px;
+  max-width: 560px;
   max-height: none;
   margin: 26px auto 18px;
-  padding: clamp(26px, 4vw, 40px);
+  padding: clamp(28px, 4.5vw, 46px);
   text-align: left;
   animation: sx-unseal 1.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.sx-letter__title2 {
+  margin-top: 18px;
+  text-align: center;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.5rem;
+  color: #7a4a22;
 }
 
 .sx-hand {
