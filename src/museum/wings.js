@@ -12,16 +12,16 @@ export const WINGS = [
     artTitle: 'Resonance, Dissolving',
     artMedium: 'Oil and gold leaf on panel',
     artYear: 'Undated — the artist kept losing track of time in it',
-    tagline: 'Music was the first thing he ever collected.',
+    tagline: 'Music was the first thing he ever collected. I like to think I’m the best thing.',
     intro:
-      'Enter slowly. The walls here are dark walnut, the light is low and amber, and somewhere a needle is always finding its groove. This wing holds the sounds Samveg returns to — not merely songs, but rooms he has lived inside. Visitors are encouraged to sit at the listening stations and stay longer than planned.',
+      'Enter slowly. The walls are dark walnut, the light is low, and somewhere a needle is always finding its groove. This is the room where I fell for his taste in music and then — inconveniently, wonderfully — for the rest of him. Four listening stations. Headphones on. If a song suddenly reminds you of someone, that is the exhibit working as intended.',
     exhibits: [
       {
         title: 'Our Songs',
         label: 'Combined collection · Listening Station 01 · Two curators of record',
         artVariant: 0,
         text:
-          'The only work in this museum with two curators. A collection assembled from both sides — songs that remind him of her, songs that remind her of him, filed jointly under “us.” Some were chosen deliberately; most simply attached themselves to a moment and refused to leave. Conservation note: still growing. Neither curator has any intention of completing it.',
+          'The only work in this museum with two curators, and the only acquisition we made together. Songs that remind him of me, songs that remind me of him, filed jointly under “us.” Most of them attached themselves to a moment and refused to leave — we’ve checked, they’re load-bearing now. Conservation note: still growing. Neither curator has any intention of finishing it. Ever.',
         links: [
           { label: 'Listen · Our Songs', url: 'https://open.spotify.com/playlist/39myOtaec9u73Q9oQGpQnP' },
         ],
@@ -31,7 +31,7 @@ export const WINGS = [
         label: 'Vols. I & II · Restricted access · Listening Station 02',
         artVariant: 4,
         text:
-          'Two volumes, kept behind the curtain of this hall and catalogued with deliberate vagueness. The museum can confirm only that they exist, that they are played with the lights low, and that no further questions will be taken at this time. Headphones are mandatory. Discretion is assumed.',
+          'Two volumes, kept behind the curtain of this hall and catalogued with deliberate vagueness. The museum can confirm the following, and only the following: they exist, they are played with the lights low, and the curator was blushing while writing this label. Headphones mandatory. Discretion assumed. Volume II is somehow shyer than Volume I.',
         links: [
           { label: 'Vol. I', url: 'https://open.spotify.com/playlist/6XvkWL2E8LnplbtWr2yuhW' },
           { label: 'Vol. II', url: 'https://open.spotify.com/playlist/43oVDMtacQa6fj1A7UcbCO' },
@@ -42,7 +42,7 @@ export const WINGS = [
         label: 'Architectural exhibit · Dark wood, one turntable, no talking during side A',
         artVariant: 5,
         text:
-          'A study of the world’s most civilized invention: the listening bar. Tokyo perfected them — small rooms of walnut and vinyl where the bartender is also the selector and the volume is set exactly right. Samveg’s ambition to build one someday is on record; this museum considers the ambition legally binding. Exhibited alongside: the opening night’s programme — a listening-bar set curated for the proprietor by the lender, jazz in exactly the right order.',
+          'The world’s most civilized invention: a small dark room where the bartender is also the selector and nobody speaks during side A. He wants to build one someday, and I believe him completely, because he already describes the lighting like the place exists. So I went ahead and curated opening night — jazz in exactly the right order, made for the proprietor by his only regular. My seat at the bar is reserved. Permanently. I’ve checked.',
         links: [
           { label: 'Listen · The Record Bar Set', url: 'https://open.spotify.com/playlist/495QuOl19C8xfXxPHoMmAK' },
         ],
@@ -52,22 +52,10 @@ export const WINGS = [
         label: 'The summit of the collection · Listening Station 04',
         artVariant: 1,
         text:
-          'Every collection has its summit; this one has three. Innerbloom — nine minutes and thirty-eight seconds of going home without moving, worn structurally thin from repeat listening. Nightwhisper — the sound of driving at 2 a.m. with nowhere urgent to be. And Come Together, whose bassline enters like someone who knows they are welcome. Ranked in no particular order, because the subject refuses to choose. The museum has stopped asking.',
+          'Every collection has its summit; his has three. Innerbloom — nine minutes and thirty-eight seconds of going home without moving (yes, he cites the length from memory; yes, I have timed him citing it). Nightwhisper — the sound of driving at 2 a.m. with nowhere urgent to be. And Come Together, whose bassline walks in like it pays rent. Ranked in no particular order, because he refuses to choose. I’ve stopped asking. It’s adorable.',
         links: [
           { label: 'Listen · The Top Three', url: 'https://open.spotify.com/playlist/6jKy7ZPdUtkYXNcLhH6sUk' },
         ],
-      },
-      {
-        title: 'Jazz',
-        label: 'Standing exhibit · Blue light, brushed drums',
-        text:
-          'The art of the unrepeatable. Jazz enters this collection as a discipline of listening: improvisation as trust, the band as a conversation, the wrong note played with conviction becoming the right one. The curators note that appreciation deepened with age, as it tends to.',
-      },
-      {
-        title: 'Albums & Playlists',
-        label: 'The open stacks · Catalogue in progress',
-        text:
-          'A playlist is an autobiography written in other people’s words. This shelf holds the favourite albums, the seasonal rotations, the playlists made for drives and for people. Some are public. The best ones were made for an audience of one or two.',
       },
     ],
   },

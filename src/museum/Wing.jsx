@@ -25,6 +25,15 @@ const BACK_ONE = [{ left: '43.5%', top: '44%', width: '13%' }]
 
 function hangExhibits(count) {
   // -> array of { wall, style } aligned with exhibit index
+  if (count === 4) {
+    // one on each side wall, two large on the back wall
+    return [
+      { wall: 'left', style: LEFT_POS[0] },
+      { wall: 'back', style: BACK_TWO[0] },
+      { wall: 'back', style: BACK_TWO[1] },
+      { wall: 'right', style: RIGHT_POS[0] },
+    ]
+  }
   const back = count >= 6 ? BACK_TWO : BACK_ONE
   const spots = [
     ...LEFT_POS.map((style) => ({ wall: 'left', style })),
