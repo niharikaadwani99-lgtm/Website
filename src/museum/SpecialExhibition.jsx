@@ -142,7 +142,95 @@ function JokeTimer() {
   )
 }
 
-/* the sealed second letter */
+/* the second letter — sealed behind a single word */
+const SEAL_WORD = 'time'
+
+const LETTER_TWO = {
+  greeting: 'Dear Sam,',
+  paragraphs: [
+    'The seal works. The letter does not exist yet — it is still being written by hand, the slow way, which feels right given the word that opened it.',
+    'You found the word. The words will find you shortly.',
+  ],
+  signoff: 'Soon,',
+  signature: 'Nix',
+}
+
+function UnsealedLetterSvg() {
+  return (
+    <svg viewBox="0 0 260 170" role="img" aria-label="The envelope, opened">
+      <path d="M10 60 L130 -6 L250 60" fill="#efe3ca" stroke="#c9b68c" strokeWidth="1.2" />
+      <rect x="10" y="58" width="240" height="104" rx="4" fill="#f3e9d2" stroke="#c9b68c" strokeWidth="1.2" />
+      <rect x="26" y="30" width="208" height="92" fill="#fbf5e4" stroke="#d8c9a6" strokeWidth="1" />
+      {[46, 58, 70, 82].map((y, i) => (
+        <line key={y} x1="40" y1={y} x2={i === 3 ? 150 : 220} y2={y} stroke="#c9b68c" strokeWidth="1.2" opacity="0.8" />
+      ))}
+      <path d="M10 162 L96 96 M250 162 L164 96" stroke="#c9b68c" strokeWidth="1" opacity="0.6" />
+      <circle cx="130" cy="140" r="12" fill="#a8442e" opacity="0.45" />
+      <path d="M124 140 l4 4 l8 -9" stroke="#f3e0c8" strokeWidth="2" fill="none" />
+    </svg>
+  )
+}
+
+function SealedLetter() {
+  const [phase, setPhase] = useState('locked') // locked | wrong | open
+  const [guess, setGuess] = useState('')
+
+  const attempt = (e) => {
+    e.preventDefault()
+    if (guess.trim().toLowerCase() === SEAL_WORD) {
+      setPhase('open')
+    } else {
+      setPhase('wrong')
+    }
+  }
+
+  if (phase === 'open') {
+    return (
+      <div className="sx-sealed sx-sealed--open">
+        <span className="sx-sealed__env"><UnsealedLetterSvg /></span>
+        <article className="sx-letter__paper sx-letter__paper--second">
+          <p className="smallcaps sx-letter__date">Seal broken by the intended recipient</p>
+          <p className="sx-letter__greeting">{LETTER_TWO.greeting}</p>
+          {LETTER_TWO.paragraphs.map((para) => (
+            <p className="sx-letter__para" key={para.slice(0, 24)}>{para}</p>
+          ))}
+          <p className="sx-letter__signoff">{LETTER_TWO.signoff}</p>
+          <p className="sx-letter__signature">{LETTER_TWO.signature}</p>
+        </article>
+        <p className="smallcaps sx-doc-label">Correspondence, item 02 · Unsealed · The word was “{SEAL_WORD}”</p>
+      </div>
+    )
+  }
+
+  return (
+    <div className="sx-sealed">
+      <span className={`sx-sealed__env ${phase === 'wrong' ? 'sx-sealed__env--held' : ''}`}>
+        <SealedLetterSvg />
+      </span>
+      <p className="smallcaps sx-doc-label">
+        Correspondence, item 02 · Sealed · The wax answers to a single word
+      </p>
+      <p className="sx-sealed__clue">Clue: something that never feels enough.</p>
+      <form className="sx-sealed__form" onSubmit={attempt}>
+        <input
+          type="text"
+          className="sx-sealed__input"
+          value={guess}
+          onChange={(e) => { setGuess(e.target.value); if (phase === 'wrong') setPhase('locked') }}
+          placeholder="speak the word"
+          aria-label="The word that breaks the seal"
+          autoComplete="off"
+          autoCapitalize="none"
+        />
+        <button type="submit" className="sx-sealed__break smallcaps">Break the seal</button>
+      </form>
+      {phase === 'wrong' && (
+        <p className="sx-sealed__held" role="status">The seal considered it, and held. Think again.</p>
+      )}
+    </div>
+  )
+}
+
 function SealedLetterSvg() {
   return (
     <svg viewBox="0 0 260 170" role="img" aria-label="A sealed envelope">
@@ -257,12 +345,7 @@ export default function SpecialExhibition() {
             <p className="smallcaps sx-doc-label">Correspondence, item 01 · Ink on paper · Under glass</p>
           </div>
 
-          <div className="sx-sealed">
-            <span className="sx-sealed__env"><SealedLetterSvg /></span>
-            <p className="smallcaps sx-doc-label">
-              Correspondence, item 02 · Sealed at the lender’s request · To be opened in person
-            </p>
-          </div>
+          <SealedLetter />
 
           <p className="sx-hand">“Some thoughts were too important to keep only in memory.”</p>
         </Exhibit>
