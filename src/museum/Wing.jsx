@@ -5,8 +5,11 @@ import { WINGS } from './wings.js'
 import Room3D, { WallFrame, RoomProp } from './Room3D.jsx'
 import { BenchSvg, PlanterSvg, PedestalSvg } from './Props.jsx'
 import ExhibitArt from './ExhibitArt.jsx'
+import { BottleArt, SpinningRecordArt, LegoArt, PuzzleArt } from './ObjectsArt.jsx'
 import ExhibitModal from './ExhibitModal.jsx'
 import './Wing.css'
+
+const CUSTOM_ARTS = { bottle: BottleArt, record: SpinningRecordArt, lego: LegoArt, puzzle: PuzzleArt }
 
 /* hanging plans — where works sit on each wall, receding with the room */
 const LEFT_POS = [
@@ -61,12 +64,17 @@ export default function Wing({ wing }) {
   const subFor = (exhibit, i) =>
     `№ ${String(i + 1).padStart(2, '0')}${exhibit.links ? ' · ♪' : ''}`
 
+  const artFor = (exhibit, i) => {
+    const Custom = exhibit.customArt && CUSTOM_ARTS[exhibit.customArt]
+    return Custom ? <Custom /> : <ExhibitArt seed={seedBase + i} variant={exhibit.artVariant} />
+  }
+
   const frameFor = (exhibit, i) => (
     <WallFrame
       key={exhibit.title}
       style={spots[i].style}
       onClick={() => setOpen(i)}
-      art={<ExhibitArt seed={seedBase + i} variant={exhibit.artVariant} />}
+      art={artFor(exhibit, i)}
       title={exhibit.title}
       sub={subFor(exhibit, i)}
       ariaLabel={`${exhibit.title} — read the label`}
@@ -96,7 +104,7 @@ export default function Wing({ wing }) {
           back={
             <>
               <div className="room3d-title" style={{ top: '13%' }}>
-                <p className="smallcaps room3d-title__eyebrow">Wing {wing.numeral} of VII</p>
+                <p className="smallcaps room3d-title__eyebrow">Wing {wing.numeral} of VI</p>
                 <h1 className="room3d-title__name">{wing.title}</h1>
                 <p className="room3d-title__tagline">{wing.tagline}</p>
               </div>
@@ -126,7 +134,7 @@ export default function Wing({ wing }) {
           <span className="smallcaps">Wing {wing.numeral}</span>
         </nav>
         <header className="wing-flat__header">
-          <p className="smallcaps room3d-title__eyebrow">Wing {wing.numeral} of VII</p>
+          <p className="smallcaps room3d-title__eyebrow">Wing {wing.numeral} of VI</p>
           <h1 className="room3d-title__name">{wing.title}</h1>
           <p className="room3d-title__tagline">{wing.tagline}</p>
         </header>
@@ -135,7 +143,7 @@ export default function Wing({ wing }) {
             <WallFrame
               key={exhibit.title}
               onClick={() => setOpen(i)}
-              art={<ExhibitArt seed={seedBase + i} variant={exhibit.artVariant} />}
+              art={artFor(exhibit, i)}
               title={exhibit.title}
               sub={subFor(exhibit, i)}
               ariaLabel={`${exhibit.title} — read the label`}
@@ -181,7 +189,7 @@ export default function Wing({ wing }) {
         <ExhibitModal
           exhibit={wing.exhibits[open]}
           number={`${wing.title} · № ${String(open + 1).padStart(2, '0')}`}
-          art={<ExhibitArt seed={seedBase + open} variant={wing.exhibits[open].artVariant} />}
+          art={artFor(wing.exhibits[open], open)}
           onClose={() => setOpen(null)}
         />
       )}

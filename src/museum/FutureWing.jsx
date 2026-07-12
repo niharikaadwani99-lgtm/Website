@@ -819,7 +819,7 @@ export default function FutureWing() {
       <nav className="room3d-topbar">
         <Link to="/" className="smallcaps">← Entrance Hall</Link>
         <span className="smallcaps room3d-topbar__wordmark">The Glyptotek of Samveg</span>
-        <span className="smallcaps">Wing VII</span>
+        <span className="smallcaps">Wing VI</span>
       </nav>
       <p className="room3d-hint smallcaps">
         {allVisited ? 'A door has appeared in the museum model' : 'Four installations · Step up to any model'}
@@ -835,7 +835,7 @@ export default function FutureWing() {
           back={
             <>
               <div className="room3d-title" style={{ top: '11%' }}>
-                <p className="smallcaps room3d-title__eyebrow">Wing VII of VII · The vision lab</p>
+                <p className="smallcaps room3d-title__eyebrow">Wing VI of VI · The vision lab</p>
                 <h1 className="room3d-title__name">The Future Wing</h1>
                 <p className="room3d-title__tagline">“A collection of things not yet built.”</p>
               </div>
@@ -874,10 +874,10 @@ export default function FutureWing() {
       <div className="wing-flat fw-flat">
         <nav className="room3d-topbar room3d-topbar--flat">
           <Link to="/" className="smallcaps">← Entrance Hall</Link>
-          <span className="smallcaps">Wing VII</span>
+          <span className="smallcaps">Wing VI</span>
         </nav>
         <header className="wing-flat__header">
-          <p className="smallcaps room3d-title__eyebrow">Wing VII of VII · The vision lab</p>
+          <p className="smallcaps room3d-title__eyebrow">Wing VI of VI · The vision lab</p>
           <h1 className="room3d-title__name">The Future Wing</h1>
           <p className="room3d-title__tagline">“A collection of things not yet built.”</p>
         </header>
