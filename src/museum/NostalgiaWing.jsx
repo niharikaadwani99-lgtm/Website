@@ -682,7 +682,7 @@ export default function NostalgiaWing() {
       <nav className="room3d-topbar">
         <Link to="/" className="smallcaps">← Entrance Hall</Link>
         <span className="smallcaps room3d-topbar__wordmark">The Glyptotek of Samveg</span>
-        <span className="smallcaps">Wing V</span>
+        <span className="smallcaps">Wing IV</span>
       </nav>
       <div className="nw-warmth" aria-hidden="true" />
       <p className="room3d-hint smallcaps">
@@ -699,7 +699,7 @@ export default function NostalgiaWing() {
           back={
             <>
               <div className="room3d-title" style={{ top: '10%' }}>
-                <p className="smallcaps room3d-title__eyebrow">Wing V of VI · The heart of the museum</p>
+                <p className="smallcaps room3d-title__eyebrow">Wing IV of V · The heart of the museum</p>
                 <h1 className="room3d-title__name">The Nostalgia Wing</h1>
                 <p className="room3d-title__tagline nw-tagline">“{wing.tagline}”</p>
               </div>
@@ -752,10 +752,10 @@ export default function NostalgiaWing() {
       <div className="wing-flat nw-flat">
         <nav className="room3d-topbar room3d-topbar--flat">
           <Link to="/" className="smallcaps">← Entrance Hall</Link>
-          <span className="smallcaps">Wing V</span>
+          <span className="smallcaps">Wing IV</span>
         </nav>
         <header className="wing-flat__header">
-          <p className="smallcaps room3d-title__eyebrow">Wing V of VI · The heart of the museum</p>
+          <p className="smallcaps room3d-title__eyebrow">Wing IV of V · The heart of the museum</p>
           <h1 className="room3d-title__name">The Nostalgia Wing</h1>
           <p className="room3d-title__tagline nw-tagline">“{wing.tagline}”</p>
         </header>

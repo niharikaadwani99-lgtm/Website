@@ -70,27 +70,6 @@
   --ceiling-bg: radial-gradient(60% 60% at 50% 50%, #fffaec 0%, #f0e8d5 60%, #ded3b9 100%);
 }
 
-.wing--motion {
-  --trim-dark: rgba(10, 9, 8, 0.6);
-  --trim-light: rgba(200, 68, 58, 0.3);
-  --rug-bg: rgba(200, 68, 58, 0.14);
-  --rug-edge: rgba(200, 68, 58, 0.4);
-  --room-bg: linear-gradient(180deg, #282522 0%, #1d1b18 100%);
-  --room-panel: rgba(52, 48, 43, 0.55);
-  --room-line: rgba(179, 56, 46, 0.45);
-  --room-ink: #f0ead9;
-  --room-muted: #a89e8c;
-  --room-accent: #c8443a;
-  --wall-bg:
-    linear-gradient(12deg, transparent 64%, rgba(200, 68, 58, 0.12) 64.4%, rgba(200, 68, 58, 0.12) 66%, transparent 66.4%),
-    linear-gradient(180deg, #33302c 0%, #232120 100%);
-  --wall-side-bg: var(--wall-bg);
-  --floor-bg:
-    repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.25) 0 3px, transparent 3px 150px),
-    linear-gradient(180deg, #26231f 0%, #363129 50%, #1e1b17 100%);
-  --ceiling-bg: radial-gradient(55% 55% at 50% 50%, #4c453c 0%, #2b2823 60%, #191713 100%);
-}
-
 .wing--memory {
   --trim-dark: rgba(20, 8, 2, 0.6);
   --trim-light: rgba(242, 140, 40, 0.3);

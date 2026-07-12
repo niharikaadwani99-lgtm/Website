@@ -115,7 +115,7 @@ export default function Wing({ wing }) {
           back={
             <>
               <div className="room3d-title" style={{ top: '13%' }}>
-                <p className="smallcaps room3d-title__eyebrow">Wing {wing.numeral} of VI</p>
+                <p className="smallcaps room3d-title__eyebrow">Wing {wing.numeral} of V</p>
                 <h1 className="room3d-title__name">{wing.title}</h1>
                 <p className="room3d-title__tagline">{wing.tagline}</p>
               </div>
@@ -145,7 +145,7 @@ export default function Wing({ wing }) {
           <span className="smallcaps">Wing {wing.numeral}</span>
         </nav>
         <header className="wing-flat__header">
-          <p className="smallcaps room3d-title__eyebrow">Wing {wing.numeral} of VI</p>
+          <p className="smallcaps room3d-title__eyebrow">Wing {wing.numeral} of V</p>
           <h1 className="room3d-title__name">{wing.title}</h1>
           <p className="room3d-title__tagline">{wing.tagline}</p>
         </header>

@@ -14,8 +14,8 @@ const MOTES = [
 ]
 
 /* the hanging plan — which wall each portal hangs on, receding into the room */
-const LEFT_WALL = [0, 1, 2]   // Sound, Founder, Objects
-const RIGHT_WALL = [3, 4]     // Motion, Nostalgia (the hidden frame keeps them company)
+const LEFT_WALL = [0, 1]      // Sound, Founder
+const RIGHT_WALL = [2, 3]     // Objects, Nostalgia (the hidden frame keeps them company)
 const LEFT_POS = [
   { left: '51.5%', top: '25%', width: '13%' },
   { left: '68%', top: '27%', width: '10.5%' },

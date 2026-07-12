@@ -155,54 +155,9 @@ export const WINGS = [
     ],
   },
   {
-    slug: 'hall-of-motion',
-    theme: 'motion',
-    numeral: 'IV',
-    title: 'Hall of Motion',
-    art: 'motion',
-    artTitle: 'Balance Study No. 9',
-    artMedium: 'Charcoal and vermilion on paper',
-    artYear: 'After many failed attempts, which is the subject of the work',
-    tagline: 'Strength, speed, discipline \u2014 and one football club I don\u2019t get a say in.',
-    intro:
-      'The ceiling is higher in this hall because he needs the headroom. Gymnastics, training logs, race strategy, and a football club that functions as a pre-existing condition. Underneath all of it, the same quiet thing I fell for: he shows up, again and again, whether anyone is watching. I am watching.',
-    exhibits: [
-      {
-        title: 'Gymnastics',
-        label: 'Exhibit IV-01 \u00b7 Strength as poetry',
-        text:
-          'The purest exhibit in this hall: a discipline where the apparatus is the body itself. Stillness held under enormous load; movement that looks effortless precisely because it isn\u2019t. He respects the iron cross and the planche the way other men respect celebrities. Watching him train is one of my favourite spectator sports. Ticketed. Front row. Me.',
-      },
-      {
-        title: 'Fitness Goals',
-        label: 'Exhibit IV-02 \u00b7 The ledger of small days',
-        text:
-          'Displayed here: not the goals, but the accounting method \u2014 progress invisible daily, undeniable yearly. The training log as a literary form: terse, honest, occasionally aspirational. He logs the session even when it went badly, which tells you everything about him worth knowing.',
-      },
-      {
-        title: 'Formula 1',
-        label: 'Exhibit IV-03 \u00b7 Decisions at 300 km/h',
-        text:
-          'The fastest systems-thinking on Earth, which explains the attraction entirely. A sport where a tenth of a second is an empire and braking later than the other man is both physics and character. He watches it religiously and then explains the strategy to me like a sermon. I understand roughly forty percent. I attend anyway. Great sermon.',
-      },
-      {
-        title: 'Liverpool',
-        label: 'Exhibit IV-04 \u00b7 You\u2019ll Never Walk Alone',
-        text:
-          'Every collection needs one allegiance that defies the collector\u2019s own systems thinking, and this is his. Anfield on a European night; an anthem sung by forty thousand people who mean it. Loyalty in its purest form: unhedged, undiversified, permanent. I once asked where I rank against the squad. I have been assured I hold a higher position. Barely. During the season.',
-      },
-      {
-        title: 'Discipline & Mastery',
-        label: 'Exhibit IV-05 \u00b7 Wall text, load-bearing',
-        text:
-          'The structural column of this hall. Talent is exhibited in other museums; this room honours repetition \u2014 the session logged unmotivated, the skill drilled past boredom into instinct. Mastery is what devotion looks like from the outside. I would know. I have been studying my own subject closely for a while now.',
-      },
-    ],
-  },
-  {
     slug: 'memory-archive',
     theme: 'memory',
-    numeral: 'V',
+    numeral: 'IV',
     title: 'The Nostalgia Wing',
     art: 'memory',
     artTitle: 'The Orange Wrapper',
@@ -216,7 +171,7 @@ export const WINGS = [
   {
     slug: 'future-wing',
     theme: 'future',
-    numeral: 'VI',
+    numeral: 'V',
     title: 'The Future Wing',
     art: 'future',
     artTitle: 'The Museum in the Mist',

@@ -21,9 +21,8 @@ and open museum label cards with the exhibit's story.
 | I · Hall of Sound | `/hall-of-sound` |
 | II · Founder Wing | `/founder-wing` |
 | III · Gallery of Objects | `/gallery-of-objects` |
-| IV · Hall of Motion | `/hall-of-motion` |
-| V · The Nostalgia Wing | `/memory-archive` |
-| VI · The Future Wing | `/future-wing` |
+| IV · The Nostalgia Wing | `/memory-archive` |
+| V · The Future Wing | `/future-wing` |
 | ∅ · Special Exhibition (hidden) | `/special-exhibition` |
 
 ## Stack
