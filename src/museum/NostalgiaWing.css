@@ -510,6 +510,18 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+.nw-drawer__photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 12px;
+  border: 3px solid #8a5a2a;
+}
+
+.nw-drawer__sliptext {
+  margin: 0;
+}
+
 /* ————— the hidden room: things worth keeping ————— */
 
 .nw-keeping {

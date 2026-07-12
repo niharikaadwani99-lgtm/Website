@@ -4,6 +4,7 @@ import { WINGS } from './wings.js'
 import { ARTWORKS } from './artworkMap.js'
 import Room3D, { RoomProp } from './Room3D.jsx'
 import { BenchSvg } from './Props.jsx'
+import evidencePhoto from './assets/evidence.jpg'
 import './NostalgiaWing.css'
 
 /*
@@ -58,27 +59,9 @@ const DISHES = [
 const DISCONTINUED = [
   {
     name: 'Cadbury Tiffins',
-    status: 'Discontinued · remembered vividly',
+    status: 'Discontinued \u00b7 remembered vividly \u00b7 the shelf\u2019s sole survivor',
     text:
-      'Chocolate, biscuit, raisins — engineering, frankly. Retired by people who clearly never sat with one on a school afternoon. The orange wrapper, the crinkle of the foil, the ceremony of opening it slowly: all preserved intact in this archive, where no committee can touch them.',
-  },
-  {
-    name: 'The Corner-Shop Rack',
-    status: 'Vanished with the shop · location survives in memory',
-    text:
-      'A whole civilization of one-rupee decisions, arranged at exactly a child’s eye level. The archive cannot list its full contents; nobody can. That is rather the point.',
-  },
-  {
-    name: 'The Loud Wrappers',
-    status: 'Design era · closed',
-    text:
-      'Vintage packaging that shouted — colours with no restraint, mascots with no shame, fonts that would never pass a brand review today. The snacks were fine. The wrappers were art. This museum, which is fussy about design, salutes them without irony.',
-  },
-  {
-    name: 'The Ice-Cream Bell',
-    status: 'Still rings · only in memory',
-    text:
-      'Not an object at all — a sound. A bell from the end of the street that could empty a house of children in under a minute. Preserved here as the archive’s only audio exhibit, playable exclusively from within.',
+      'Chocolate, biscuit, raisins \u2014 engineering, frankly. Retired by people who clearly never sat with one on a school afternoon. The orange wrapper, the crinkle of the foil, the ceremony of opening it slowly: all preserved intact in this archive, where no committee can touch them. The rest of the shelf stands empty on purpose. Nothing else earned the space.',
   },
 ]
 
@@ -91,15 +74,40 @@ const COMFORTS = [
 ]
 
 const DRAWERS = [
-  { label: 'Ticket', text: 'One cinema ticket, kept. The film was fine. The company was the point.' },
-  { label: 'Anfield', text: '3 a.m., television glowing. He whispered “we’re going to win this” and refused to elaborate. They did.' },
-  { label: 'Napkin', text: 'From a record bar: three album names in smudged ink. Two were great. He maintains all three were.' },
-  { label: '№ ∞', text: 'The inside joke, catalogued once more. Still funny. Still not being explained.' },
-  { label: 'Photo', text: 'A photograph, withheld again at the lender’s request. It was a good day. The weather remains disputed.' },
-  { label: '2:14 a.m.', text: 'A screenshot of a message that says only: “ok but imagine if we actually did it.”' },
-  { label: 'Note', text: 'A note in her handwriting: “eat something.” Framed by the museum over his objections.' },
-  { label: 'Stuck', text: 'This drawer is stuck. The museum suspects it is holding something embarrassing, and respects its decision.' },
-  { label: 'Empty', text: 'Empty. Reserved for the next memory. There is always a next one.' },
+  {
+    label: 'Bhoot Bangla',
+    text:
+      'One movie: Bhoot Bangla, watched together. Somewhere in the second act I stopped watching the film and started watching him laugh, and a private realization quietly filed itself under \u201coh. oh no. oh good.\u201d The movie was fine. The evening was cinema.',
+  },
+  {
+    label: 'Dog Chase',
+    text:
+      'Eyewitness account: one (1) boyfriend, pursued at genuine speed down my street by one (1) extremely committed dog. Most men would be embarrassed. He finished the sprint, straightened his shirt, and carried on as though it were a scheduled part of the workout. Refused \u2014 flatly \u2014 to be embarrassed. I have never respected anyone more while laughing that hard.',
+  },
+  {
+    label: 'Note',
+    text:
+      'A note in my handwriting: \u201cI love you more.\u201d Filed as fact, not opinion. The museum has reviewed his counter-claims and dismissed them all. Appeals may be submitted in person, at the kitchen table, indefinitely.',
+  },
+  {
+    label: 'Sauvage',
+    text:
+      'One bottle of Dior Sauvage. Nobody will admit to knowing how it got in here. Our shared hatred of it was one of the earliest and strongest compatibility signals on record \u2014 some couples have a song; we have an enemy. Displayed as a warning, not a fragrance. Drawer kept closed for everyone\u2019s safety.',
+  },
+  {
+    label: 'Evidence',
+    image: 'evidence',
+    text:
+      'Exhibit E: one (1) meme, sent by me during the \u201cjust friends\u201d era. A clear, dignified, unmistakable attempt at flirting. He responded with something so devastatingly neutral that the museum declines to reprint it. The defence rests. He came around. Spectacularly. The museum keeps this to remind him who flirted first, and me of how far we\u2019ve come.',
+  },
+  {
+    label: 'Stuck',
+    text: 'This drawer is stuck. The museum suspects it is holding something embarrassing, and respects its decision.',
+  },
+  {
+    label: 'Empty',
+    text: 'Empty. Reserved for the next memory. There is always a next one.',
+  },
 ]
 
 const KEEPING = [
@@ -568,7 +576,7 @@ function DrawerView({ onClose }) {
   const toggle = (i) =>
     setOpenDrawers((prev) => (prev.includes(i) ? prev.filter((d) => d !== i) : [...prev, i]))
   return (
-    <Overlay id="drawer" eyebrow="Exhibit V · The Memory Drawer" title="The Memory Drawer" subtitle="Nine drawers · no filing system · none planned" onClose={onClose}>
+    <Overlay id="drawer" eyebrow="Exhibit V · The Memory Drawer" title="The Memory Drawer" subtitle="Seven drawers · no filing system · none planned" onClose={onClose}>
       <p className="nw-ov__lede">
         Memory is not organized. It is a desk full of drawers, each holding something that refused to be thrown
         away. Open them in any order. That is how they went in.
@@ -588,7 +596,18 @@ function DrawerView({ onClose }) {
                 <span className="nw-drawer__knob" aria-hidden="true" />
                 <span className="smallcaps nw-drawer__tag">{d.label}</span>
               </button>
-              {isOpen && <p className="nw-drawer__slip">{d.text}</p>}
+              {isOpen && (
+                <div className="nw-drawer__slip">
+                  {d.image === 'evidence' && (
+                    <img
+                      src={evidencePhoto}
+                      alt="The meme in question: four stills of a man in a bathrobe posing invitingly on a bed"
+                      className="nw-drawer__photo"
+                    />
+                  )}
+                  <p className="nw-drawer__sliptext">{d.text}</p>
+                </div>
+              )}
             </div>
           )
         })}
