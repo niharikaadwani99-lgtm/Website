@@ -28,11 +28,17 @@
   position: relative;
   max-width: 1300px;
   margin: 0 auto;
-  padding: 30px 20px 120px;
+  padding: 40px 20px 130px;
   display: flex;
   flex-direction: column;
   gap: 22px;
   align-items: center;
+  background:
+    radial-gradient(ellipse 60% 40% at 85% 92%, rgba(255, 255, 255, 0.05), transparent 60%),
+    radial-gradient(ellipse 50% 35% at 10% 8%, rgba(255, 255, 255, 0.04), transparent 60%),
+    linear-gradient(160deg, #3a2c1f 0%, #2e2117 55%, #201810 100%);
+  border-radius: 12px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
 }
 
 .desk-item {
@@ -72,6 +78,8 @@
   background: var(--sage);
   color: var(--chocolate-deep);
   padding-left: 34px;
+  padding-top: 26px;
+  overflow: visible;
 }
 
 .desk-item__rings {
@@ -81,12 +89,42 @@
   bottom: 12px;
 }
 
-.desk-item__doodle svg {
-  width: 60px;
-  height: 40px;
-  color: var(--chocolate-deep);
-  opacity: 0.6;
+.sketchbook-bow {
+  position: absolute;
+  top: -18px;
+  left: 40%;
+  width: 46px;
+  filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.3));
 }
+
+.sketchbook-strip {
+  position: absolute;
+  top: -20px;
+  right: -10px;
+  width: 44px;
+  background: #f4f2e6;
+  padding: 4px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transform: rotate(7deg);
+  z-index: 1;
+}
+
+.desk-item--sketchbook .desk-item__tag {
+  max-width: 70%;
+}
+
+.sketchbook-strip__frame {
+  position: relative;
+  display: block;
+  height: 28px;
+  margin-bottom: 3px;
+  overflow: hidden;
+  filter: grayscale(0.6) contrast(1.2) brightness(0.95);
+}
+
+.sketchbook-strip__frame--1 { background: radial-gradient(circle at 40% 30%, #cbb289, transparent 60%), linear-gradient(160deg, #46402f, #1c1712); }
+.sketchbook-strip__frame--2 { background: radial-gradient(circle at 60% 40%, #eec2c6, transparent 55%), linear-gradient(160deg, #8a6743, #2b241d); }
+.sketchbook-strip__frame--3 { background: radial-gradient(circle at 50% 55%, #d99aa1, transparent 55%), linear-gradient(160deg, #6b5a46, #251d15); margin-bottom: 0; }
 
 /* folder */
 .desk-item--folder {
@@ -209,6 +247,12 @@
 /* cassette keeps its own look from Cassette.css; this class only positions it */
 .desk-item--cassette {
   align-self: center;
+}
+
+/* -------- elastic bands + charms (decorative, desktop only) -------- */
+
+.desk-bands {
+  display: none;
 }
 
 /* -------- hidden notes & flourishes -------- */
@@ -335,13 +379,77 @@
   .desk-item--blueprint { top: 52%; left: 5%; transform: rotate(-3deg); }
   .desk-item--planner { top: 55%; right: 6%; transform: rotate(3deg); }
 
+  .desk-bands {
+    display: block;
+    position: absolute;
+    left: 3%;
+    right: 3%;
+    top: 40%;
+    height: 8%;
+    z-index: 0;
+  }
+
+  .desk-bands__line {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #8a8570 6%, #8a8570 94%, transparent);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+
+  .desk-bands__line:first-child {
+    top: 0;
+  }
+
+  .desk-bands__line:last-child {
+    bottom: 0;
+  }
+
+  .desk-bands__slider {
+    position: absolute;
+    top: 50%;
+    left: 44%;
+    transform: translateY(-50%);
+    width: 34px;
+    height: 12px;
+    border-radius: 2px;
+    background: linear-gradient(180deg, #e2ddc9, #a39d84);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .desk-bands__charm {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #cfc9b8;
+    filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.4));
+  }
+
+  .desk-bands__charm--key {
+    left: 8%;
+    width: 44px;
+  }
+
+  .desk-bands__charm--heart {
+    left: 20%;
+    width: 30px;
+  }
+
+  .desk-bands__charm--heart2 {
+    left: 27%;
+    width: 30px;
+    transform: translateY(-50%) rotate(10deg);
+  }
+
   .desk-note {
     position: absolute;
     align-self: auto;
   }
 
   .desk-note--1 { top: 15%; left: 66%; }
-  .desk-note--2 { top: 44%; left: 22%; }
+  .desk-note--2 { top: 48%; left: 22%; }
   .desk-note--3 { top: 66%; left: 44%; }
 
   .desk-arrow {

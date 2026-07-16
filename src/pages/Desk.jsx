@@ -34,14 +34,57 @@ function Desk() {
       </header>
 
       <div className="desk-surface">
-        <StarSticker style={{ top: '4%', left: '3%' }} />
-        <StarSticker char="✸" style={{ top: '58%', right: '2%', fontSize: '1.1rem' }} />
+        <StarSticker style={{ bottom: '3%', right: '6%', fontSize: '2.1rem' }} />
+        <StarSticker char="✸" style={{ bottom: '4.5%', right: '13%', fontSize: '1.3rem' }} />
+
+        <div className="desk-bands" aria-hidden="true">
+          <span className="desk-bands__line" />
+          <span className="desk-bands__line" />
+          <span className="desk-bands__charm desk-bands__charm--key">
+            <svg viewBox="0 0 40 20">
+              <circle cx="8" cy="10" r="6" fill="none" stroke="currentColor" strokeWidth="3" />
+              <line x1="14" y1="10" x2="35" y2="10" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+              <line x1="26" y1="10" x2="26" y2="16" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+              <line x1="32" y1="10" x2="32" y2="17" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+            </svg>
+          </span>
+          <span className="desk-bands__charm desk-bands__charm--heart">
+            <svg viewBox="0 0 40 36">
+              <path
+                d="M20 33 C4 22 2 11 10 6 C15 3 19 6 20 11 C21 6 25 3 30 6 C38 11 36 22 20 33Z"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="3"
+              />
+            </svg>
+          </span>
+          <span className="desk-bands__charm desk-bands__charm--heart2">
+            <svg viewBox="0 0 40 36">
+              <path
+                d="M20 33 C4 22 2 11 10 6 C15 3 19 6 20 11 C21 6 25 3 30 6 C38 11 36 22 20 33Z"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="3"
+              />
+            </svg>
+          </span>
+          <span className="desk-bands__slider" />
+        </div>
 
         <Link to="/about" className="desk-item desk-item--sketchbook" aria-label="Open About Me">
-          <RingHoles count={5} className="desk-item__rings" />
-          <span className="desk-item__doodle" aria-hidden="true">
-            <svg viewBox="0 0 60 40"><path d="M4 30 C 14 6, 26 34, 36 14 S 54 8, 56 20" fill="none" stroke="currentColor" strokeWidth="2" /></svg>
+          <span className="sketchbook-bow" aria-hidden="true">
+            <svg viewBox="0 0 64 40">
+              <path d="M30 20 L4 6 C -2 16, -2 26, 4 34 Z" fill="#dcd0a0" stroke="#4a3826" strokeWidth="1.5" />
+              <path d="M30 20 L56 6 C 62 16, 62 26, 56 34 Z" fill="#dcd0a0" stroke="#4a3826" strokeWidth="1.5" />
+              <circle cx="30" cy="20" r="5" fill="#4a3826" />
+            </svg>
           </span>
+          <span className="sketchbook-strip" aria-hidden="true">
+            <span className="sketchbook-strip__frame sketchbook-strip__frame--1 photo-grain" />
+            <span className="sketchbook-strip__frame sketchbook-strip__frame--2 photo-grain" />
+            <span className="sketchbook-strip__frame sketchbook-strip__frame--3 photo-grain" />
+          </span>
+          <RingHoles count={5} className="desk-item__rings" />
           <span className="desk-item__label hand">About Me</span>
           <span className="label desk-item__tag">sketchbook, well-worn</span>
         </Link>
