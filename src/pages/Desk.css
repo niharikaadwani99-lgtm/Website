@@ -99,32 +99,25 @@
 
 .sketchbook-strip {
   position: absolute;
-  top: -20px;
-  right: -10px;
-  width: 44px;
+  top: -36px;
+  right: -14px;
+  width: 78px;
   background: #f4f2e6;
-  padding: 4px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  padding: 5px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
   transform: rotate(7deg);
   z-index: 1;
+}
+
+.sketchbook-strip img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .desk-item--sketchbook .desk-item__tag {
   max-width: 70%;
 }
-
-.sketchbook-strip__frame {
-  position: relative;
-  display: block;
-  height: 28px;
-  margin-bottom: 3px;
-  overflow: hidden;
-  filter: grayscale(0.6) contrast(1.2) brightness(0.95);
-}
-
-.sketchbook-strip__frame--1 { background: radial-gradient(circle at 40% 30%, #cbb289, transparent 60%), linear-gradient(160deg, #46402f, #1c1712); }
-.sketchbook-strip__frame--2 { background: radial-gradient(circle at 60% 40%, #eec2c6, transparent 55%), linear-gradient(160deg, #8a6743, #2b241d); }
-.sketchbook-strip__frame--3 { background: radial-gradient(circle at 50% 55%, #d99aa1, transparent 55%), linear-gradient(160deg, #6b5a46, #251d15); margin-bottom: 0; }
 
 /* folder */
 .desk-item--folder {

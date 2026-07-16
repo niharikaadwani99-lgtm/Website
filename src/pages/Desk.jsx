@@ -4,6 +4,7 @@ import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import { FoldedCorner, HandArrow, HiddenNote, Paperclip, RingHoles, StarSticker, Stamp, Tape } from '../components/Deco.jsx'
 import { CassetteButton, CassettePlayer } from '../components/Cassette.jsx'
+import photoboothStrip from '../assets/photobooth-strip.jpg'
 import './Desk.css'
 
 const THINGS_I_LOVE = [
@@ -80,9 +81,7 @@ function Desk() {
             </svg>
           </span>
           <span className="sketchbook-strip" aria-hidden="true">
-            <span className="sketchbook-strip__frame sketchbook-strip__frame--1 photo-grain" />
-            <span className="sketchbook-strip__frame sketchbook-strip__frame--2 photo-grain" />
-            <span className="sketchbook-strip__frame sketchbook-strip__frame--3 photo-grain" />
+            <img src={photoboothStrip} alt="" />
           </span>
           <RingHoles count={5} className="desk-item__rings" />
           <span className="desk-item__label hand">About Me</span>
