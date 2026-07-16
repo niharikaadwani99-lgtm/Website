@@ -5,11 +5,8 @@ function Footer() {
   return (
     <footer className="site-footer">
       <div className="wrap site-footer__inner">
-        <p>
-          <span className="star">✸</span> made by gabbtopia &middot; 2026
-        </p>
-        <Link to="/planner">open the planner ✎</Link>
-        <a href="#top">back to top ↑</a>
+        <p className="hand">stitched together at a desk in the studio, 2026</p>
+        <Link to="/">back to the desk ↑</Link>
       </div>
     </footer>
   )

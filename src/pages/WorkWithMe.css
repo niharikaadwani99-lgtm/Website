@@ -1,0 +1,98 @@
+.passport-hero {
+  padding: 48px 0 24px;
+  text-align: center;
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+.passport-hero__title {
+  font-size: clamp(2.1rem, 5.5vw, 3rem);
+  color: var(--burgundy);
+  margin: 8px 0 12px;
+}
+
+.passport-hero__sub {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--olive);
+  line-height: 1.5;
+}
+
+.passport-cover {
+  max-width: 420px;
+  background: var(--burgundy);
+  color: var(--paper);
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+}
+
+.passport-cover__emblem {
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.passport-cover__type {
+  color: rgba(247, 240, 226, 0.75);
+}
+
+.passport-cover__name {
+  font-size: 2rem;
+  margin: 14px 0 6px;
+}
+
+.passport-cover__sub {
+  color: rgba(247, 240, 226, 0.75);
+}
+
+.passport-pages {
+  padding: 40px 0 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+.passport-entry {
+  position: relative;
+  background: var(--paper);
+  padding: 26px 22px;
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.15);
+}
+
+.passport-entry__stamp {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-family: var(--font-type);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  color: var(--sage-dim);
+  border: 1.5px solid var(--sage-dim);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transform: rotate(-12deg);
+  opacity: 0.8;
+  line-height: 1.1;
+}
+
+.passport-entry__title {
+  font-size: 1.5rem;
+  color: var(--chocolate-deep);
+  margin: 0 0 10px;
+  max-width: 62%;
+}
+
+.passport-entry p {
+  font-family: var(--font-serif);
+  font-size: 0.98rem;
+  line-height: 1.6;
+  margin: 0;
+}

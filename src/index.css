@@ -1,22 +1,25 @@
 :root {
-  --kraft: #c9a876;
-  --kraft-dark: #a9825a;
-  --kraft-darker: #8a6743;
-  --cream: #f4ecd8;
-  --paper: #faf5ea;
-  --pink: #eec2c6;
-  --pink-line: #d99aa1;
-  --ink: #251d15;
-  --brown: #2b241d;
-  --brown-deep: #1c1712;
-  --olive: #46402f;
-  --line: rgba(37, 29, 21, 0.16);
-  --line-strong: rgba(37, 29, 21, 0.35);
+  --ivory: #f2ead9;
+  --cream: #ede2ca;
+  --paper: #f7f0e2;
+  --paper-aged: #e9dcc0;
+  --sage: #8a9679;
+  --sage-dim: #6f7a5f;
+  --olive: #4d4a35;
+  --chocolate: #4a3826;
+  --chocolate-deep: #2e2117;
+  --washed-black: #292420;
+  --burgundy: #7a2e2c;
+  --pastel-blue: #b9c8cf;
+  --pastel-pink: #d9b8ae;
+  --ink: #2c2417;
+  --line: rgba(44, 36, 23, 0.18);
+  --line-strong: rgba(44, 36, 23, 0.4);
 
-  --font-serif: 'DM Serif Display', Georgia, serif;
-  --font-mono: 'Space Mono', ui-monospace, monospace;
-  --font-script: 'Caveat', cursive;
-  --font-sans: 'Space Grotesk', system-ui, sans-serif;
+  --font-hand: 'Caveat', cursive;
+  --font-hand2: 'Kalam', cursive;
+  --font-serif: 'Source Serif 4', Georgia, serif;
+  --font-type: 'Special Elite', 'Courier New', monospace;
 
   color-scheme: light;
   font-synthesis: none;
@@ -35,9 +38,9 @@ html {
 
 body {
   margin: 0;
-  background: var(--cream);
+  background: var(--ivory);
   color: var(--ink);
-  font-family: var(--font-sans);
+  font-family: var(--font-serif);
   overflow-x: hidden;
 }
 
@@ -54,14 +57,33 @@ a {
   color: inherit;
 }
 
+button {
+  font-family: inherit;
+}
+
+/* film-grain / paper-grain overlays, used throughout */
 .grain {
   pointer-events: none;
   position: fixed;
   inset: 0;
   z-index: 500;
-  opacity: 0.5;
+  opacity: 0.45;
   mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.3'/%3E%3C/svg%3E");
+}
+
+.paper-grain {
+  position: relative;
+}
+
+.paper-grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+  opacity: 0.5;
 }
 
 .photo-grain {
@@ -83,16 +105,54 @@ a {
   padding-inline: clamp(20px, 5vw, 64px);
 }
 
-.eyebrow {
-  font-family: var(--font-mono);
+.label {
+  font-family: var(--font-type);
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  font-size: 0.72rem;
   color: var(--olive);
 }
 
-.star {
+.hand {
+  font-family: var(--font-hand);
+}
+
+.paper-card {
+  background: var(--paper);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(44, 36, 23, 0.12);
+}
+
+.btn-scribble {
   display: inline-block;
+  font-family: var(--font-type);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  padding: 12px 22px;
+  border-radius: 2px;
+  border: 1.5px solid var(--chocolate-deep);
+  color: var(--chocolate-deep);
+  background: transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.btn-scribble:hover {
+  background: var(--chocolate-deep);
+  color: var(--paper);
+  transform: translateY(-2px);
+}
+
+.btn-scribble--solid {
+  background: var(--chocolate-deep);
+  color: var(--paper);
+}
+
+.btn-scribble--solid:hover {
+  background: var(--burgundy);
+  border-color: var(--burgundy);
 }
 
 section {
@@ -100,6 +160,13 @@ section {
 }
 
 ::selection {
-  background: var(--pink);
-  color: var(--brown-deep);
+  background: var(--pastel-pink);
+  color: var(--chocolate-deep);
+}
+
+/* generic page scaffold used by every inner page */
+.page {
+  min-height: 100vh;
+  background: var(--ivory);
+  padding-bottom: 60px;
 }

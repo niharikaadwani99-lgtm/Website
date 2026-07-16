@@ -1,75 +1,63 @@
-.nav {
+.site-nav {
   position: sticky;
   top: 0;
-  z-index: 100;
-  background: rgba(244, 236, 216, 0.88);
+  z-index: 200;
+  background: rgba(242, 234, 217, 0.92);
   backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--line);
 }
 
-.nav__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 64px;
-  gap: 24px;
-}
-
-.nav__logo {
-  font-family: var(--font-serif);
-  font-size: 1.25rem;
-  text-decoration: none;
-  color: var(--ink);
+.site-nav__inner {
   display: flex;
   align-items: center;
   gap: 6px;
+  height: 56px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.site-nav__inner::-webkit-scrollbar {
+  display: none;
+}
+
+.site-nav__home {
+  font-family: var(--font-hand);
+  font-size: 1.3rem;
+  color: var(--burgundy);
+  text-decoration: none;
   white-space: nowrap;
+  margin-right: 18px;
+  flex: none;
 }
 
-.nav__logo .star {
-  color: var(--pink-line);
-}
-
-.nav__links {
+.site-nav__tabs {
   display: flex;
-  gap: 28px;
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
+  gap: 4px;
+}
+
+.site-nav__tab {
+  font-family: var(--font-type);
+  font-size: 0.7rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.nav__links a {
-  text-decoration: none;
+  letter-spacing: 0.05em;
   color: var(--olive);
-  position: relative;
-  padding-bottom: 2px;
-}
-
-.nav__links a:hover {
-  color: var(--ink);
-  border-bottom: 1px solid var(--pink-line);
-}
-
-.nav__cta {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
   text-decoration: none;
-  border: 1px solid var(--line-strong);
-  padding: 8px 14px;
-  border-radius: 999px;
-  color: var(--ink);
   white-space: nowrap;
-  transition: background 0.15s ease;
+  padding: 8px 12px;
+  border-radius: 3px 3px 0 0;
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid var(--line);
+  border-bottom: none;
+  transition: background 0.15s ease, color 0.15s ease;
 }
 
-.nav__cta:hover {
-  background: var(--pink);
-  border-color: var(--pink-line);
+.site-nav__tab:hover {
+  background: var(--paper);
+  color: var(--ink);
 }
 
-@media (max-width: 720px) {
-  .nav__links {
-    display: none;
-  }
+.site-nav__tab.is-active {
+  background: var(--paper);
+  color: var(--chocolate-deep);
+  font-weight: 700;
 }

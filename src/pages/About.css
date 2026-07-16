@@ -1,0 +1,132 @@
+.about-hero {
+  position: relative;
+  padding: 48px 0 20px;
+  text-align: center;
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+.about-hero__title {
+  font-size: clamp(2.2rem, 5.5vw, 3rem);
+  color: var(--burgundy);
+  margin: 8px 0 12px;
+}
+
+.about-hero__sub {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--olive);
+  line-height: 1.5;
+}
+
+.about-board {
+  position: relative;
+  columns: 3 280px;
+  column-gap: 22px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.scrap-card {
+  position: relative;
+  break-inside: avoid;
+  margin-bottom: 22px;
+  padding: 16px 16px 18px;
+  background: var(--paper);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(44, 36, 23, 0.1);
+}
+
+.r1 { transform: rotate(-2deg); }
+.r2 { transform: rotate(2deg); background: #f0e6a8 !important; }
+.r3 { transform: rotate(-1deg); }
+.r4 { transform: rotate(1.5deg); }
+.r5 { transform: rotate(2.5deg); }
+.r6 { transform: rotate(-2deg); }
+.r7 { transform: rotate(1deg); background: #f0e6a8 !important; }
+.r8 { transform: rotate(-2.5deg); }
+
+.scrap-card--photo .scrap-card__photo {
+  display: block;
+  height: 190px;
+  margin-bottom: 10px;
+  filter: grayscale(0.55) contrast(1.2) brightness(0.95);
+  background:
+    radial-gradient(circle at 35% 30%, #b7c4a6, transparent 55%),
+    linear-gradient(160deg, #6b5a46, #251d15);
+}
+
+.photo-grain--b {
+  background:
+    radial-gradient(circle at 60% 40%, #d9b8ae, transparent 55%),
+    linear-gradient(160deg, #4d4a35, #201c15) !important;
+}
+
+.scrap-card__cap {
+  font-size: 1.05rem;
+  color: var(--chocolate-deep);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.scrap-card__quote {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  color: var(--chocolate-deep);
+  margin: 6px 0 0;
+}
+
+.scrap-card__sketch {
+  width: 100%;
+  height: auto;
+  margin-bottom: 8px;
+}
+
+.scrap-card--index ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.scrap-card--index h3 {
+  font-size: 1.4rem;
+  margin: 6px 0 2px;
+  color: var(--burgundy);
+}
+
+.about-influences {
+  margin-top: 10px;
+}
+
+.about-influences__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  margin-top: 12px;
+}
+
+.about-influences__row span {
+  font-family: var(--font-type);
+  font-size: 0.82rem;
+  background: rgba(44, 36, 23, 0.06);
+  border: 1px solid var(--line);
+  padding: 6px 12px;
+  border-radius: 2px;
+}
+
+.about-note-row {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+@media (max-width: 640px) {
+  .about-board {
+    columns: 1 100%;
+  }
+}
