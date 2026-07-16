@@ -5,6 +5,8 @@ import Footer from '../components/Footer.jsx'
 import { FoldedCorner, HandArrow, HiddenNote, Paperclip, RingHoles, StarSticker, Stamp, Tape } from '../components/Deco.jsx'
 import { CassetteButton, CassettePlayer } from '../components/Cassette.jsx'
 import photoboothStrip from '../assets/photobooth-strip.jpg'
+import heartCharm1 from '../assets/heart-charm-1.png'
+import heartCharm2 from '../assets/heart-charm-2.png'
 import './Desk.css'
 
 const THINGS_I_LOVE = [
@@ -50,24 +52,10 @@ function Desk() {
             </svg>
           </span>
           <span className="desk-bands__charm desk-bands__charm--heart">
-            <svg viewBox="0 0 40 36">
-              <path
-                d="M20 33 C4 22 2 11 10 6 C15 3 19 6 20 11 C21 6 25 3 30 6 C38 11 36 22 20 33Z"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="3"
-              />
-            </svg>
+            <img src={heartCharm1} alt="" />
           </span>
           <span className="desk-bands__charm desk-bands__charm--heart2">
-            <svg viewBox="0 0 40 36">
-              <path
-                d="M20 33 C4 22 2 11 10 6 C15 3 19 6 20 11 C21 6 25 3 30 6 C38 11 36 22 20 33Z"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="3"
-              />
-            </svg>
+            <img src={heartCharm2} alt="" />
           </span>
           <span className="desk-bands__slider" />
         </div>

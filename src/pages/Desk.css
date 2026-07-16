@@ -420,19 +420,25 @@
     filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.4));
   }
 
+  .desk-bands__charm img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
   .desk-bands__charm--key {
     left: 8%;
     width: 44px;
   }
 
   .desk-bands__charm--heart {
-    left: 20%;
-    width: 30px;
+    left: 19%;
+    width: 38px;
   }
 
   .desk-bands__charm--heart2 {
     left: 27%;
-    width: 30px;
+    width: 38px;
     transform: translateY(-50%) rotate(10deg);
   }
 
