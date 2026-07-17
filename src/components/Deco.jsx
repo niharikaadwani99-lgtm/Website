@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import tapeImg from '../assets/tape.png'
 import paperclipImg from '../assets/paperclip.png'
+import starImg from '../assets/star.png'
+import ribbonBowImg from '../assets/ribbon-bow.png'
 import './Deco.css'
 
 export function Tape({ className = '', style }) {
@@ -15,11 +17,15 @@ export function Tape({ className = '', style }) {
   )
 }
 
-export function StarSticker({ className = '', style, char = '★' }) {
+export function StarSticker({ className = '', style }) {
   return (
-    <span className={`deco-star ${className}`} style={style} aria-hidden="true">
-      {char}
-    </span>
+    <img
+      src={starImg}
+      alt=""
+      className={`deco-star ${className}`}
+      style={style}
+      aria-hidden="true"
+    />
   )
 }
 
@@ -55,6 +61,18 @@ export function RingHoles({ count = 6, className = '' }) {
 
 export function FoldedCorner({ className = '', style }) {
   return <span className={`deco-fold ${className}`} style={style} aria-hidden="true" />
+}
+
+export function RibbonBow({ className = '', style }) {
+  return (
+    <img
+      src={ribbonBowImg}
+      alt=""
+      className={`deco-bow ${className}`}
+      style={style}
+      aria-hidden="true"
+    />
+  )
 }
 
 export function HandArrow({ className = '', style, d = 'M4 6 C 40 2, 70 40, 100 70', flip = false }) {

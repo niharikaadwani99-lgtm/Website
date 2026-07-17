@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
-import { FoldedCorner, HandArrow, HiddenNote, Paperclip, RingHoles, StarSticker, Stamp, Tape } from '../components/Deco.jsx'
+import { FoldedCorner, HandArrow, HiddenNote, Paperclip, RibbonBow, RingHoles, StarSticker, Stamp, Tape } from '../components/Deco.jsx'
 import { CassetteButton, CassettePlayer } from '../components/Cassette.jsx'
 import photoboothStrip from '../assets/photobooth-strip.jpg'
 import heartCharm1 from '../assets/heart-charm-1.png'
@@ -37,8 +37,8 @@ function Desk() {
       </header>
 
       <div className="desk-surface">
-        <StarSticker style={{ bottom: '3%', right: '6%', fontSize: '2.1rem' }} />
-        <StarSticker char="✸" style={{ bottom: '4.5%', right: '13%', fontSize: '1.3rem' }} />
+        <StarSticker style={{ bottom: '3%', right: '6%', width: '46px' }} />
+        <StarSticker style={{ bottom: '4.5%', right: '13%', width: '28px' }} />
 
         <div className="desk-bands" aria-hidden="true">
           <span className="desk-bands__line" />
@@ -61,13 +61,7 @@ function Desk() {
         </div>
 
         <Link to="/about" className="desk-item desk-item--sketchbook" aria-label="Open About Me">
-          <span className="sketchbook-bow" aria-hidden="true">
-            <svg viewBox="0 0 64 40">
-              <path d="M30 20 L4 6 C -2 16, -2 26, 4 34 Z" fill="#dcd0a0" stroke="#4a3826" strokeWidth="1.5" />
-              <path d="M30 20 L56 6 C 62 16, 62 26, 56 34 Z" fill="#dcd0a0" stroke="#4a3826" strokeWidth="1.5" />
-              <circle cx="30" cy="20" r="5" fill="#4a3826" />
-            </svg>
-          </span>
+          <RibbonBow className="sketchbook-bow" />
           <span className="sketchbook-strip" aria-hidden="true">
             <img src={photoboothStrip} alt="" />
           </span>
