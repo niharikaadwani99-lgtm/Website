@@ -7,7 +7,6 @@ const LINKS = [
   { to: '/process', label: 'Process' },
   { to: '/portfolio', label: 'Portfolio' },
   { to: '/work-with-me', label: 'Work with me' },
-  { to: '/book-a-call', label: 'Book a call' },
 ]
 
 function Nav() {

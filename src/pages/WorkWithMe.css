@@ -48,10 +48,19 @@
 }
 
 .passport-pages {
-  padding: 40px 0 60px;
+  padding: 40px 0 20px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 22px;
+}
+
+.bookcall-section {
+  border-top: 1px dashed var(--line);
+  margin-top: 40px;
+}
+
+.bookcall-section .bookcall-hero {
+  padding-top: 40px;
 }
 
 .passport-entry {

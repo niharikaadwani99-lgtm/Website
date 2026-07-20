@@ -101,7 +101,7 @@ function Desk() {
           <span className="label desk-item__tag">pinned to the wall</span>
         </Link>
 
-        <Link to="/book-a-call" className="desk-item desk-item--planner" aria-label="Open Book a Call">
+        <Link to="/work-with-me#book-a-call" className="desk-item desk-item--planner" aria-label="Open Book a Call">
           <RingHoles count={6} className="desk-item__rings desk-item__rings--top" />
           <span className="desk-item__label hand">book a call</span>
           <span className="desk-item__mini-cal" aria-hidden="true">

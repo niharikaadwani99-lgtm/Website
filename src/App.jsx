@@ -4,7 +4,6 @@ import About from './pages/About.jsx'
 import Services from './pages/Services.jsx'
 import Process from './pages/Process.jsx'
 import Portfolio from './pages/Portfolio.jsx'
-import BookCall from './pages/BookCall.jsx'
 import WorkWithMe from './pages/WorkWithMe.jsx'
 
 function App() {
@@ -15,7 +14,6 @@ function App() {
       <Route path="/services" element={<Services />} />
       <Route path="/process" element={<Process />} />
       <Route path="/portfolio" element={<Portfolio />} />
-      <Route path="/book-a-call" element={<BookCall />} />
       <Route path="/work-with-me" element={<WorkWithMe />} />
     </Routes>
   )

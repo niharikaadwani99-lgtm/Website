@@ -32,10 +32,13 @@ src/
     Services.jsx     "/services" — binder with pull-tab dividers
     Process.jsx      "/process" — pinboard roadmap ("how I help brands")
     Portfolio.jsx    "/portfolio" — pinned moodboard wall with a lightbox
-    BookCall.jsx     "/book-a-call" — planner page with a scheduling-embed
-                     slot (placeholder — drop in a real Calendly embed)
     WorkWithMe.jsx   "/work-with-me" — passport-styled "what it's like to
-                     work with me", aimed at international founders
+                     work with me" (aimed at international founders),
+                     flowing into a "let's talk" booking section (planner
+                     page with a scheduling-embed slot — placeholder, drop
+                     in a real Calendly embed). The Desk's "book a call"
+                     planner object deep-links to #book-a-call on this
+                     page.
   index.css          design tokens, paper/photo grain overlays, globals
 ```
 
@@ -59,7 +62,7 @@ npm run build
 ## What's deliberately placeholder / next steps
 
 - **Book a call**: the scheduling area is a styled placeholder. Swap in a
-  real Calendly (or similar) embed — see the comment in `BookCall.jsx`.
+  real Calendly (or similar) embed — see the comment in `WorkWithMe.jsx`.
 - **Cassette player**: UI-only nostalgia, no real audio. Point it at a
   Spotify/Apple Music embed, or wire up actual audio files, when ready.
 - **Contact/email links**: currently `mailto:hello@niharikaadwani.com` —
