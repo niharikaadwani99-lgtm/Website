@@ -115,8 +115,8 @@ function Desk() {
           <span className="desk-item__label hand">what it&rsquo;s like to work with me</span>
         </Link>
 
-        <Tape style={{ top: '31%', left: '48%', transform: 'rotate(-8deg)' }} />
-        <Paperclip style={{ top: '14%', left: '38%', transform: 'rotate(18deg)' }} />
+        <Tape style={{ top: '60%', left: '56%', transform: 'rotate(-8deg)' }} />
+        <Paperclip style={{ top: '66%', left: '60%', transform: 'rotate(18deg)' }} />
 
         <HiddenNote
           teaser="ask me about my worst sample"
