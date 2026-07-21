@@ -95,7 +95,7 @@ function Desk() {
           <span className="desk-item__label hand">things I love</span>
         </button>
 
-        <Link to="/process" className="desk-item desk-item--blueprint" aria-label="Open How I Help Brands">
+        <Link to="/services#how-i-help-brands" className="desk-item desk-item--blueprint" aria-label="Open How I Help Brands">
           <span className="desk-item__scroll-end" aria-hidden="true" />
           <span className="desk-item__label hand">how I help brands</span>
           <span className="label desk-item__tag">pinned to the wall</span>

@@ -29,8 +29,10 @@ src/
                      3 hidden notes, the "things I love" clipping teaser,
                      and the secret drawer
     About.jsx        "/about" — scrapbook spread
-    Services.jsx     "/services" — binder with pull-tab dividers
-    Process.jsx      "/process" — pinboard roadmap ("how I help brands")
+    Services.jsx     "/services" — binder with pull-tab dividers, flowing
+                     into a pinboard roadmap ("how I help brands"). The
+                     Desk's blueprint object deep-links to
+                     #how-i-help-brands on this page.
     Portfolio.jsx    "/portfolio" — pinned moodboard wall with a lightbox
     WorkWithMe.jsx   "/work-with-me" — passport-styled "what it's like to
                      work with me" (aimed at international founders),

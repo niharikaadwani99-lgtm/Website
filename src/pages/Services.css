@@ -26,6 +26,14 @@
   min-height: 520px;
 }
 
+.process-section {
+  margin-top: 20px;
+}
+
+.process-section .process-hero {
+  padding-top: 40px;
+}
+
 .binder__rings {
   position: absolute;
   top: 30px;
