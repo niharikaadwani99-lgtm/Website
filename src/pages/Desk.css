@@ -1,5 +1,20 @@
 .desk-page {
-  background: var(--ivory);
+  background:
+    radial-gradient(rgba(92, 53, 64, 0.07) 1.5px, transparent 1.7px) 0 0 / 24px 24px,
+    radial-gradient(rgba(136, 168, 42, 0.05) 1.5px, transparent 1.7px) 12px 12px / 24px 24px,
+    var(--ivory);
+}
+
+/* keep the busy paper layers to the desktop scatter; hide on narrow screens
+   so the stacked mobile flow stays legible */
+@media (max-width: 760px) {
+  .desk-envelope,
+  .desk-paperstar,
+  .desk-scrap,
+  .desk-tapebow,
+  .desk-confetti {
+    display: none;
+  }
 }
 
 .desk-intro {

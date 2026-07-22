@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
-import { Charm, FoldedCorner, HandArrow, HiddenNote, Paperclip, RibbonBow, RingHoles, StarConfetti, StarSticker, Stamp, Tape, TapeBow } from '../components/Deco.jsx'
+import { Charm, Envelope, FoldedCorner, HandArrow, HiddenNote, Paperclip, PaperScrap, PaperStar, RibbonBow, RingHoles, StarConfetti, StarSticker, Stamp, Tape, TapeBow } from '../components/Deco.jsx'
 import { CassetteButton, CassettePlayer } from '../components/Cassette.jsx'
 import photoboothStrip from '../assets/photobooth-strip.jpg'
 import heartCharm1 from '../assets/heart-charm-1.png'
@@ -40,8 +40,11 @@ function Desk() {
         <StarSticker style={{ bottom: '3%', right: '6%', width: '46px' }} />
         <StarSticker style={{ bottom: '4.5%', right: '13%', width: '28px' }} />
         <TapeBow className="desk-tapebow" style={{ top: '1%', left: '39%', transform: 'rotate(-7deg)' }} />
-        <StarConfetti className="desk-confetti" style={{ top: '40%', left: '30%' }} />
+        <StarConfetti className="desk-confetti" style={{ top: '39%', left: '31%' }} />
         <Charm className="desk-charm" style={{ top: '44%', right: '31%' }} />
+        <PaperStar className="desk-paperstar" style={{ top: '61%', left: '6%', transform: 'rotate(-10deg)' }} />
+        <PaperScrap className="desk-scrap" style={{ top: '15%', right: '2%', transform: 'rotate(6deg)' }} />
+        <Envelope className="desk-envelope" style={{ top: '58%', left: '42%', transform: 'rotate(-5deg)' }} />
 
         <div className="desk-bands" aria-hidden="true">
           <span className="desk-bands__line" />
@@ -126,6 +129,7 @@ function Desk() {
           className="desk-note desk-note--1"
           rotate={-6}
           pin="pink"
+          paper="pink"
         >
           <span className="hand">the muslin disaster of 2019</span>
           A first sample that arrived with the sleeves sewn shut and the lining inside out.
@@ -139,6 +143,7 @@ function Desk() {
           className="desk-note desk-note--2"
           rotate={4}
           pin="teal"
+          paper="speckled"
         >
           <span className="hand">six looks, one very small budget</span>
           Made from deadstock fabric bought by the kilo and finished on a borrowed machine at
@@ -150,7 +155,8 @@ function Desk() {
           teaser="a sketch that never became a garment"
           className="desk-note desk-note--3"
           rotate={-3}
-          pin="pink"
+          pin="teal"
+          paper="kraft"
         >
           <span className="hand">the coat that stayed a drawing</span>
           Some ideas are better left as a page in a sketchbook. This one had eleven pattern

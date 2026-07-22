@@ -10,9 +10,34 @@ import charmButterflyImg from '../assets/charm-butterfly.png'
 import priceTagImg from '../assets/price-tag.png'
 import pushpinPinkImg from '../assets/pushpin-pink.png'
 import pushpinTealImg from '../assets/pushpin-teal.png'
+import notePinkImg from '../assets/note-pink.png'
+import noteSpeckledImg from '../assets/note-speckled.png'
+import noteKraftImg from '../assets/note-kraft.png'
+import noteRedImg from '../assets/note-red.png'
+import envelopeRedImg from '../assets/envelope-red.png'
+import paperStarburstImg from '../assets/paper-starburst.png'
 import './Deco.css'
 
 const PUSHPINS = { pink: pushpinPinkImg, teal: pushpinTealImg }
+const NOTE_PAPERS = { pink: notePinkImg, speckled: noteSpeckledImg, kraft: noteKraftImg }
+
+export function Envelope({ className = '', style }) {
+  return (
+    <img src={envelopeRedImg} alt="" className={`deco-envelope ${className}`} style={style} aria-hidden="true" />
+  )
+}
+
+export function PaperStar({ className = '', style }) {
+  return (
+    <img src={paperStarburstImg} alt="" className={`deco-paperstar ${className}`} style={style} aria-hidden="true" />
+  )
+}
+
+export function PaperScrap({ className = '', style }) {
+  return (
+    <img src={noteRedImg} alt="" className={`deco-scrap ${className}`} style={style} aria-hidden="true" />
+  )
+}
 
 export function Pushpin({ variant = 'pink', className = '', style }) {
   return (
@@ -157,7 +182,7 @@ export function FolderTab({ label, color = '#b9bd85', style, className = '' }) {
 
 let noteId = 0
 
-export function HiddenNote({ teaser, children, className = '', style, rotate = -3, pin = 'pink' }) {
+export function HiddenNote({ teaser, children, className = '', style, rotate = -3, pin = 'pink', paper = 'pink' }) {
   const [open, setOpen] = useState(false)
   const [id] = useState(() => `note-${noteId++}`)
 
@@ -172,12 +197,18 @@ export function HiddenNote({ teaser, children, className = '', style, rotate = -
         aria-controls={id}
       >
         <img
+          src={NOTE_PAPERS[paper] || notePinkImg}
+          alt=""
+          className="hidden-note__paper"
+          aria-hidden="true"
+        />
+        <img
           src={PUSHPINS[pin] || pushpinPinkImg}
           alt=""
           className="hidden-note__pin"
           aria-hidden="true"
         />
-        {teaser}
+        <span className="hidden-note__text">{teaser}</span>
       </button>
 
       {open && (
