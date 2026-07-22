@@ -5,7 +5,7 @@
   gap: 8px;
   width: 150px;
   padding: 16px 14px;
-  background: var(--washed-black);
+  background: var(--burgundy);
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -84,7 +84,7 @@
 
 .cassette-tape {
   position: relative;
-  background: var(--washed-black);
+  background: var(--burgundy);
   border-radius: 8px;
   height: 130px;
   padding: 16px;

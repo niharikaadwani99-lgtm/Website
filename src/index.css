@@ -18,7 +18,9 @@
 
   --font-hand: 'Niharika Hand', 'Caveat', cursive;
   --font-hand2: 'Kalam', cursive;
-  --font-serif: 'Source Serif 4', Georgia, serif;
+  /* body / editorial text — Avenir where installed (Apple), Nunito Sans as
+     the closest free web fallback everywhere else */
+  --font-serif: 'Avenir Next', 'Avenir', 'Nunito Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
   --font-type: 'Special Elite', 'Courier New', monospace;
 
   color-scheme: light;

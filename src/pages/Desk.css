@@ -34,11 +34,13 @@
   gap: 22px;
   align-items: center;
   background:
-    radial-gradient(ellipse 60% 40% at 85% 92%, rgba(255, 255, 255, 0.05), transparent 60%),
-    radial-gradient(ellipse 50% 35% at 10% 8%, rgba(255, 255, 255, 0.04), transparent 60%),
-    linear-gradient(160deg, #3a2530 0%, #1c2e0d 55%, #14200a 100%);
+    radial-gradient(ellipse 46% 40% at 8% 6%, rgba(225, 177, 193, 0.75), transparent 62%),
+    radial-gradient(ellipse 48% 42% at 93% 10%, rgba(196, 233, 248, 0.8), transparent 62%),
+    radial-gradient(ellipse 55% 50% at 88% 92%, rgba(168, 168, 74, 0.55), transparent 66%),
+    radial-gradient(ellipse 52% 46% at 10% 96%, rgba(137, 77, 91, 0.4), transparent 66%),
+    linear-gradient(155deg, #fbf4e2 0%, #f6efdc 55%, #f2ecd6 100%);
   border-radius: 12px;
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 24px 55px rgba(92, 53, 64, 0.22);
 }
 
 .desk-item {

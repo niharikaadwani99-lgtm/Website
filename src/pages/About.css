@@ -50,16 +50,15 @@
   display: block;
   height: 190px;
   margin-bottom: 10px;
-  filter: grayscale(0.55) contrast(1.2) brightness(0.95);
   background:
-    radial-gradient(circle at 35% 30%, #a8bf6a, transparent 55%),
-    linear-gradient(160deg, #6b4550, #241a1d);
+    radial-gradient(circle at 30% 25%, #ffe1ec, transparent 58%),
+    linear-gradient(160deg, #e1b1c1 0%, #a8ad4a 100%);
 }
 
 .photo-grain--b {
   background:
-    radial-gradient(circle at 60% 40%, #e1b1c1, transparent 55%),
-    linear-gradient(160deg, #21510a, #1e1a1d) !important;
+    radial-gradient(circle at 65% 35%, #d9f2ff, transparent 58%),
+    linear-gradient(160deg, #a8bf6a 0%, #c4e9f8 100%) !important;
 }
 
 .scrap-card__cap {

@@ -20,7 +20,7 @@
 
 .binder {
   position: relative;
-  background: var(--chocolate-deep);
+  background: var(--sage);
   padding: 40px clamp(20px, 5vw, 60px) 50px;
   padding-left: 60px;
   min-height: 520px;

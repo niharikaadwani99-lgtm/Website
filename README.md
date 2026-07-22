@@ -11,8 +11,11 @@ a secret drawer) open into the rest of the site.
 Plain React + Vite + `react-router-dom`, no UI framework — hand-rolled CSS
 per page using a garden-inspired palette (apple green, dark moss, quinacridone
 magenta, orchid pink, Columbia blue) and a custom handwriting font (from a
-scanned specimen) + Kalam (secondary handwriting) / Source Serif 4 (editorial
-body) / Special Elite (typewriter) from Google Fonts.
+scanned specimen) + Kalam (secondary handwriting) / Avenir (editorial body,
+falling back to Nunito Sans off Apple devices) / Special Elite (typewriter).
+The overall treatment is bright and collage-forward: a light craft-paper desk
+with colorful corner washes, vivid moodboard tiles, and colored binder/planner
+covers rather than dark surfaces.
 
 ## Structure
 

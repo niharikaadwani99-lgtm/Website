@@ -20,7 +20,7 @@
 
 .planner-spread {
   position: relative;
-  background: var(--chocolate-deep);
+  background: var(--pastel-blue);
   padding: 40px clamp(20px, 5vw, 60px) 60px;
   padding-left: 60px;
 }

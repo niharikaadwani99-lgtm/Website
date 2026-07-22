@@ -1,6 +1,6 @@
 .site-footer {
-  background: var(--chocolate-deep);
-  color: var(--paper);
+  background: var(--pastel-pink);
+  color: var(--ink);
   padding: 30px 0;
 }
 
@@ -21,7 +21,7 @@
 
 .site-footer a {
   text-decoration: none;
-  color: var(--paper);
+  color: var(--chocolate-deep);
   font-family: var(--font-type);
   font-size: 0.72rem;
   text-transform: uppercase;
