@@ -27,6 +27,54 @@
   filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.25));
 }
 
+.deco-pin {
+  position: absolute;
+  width: 34px;
+  height: auto;
+  filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.35));
+  pointer-events: none;
+}
+
+.deco-tapebow {
+  position: absolute;
+  width: 120px;
+  height: auto;
+  filter: drop-shadow(0 5px 8px rgba(0, 0, 0, 0.28));
+  pointer-events: none;
+}
+
+.deco-clothespin {
+  position: absolute;
+  width: 74px;
+  height: auto;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+  pointer-events: none;
+}
+
+.deco-confetti {
+  position: absolute;
+  width: 130px;
+  height: auto;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.25));
+  pointer-events: none;
+}
+
+.deco-charm {
+  position: absolute;
+  width: 70px;
+  height: auto;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+  pointer-events: none;
+}
+
+.deco-tag {
+  position: absolute;
+  width: 84px;
+  height: auto;
+  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.28));
+  pointer-events: none;
+}
+
 .deco-stamp {
   position: absolute;
   width: 58px;
@@ -127,14 +175,13 @@
 
 .hidden-note__pin {
   position: absolute;
-  top: -7px;
+  top: -16px;
   left: 50%;
-  transform: translateX(-50%);
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #9c5468, #894d5b);
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
+  transform: translateX(-50%) rotate(8deg);
+  width: 26px;
+  height: auto;
+  filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.4));
+  pointer-events: none;
 }
 
 .hidden-note-veil {

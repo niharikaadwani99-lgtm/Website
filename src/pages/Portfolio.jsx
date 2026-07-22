@@ -1,7 +1,23 @@
 import { useState } from 'react'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
-import { Tape } from '../components/Deco.jsx'
+import { Clothespin, Paperclip, PriceTag, Pushpin, Tape } from '../components/Deco.jsx'
+
+// real-object pins rotated across the board so it reads like a physical wall
+function BoardPin({ i }) {
+  switch (i % 5) {
+    case 0:
+      return <Tape style={{ top: -10, left: '50%', transform: 'translateX(-50%) rotate(-2deg)' }} />
+    case 1:
+      return <Pushpin variant="pink" style={{ top: -18, left: '50%', transform: 'translateX(-50%)' }} />
+    case 2:
+      return <Clothespin style={{ top: -22, left: '46%', transform: 'translateX(-50%) rotate(-6deg)' }} />
+    case 3:
+      return <Pushpin variant="teal" style={{ top: -18, left: '50%', transform: 'translateX(-50%)' }} />
+    default:
+      return <Paperclip style={{ top: -20, left: '58%', width: 44, transform: 'rotate(12deg)' }} />
+  }
+}
 import './Portfolio.css'
 
 const ITEMS = [
@@ -44,7 +60,8 @@ function Portfolio() {
             style={{ '--r': `${item.r}deg` }}
             onClick={() => setOpen(item)}
           >
-            {i % 3 === 0 && <Tape style={{ top: -10, left: '50%', transform: 'translateX(-50%) rotate(-2deg)' }} />}
+            <BoardPin i={i} />
+            {item.type === 'swatch' && <PriceTag style={{ top: 34, right: -18, transform: 'rotate(7deg)' }} />}
             {item.type === 'photo' && <span className={`board-item__photo photo-grain tone-${item.tone}`} />}
             {item.type === 'swatch' && (
               <span className="board-item__chips">

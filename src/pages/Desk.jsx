@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
-import { FoldedCorner, HandArrow, HiddenNote, Paperclip, RibbonBow, RingHoles, StarSticker, Stamp, Tape } from '../components/Deco.jsx'
+import { Charm, FoldedCorner, HandArrow, HiddenNote, Paperclip, RibbonBow, RingHoles, StarConfetti, StarSticker, Stamp, Tape, TapeBow } from '../components/Deco.jsx'
 import { CassetteButton, CassettePlayer } from '../components/Cassette.jsx'
 import photoboothStrip from '../assets/photobooth-strip.jpg'
 import heartCharm1 from '../assets/heart-charm-1.png'
@@ -39,6 +39,9 @@ function Desk() {
       <div className="desk-surface">
         <StarSticker style={{ bottom: '3%', right: '6%', width: '46px' }} />
         <StarSticker style={{ bottom: '4.5%', right: '13%', width: '28px' }} />
+        <TapeBow className="desk-tapebow" style={{ top: '1%', left: '39%', transform: 'rotate(-7deg)' }} />
+        <StarConfetti className="desk-confetti" style={{ top: '40%', left: '30%' }} />
+        <Charm className="desk-charm" style={{ top: '44%', right: '31%' }} />
 
         <div className="desk-bands" aria-hidden="true">
           <span className="desk-bands__line" />
@@ -122,6 +125,7 @@ function Desk() {
           teaser="ask me about my worst sample"
           className="desk-note desk-note--1"
           rotate={-6}
+          pin="pink"
         >
           <span className="hand">the muslin disaster of 2019</span>
           A first sample that arrived with the sleeves sewn shut and the lining inside out.
@@ -134,6 +138,7 @@ function Desk() {
           teaser="the first collection I ever designed"
           className="desk-note desk-note--2"
           rotate={4}
+          pin="teal"
         >
           <span className="hand">six looks, one very small budget</span>
           Made from deadstock fabric bought by the kilo and finished on a borrowed machine at
@@ -145,6 +150,7 @@ function Desk() {
           teaser="a sketch that never became a garment"
           className="desk-note desk-note--3"
           rotate={-3}
+          pin="pink"
         >
           <span className="hand">the coat that stayed a drawing</span>
           Some ideas are better left as a page in a sketchbook. This one had eleven pattern

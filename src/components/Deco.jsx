@@ -3,7 +3,58 @@ import tapeImg from '../assets/tape.png'
 import paperclipImg from '../assets/paperclip.png'
 import starImg from '../assets/star.png'
 import ribbonBowImg from '../assets/ribbon-bow.png'
+import tapeBowImg from '../assets/tape-bow.png'
+import clothespinImg from '../assets/clothespin.png'
+import starsPinkImg from '../assets/stars-pink.png'
+import charmButterflyImg from '../assets/charm-butterfly.png'
+import priceTagImg from '../assets/price-tag.png'
+import pushpinPinkImg from '../assets/pushpin-pink.png'
+import pushpinTealImg from '../assets/pushpin-teal.png'
 import './Deco.css'
+
+const PUSHPINS = { pink: pushpinPinkImg, teal: pushpinTealImg }
+
+export function Pushpin({ variant = 'pink', className = '', style }) {
+  return (
+    <img
+      src={PUSHPINS[variant] || pushpinPinkImg}
+      alt=""
+      className={`deco-pin ${className}`}
+      style={style}
+      aria-hidden="true"
+    />
+  )
+}
+
+export function TapeBow({ className = '', style }) {
+  return (
+    <img src={tapeBowImg} alt="" className={`deco-tapebow ${className}`} style={style} aria-hidden="true" />
+  )
+}
+
+export function Clothespin({ className = '', style }) {
+  return (
+    <img src={clothespinImg} alt="" className={`deco-clothespin ${className}`} style={style} aria-hidden="true" />
+  )
+}
+
+export function StarConfetti({ className = '', style }) {
+  return (
+    <img src={starsPinkImg} alt="" className={`deco-confetti ${className}`} style={style} aria-hidden="true" />
+  )
+}
+
+export function Charm({ className = '', style }) {
+  return (
+    <img src={charmButterflyImg} alt="" className={`deco-charm ${className}`} style={style} aria-hidden="true" />
+  )
+}
+
+export function PriceTag({ className = '', style }) {
+  return (
+    <img src={priceTagImg} alt="" className={`deco-tag ${className}`} style={style} aria-hidden="true" />
+  )
+}
 
 export function Tape({ className = '', style }) {
   return (
@@ -106,7 +157,7 @@ export function FolderTab({ label, color = '#b9bd85', style, className = '' }) {
 
 let noteId = 0
 
-export function HiddenNote({ teaser, children, className = '', style, rotate = -3 }) {
+export function HiddenNote({ teaser, children, className = '', style, rotate = -3, pin = 'pink' }) {
   const [open, setOpen] = useState(false)
   const [id] = useState(() => `note-${noteId++}`)
 
@@ -120,7 +171,12 @@ export function HiddenNote({ teaser, children, className = '', style, rotate = -
         aria-haspopup="dialog"
         aria-controls={id}
       >
-        <span className="hidden-note__pin" aria-hidden="true" />
+        <img
+          src={PUSHPINS[pin] || pushpinPinkImg}
+          alt=""
+          className="hidden-note__pin"
+          aria-hidden="true"
+        />
         {teaser}
       </button>
 
