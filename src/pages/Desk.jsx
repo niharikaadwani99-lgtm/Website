@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
-import { Charm, Envelope, FoldedCorner, HandArrow, HiddenNote, Paperclip, PaperScrap, PaperStar, RibbonBow, RingHoles, StarConfetti, StarSticker, Stamp, Tape, TapeBow } from '../components/Deco.jsx'
+import { Charm, Envelope, FoldedCorner, HandArrow, HiddenNote, LaceDoily, Paperclip, RibbonBow, RingHoles, ScallopEnvelope, StarConfetti, StarSticker, Stamp, Tape, TapeBow } from '../components/Deco.jsx'
 import { CassetteButton, CassettePlayer } from '../components/Cassette.jsx'
 import photoboothStrip from '../assets/photobooth-strip.jpg'
 import heartCharm1 from '../assets/heart-charm-1.png'
@@ -37,14 +37,24 @@ function Desk() {
       </header>
 
       <div className="desk-surface">
+        <LaceDoily className="desk-doily" />
         <StarSticker style={{ bottom: '3%', right: '6%', width: '46px' }} />
         <StarSticker style={{ bottom: '4.5%', right: '13%', width: '28px' }} />
         <TapeBow className="desk-tapebow" style={{ top: '1%', left: '39%', transform: 'rotate(-7deg)' }} />
         <StarConfetti className="desk-confetti" style={{ top: '39%', left: '31%' }} />
         <Charm className="desk-charm" style={{ top: '44%', right: '31%' }} />
-        <PaperStar className="desk-paperstar" style={{ top: '61%', left: '6%', transform: 'rotate(-10deg)' }} />
-        <PaperScrap className="desk-scrap" style={{ top: '15%', right: '2%', transform: 'rotate(6deg)' }} />
-        <Envelope className="desk-envelope" style={{ top: '58%', left: '42%', transform: 'rotate(-5deg)' }} />
+
+        <div className="desk-polaroid" aria-hidden="true">
+          <span className="desk-polaroid__lined" />
+          <span className="desk-polaroid__photo"><img src={photoboothStrip} alt="" /></span>
+        </div>
+
+        <ScallopEnvelope color="#c4e9f8" className="desk-scallop desk-scallop--blue" />
+        <ScallopEnvelope color="#e1b1c1" className="desk-scallop desk-scallop--pink" />
+        <Envelope className="desk-envelope" style={{ top: '80%', right: '6%', transform: 'rotate(-5deg)' }} />
+
+        <Paperclip variant="gold" className="desk-bigclip desk-bigclip--1" />
+        <Paperclip variant="red" className="desk-bigclip desk-bigclip--2" />
 
         <div className="desk-bands" aria-hidden="true">
           <span className="desk-bands__line" />

@@ -7,10 +7,13 @@
 
 /* keep the busy paper layers to the desktop scatter; hide on narrow screens
    so the stacked mobile flow stays legible */
-@media (max-width: 760px) {
+@media (max-width: 900px) {
+  .desk-doily,
+  .desk-polaroid,
+  .desk-scallop,
   .desk-envelope,
-  .desk-paperstar,
-  .desk-scrap,
+  .desk-bigclip,
+  .desk-charm,
   .desk-tapebow,
   .desk-confetti {
     display: none;
@@ -364,6 +367,57 @@
   line-height: 1.5;
 }
 
+/* -------- reference collage layers: polaroid on lined paper -------- */
+
+.desk-polaroid {
+  position: absolute;
+  width: 210px;
+  height: 250px;
+  pointer-events: none;
+}
+
+.desk-polaroid__lined {
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(#fdfbf4 0 26px, rgba(120, 150, 200, 0.3) 26px 27px),
+    #fdfbf4;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.desk-polaroid__lined::before {
+  content: '';
+  position: absolute;
+  left: 24px;
+  top: 0;
+  bottom: 0;
+  width: 1.5px;
+  background: rgba(180, 80, 90, 0.45);
+}
+
+.desk-polaroid__photo {
+  position: absolute;
+  top: -16px;
+  left: 32%;
+  width: 122px;
+  background: #fff;
+  padding: 7px 7px 22px;
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.32);
+  transform: rotate(6deg);
+  z-index: 2;
+}
+
+.desk-polaroid__photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.desk-bigclip {
+  pointer-events: none;
+}
+
 /* =====================================================
    DESKTOP: scatter everything across an actual "desk"
    ===================================================== */
@@ -397,6 +451,14 @@
   .desk-item--blueprint { top: 21%; right: 2%; width: 300px; transform: rotate(-4deg); }
 
   .desk-item--planner { top: 53%; left: 30%; width: 340px; transform: rotate(3deg); z-index: 2; }
+
+  /* reference collage layers */
+  .desk-doily { top: 26%; left: 50%; transform: translateX(-50%) rotate(-2deg); width: 660px; z-index: 0; }
+  .desk-polaroid { top: 61%; left: 55%; transform: rotate(-4deg); z-index: 3; }
+  .desk-scallop--blue { top: 64%; right: 7%; width: 182px; transform: rotate(7deg); z-index: 2; }
+  .desk-scallop--pink { top: 70%; right: 15%; width: 168px; transform: rotate(-7deg); z-index: 1; }
+  .desk-bigclip--1 { top: 56%; left: 60%; width: 116px; transform: rotate(-8deg); z-index: 6; }
+  .desk-bigclip--2 { top: 88%; right: 9%; width: 120px; transform: rotate(10deg); z-index: 6; }
 
   .desk-bands {
     display: block;
@@ -475,7 +537,7 @@
 
   .desk-note--1 { top: 33%; left: 65%; }
   .desk-note--2 { top: 78%; left: 22%; }
-  .desk-note--3 { top: 56%; right: 6%; }
+  .desk-note--3 { top: 46%; right: 4%; }
 
   .desk-arrow {
     display: block;

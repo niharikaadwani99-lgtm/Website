@@ -99,6 +99,22 @@
   pointer-events: none;
 }
 
+.deco-doily {
+  position: absolute;
+  width: 640px;
+  height: auto;
+  filter: drop-shadow(0 10px 22px rgba(92, 53, 64, 0.18));
+  pointer-events: none;
+}
+
+.deco-scallop-env {
+  position: absolute;
+  width: 180px;
+  height: auto;
+  filter: drop-shadow(0 7px 13px rgba(0, 0, 0, 0.22));
+  pointer-events: none;
+}
+
 .deco-stamp {
   position: absolute;
   width: 58px;
