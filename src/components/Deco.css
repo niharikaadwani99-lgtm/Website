@@ -31,8 +31,8 @@
   position: absolute;
   width: 58px;
   height: 70px;
-  background: #ede4cf;
-  border: 2px dotted rgba(44, 36, 23, 0.5);
+  background: #eef2e6;
+  border: 2px dotted rgba(36, 26, 29, 0.5);
   padding: 4px;
   display: flex;
   align-items: center;
@@ -43,7 +43,7 @@
 .deco-stamp__inner {
   width: 100%;
   height: 100%;
-  border: 1px solid rgba(44, 36, 23, 0.4);
+  border: 1px solid rgba(36, 26, 29, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -54,8 +54,8 @@
   color: var(--olive);
   background: repeating-linear-gradient(
     45deg,
-    rgba(44, 36, 23, 0.06),
-    rgba(44, 36, 23, 0.06) 3px,
+    rgba(36, 26, 29, 0.06),
+    rgba(36, 26, 29, 0.06) 3px,
     transparent 3px,
     transparent 6px
   );
@@ -133,7 +133,7 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #d9635a, #7a2e2c);
+  background: radial-gradient(circle at 35% 30%, #9c5468, #894d5b);
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
 }
 

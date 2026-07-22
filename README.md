@@ -9,9 +9,10 @@ a secret drawer) open into the rest of the site.
 ## Stack
 
 Plain React + Vite + `react-router-dom`, no UI framework — hand-rolled CSS
-per page using a shared ivory/sage/chocolate/burgundy palette and
-Caveat + Kalam (handwriting) / Source Serif 4 (editorial body) / Special
-Elite (typewriter) from Google Fonts.
+per page using a garden-inspired palette (apple green, dark moss, quinacridone
+magenta, orchid pink, Columbia blue) and a custom handwriting font (from a
+scanned specimen) + Kalam (secondary handwriting) / Source Serif 4 (editorial
+body) / Special Elite (typewriter) from Google Fonts.
 
 ## Structure
 

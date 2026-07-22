@@ -9,7 +9,7 @@ import './Process.css'
 const SERVICES = [
   {
     label: 'Concept Development',
-    color: '#c9b06a',
+    color: '#a8ad4a',
     sketch: (
       <path d="M50 90 C 20 90, 10 60, 30 40 C 45 25, 70 30, 75 50 C 78 62, 68 70, 58 65" />
     ),
@@ -18,14 +18,14 @@ const SERVICES = [
   },
   {
     label: 'Collection Design',
-    color: '#d9b8ae',
+    color: '#e1b1c1',
     sketch: <path d="M50 15 L35 35 L38 95 L62 95 L65 35 Z M35 35 L20 55 M65 35 L80 55" />,
     body:
       'Full range planning — silhouettes, fabric stories, colour palettes — built to hang together as a collection, not a pile of separate pieces.',
   },
   {
     label: 'Tech Packs',
-    color: '#8a9679',
+    color: '#88a82a',
     sketch: (
       <>
         <rect x="20" y="18" width="70" height="84" rx="2" />
@@ -39,7 +39,7 @@ const SERVICES = [
   },
   {
     label: 'Sampling Support',
-    color: '#b9c8cf',
+    color: '#c4e9f8',
     sketch: (
       <>
         <circle cx="55" cy="40" r="14" />
@@ -51,14 +51,14 @@ const SERVICES = [
   },
   {
     label: 'Production Guidance',
-    color: '#7a2e2c',
+    color: '#894d5b',
     sketch: <path d="M15 60 L40 60 L40 40 L65 40 L65 75 L95 75 M85 65 L95 75 L85 85" />,
     body:
       'Guiding a collection from approved sample to a finished production run — timelines, quality checkpoints, and the logistics no one designs for fun.',
   },
   {
     label: 'Manufacturer Communication',
-    color: '#4d4a35',
+    color: '#21510a',
     sketch: (
       <>
         <path d="M20 30 Q20 20 30 20 L70 20 Q80 20 80 30 L80 55 Q80 65 70 65 L40 65 L25 80 L28 65 L30 65 Q20 65 20 55 Z" />

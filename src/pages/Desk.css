@@ -36,7 +36,7 @@
   background:
     radial-gradient(ellipse 60% 40% at 85% 92%, rgba(255, 255, 255, 0.05), transparent 60%),
     radial-gradient(ellipse 50% 35% at 10% 8%, rgba(255, 255, 255, 0.04), transparent 60%),
-    linear-gradient(160deg, #3a2c1f 0%, #2e2117 55%, #201810 100%);
+    linear-gradient(160deg, #3a2530 0%, #1c2e0d 55%, #14200a 100%);
   border-radius: 12px;
   box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
 }
@@ -52,7 +52,7 @@
   color: var(--ink);
   background: var(--paper);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(44, 36, 23, 0.12);
+  border: 1px solid rgba(36, 26, 29, 0.12);
   cursor: pointer;
   font: inherit;
   text-align: left;
@@ -102,7 +102,7 @@
   top: -36px;
   right: -14px;
   width: 78px;
-  background: #f4f2e6;
+  background: #eef2e6;
   padding: 5px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
   transform: rotate(7deg);
@@ -121,7 +121,7 @@
 
 /* folder */
 .desk-item--folder {
-  background: #d9c592;
+  background: #c3cf85;
   padding-top: 30px;
 }
 
@@ -129,7 +129,7 @@
   position: absolute;
   top: -14px;
   left: 18px;
-  background: #c9b06a;
+  background: #a8ad4a;
   padding: 5px 14px;
   border-radius: 3px 3px 0 0;
   color: var(--chocolate-deep);
@@ -152,13 +152,13 @@
 .desk-item__postlines span {
   display: block;
   height: 1px;
-  background: rgba(44, 36, 23, 0.3);
+  background: rgba(36, 26, 29, 0.3);
   margin-bottom: 8px;
 }
 
 /* crossword clipping */
 .desk-item--crossword {
-  background: #ece6d6;
+  background: #e8ecd8;
   clip-path: polygon(
     0 0, 96% 0, 100% 4%, 98% 8%, 100% 100%, 4% 100%, 0 96%, 2% 8%
   );
@@ -174,7 +174,7 @@
 
 .desk-item__grid span {
   aspect-ratio: 1;
-  border: 1px solid rgba(44, 36, 23, 0.35);
+  border: 1px solid rgba(36, 26, 29, 0.35);
   background: transparent;
 }
 
@@ -190,7 +190,7 @@
 
 /* planner / book a call */
 .desk-item--planner {
-  background: #efe6d2;
+  background: #ebe8d4;
   padding-top: 30px;
 }
 
@@ -219,7 +219,7 @@
 
 .desk-item__mini-cal span {
   aspect-ratio: 1;
-  background: rgba(44, 36, 23, 0.12);
+  background: rgba(36, 26, 29, 0.12);
   border-radius: 1px;
 }
 
@@ -265,7 +265,7 @@
   width: min(260px, 90%);
   height: 46px;
   margin-top: 10px;
-  background: linear-gradient(180deg, #6b5138, #4a3826);
+  background: linear-gradient(180deg, #6b4550, #5c3540);
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 3px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), inset 0 -3px 0 rgba(0, 0, 0, 0.25);
@@ -279,7 +279,7 @@
   width: 60px;
   height: 8px;
   border-radius: 4px;
-  background: #d8cdb0;
+  background: #cdd1b0;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
@@ -328,7 +328,7 @@
 }
 
 .drawer-panel__card {
-  background: rgba(44, 36, 23, 0.05);
+  background: rgba(36, 26, 29, 0.05);
   border-left: 3px solid var(--burgundy);
   padding: 12px 14px;
 }

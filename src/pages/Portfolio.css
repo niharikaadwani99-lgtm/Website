@@ -31,7 +31,7 @@
   break-inside: avoid;
   margin-bottom: 20px;
   background: var(--paper);
-  border: 1px solid rgba(44, 36, 23, 0.1);
+  border: 1px solid rgba(36, 26, 29, 0.1);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
   padding: 14px 14px 16px;
   cursor: pointer;
@@ -53,11 +53,11 @@
   filter: grayscale(0.5) contrast(1.2) brightness(0.95);
 }
 
-.tone-a { background: radial-gradient(circle at 35% 30%, #b7c4a6, transparent 55%), linear-gradient(160deg, #6b5a46, #251d15); }
-.tone-b { background: radial-gradient(circle at 60% 40%, #d9b8ae, transparent 55%), linear-gradient(160deg, #4d4a35, #201c15); }
-.tone-c { background: radial-gradient(circle at 50% 55%, #b9c8cf, transparent 55%), linear-gradient(160deg, #3a352c, #17140f); }
-.tone-d { background: radial-gradient(circle at 45% 35%, #c9b06a, transparent 55%), linear-gradient(160deg, #4a3826, #201c15); }
-.tone-e { background: radial-gradient(circle at 55% 45%, #7a2e2c, transparent 55%), linear-gradient(160deg, #2e2117, #17140f); }
+.tone-a { background: radial-gradient(circle at 35% 30%, #a8bf6a, transparent 55%), linear-gradient(160deg, #6b4550, #241a1d); }
+.tone-b { background: radial-gradient(circle at 60% 40%, #e1b1c1, transparent 55%), linear-gradient(160deg, #21510a, #1e1a1d); }
+.tone-c { background: radial-gradient(circle at 50% 55%, #c4e9f8, transparent 55%), linear-gradient(160deg, #3a2c30, #14120f); }
+.tone-d { background: radial-gradient(circle at 45% 35%, #a8ad4a, transparent 55%), linear-gradient(160deg, #5c3540, #1e1a1d); }
+.tone-e { background: radial-gradient(circle at 55% 45%, #894d5b, transparent 55%), linear-gradient(160deg, #1c2e0d, #14120f); }
 
 .board-item__chips {
   display: flex;

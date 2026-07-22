@@ -1,20 +1,20 @@
 :root {
-  --ivory: #f2ead9;
-  --cream: #ede2ca;
-  --paper: #f7f0e2;
-  --paper-aged: #e9dcc0;
-  --sage: #8a9679;
-  --sage-dim: #6f7a5f;
-  --olive: #4d4a35;
-  --chocolate: #4a3826;
-  --chocolate-deep: #2e2117;
-  --washed-black: #292420;
-  --burgundy: #7a2e2c;
-  --pastel-blue: #b9c8cf;
-  --pastel-pink: #d9b8ae;
-  --ink: #2c2417;
-  --line: rgba(44, 36, 23, 0.18);
-  --line-strong: rgba(44, 36, 23, 0.4);
+  --ivory: #eef3ea;
+  --cream: #f4e9ec;
+  --paper: #f2f4ea;
+  --paper-aged: #e6d3d6;
+  --sage: #88a82a;
+  --sage-dim: #6a8620;
+  --olive: #21510a;
+  --chocolate: #5c3540;
+  --chocolate-deep: #1c2e0d;
+  --washed-black: #16200d;
+  --burgundy: #894d5b;
+  --pastel-blue: #c4e9f8;
+  --pastel-pink: #e1b1c1;
+  --ink: #241a1d;
+  --line: rgba(36, 26, 29, 0.18);
+  --line-strong: rgba(36, 26, 29, 0.4);
 
   --font-hand: 'Niharika Hand', 'Caveat', cursive;
   --font-hand2: 'Kalam', cursive;
@@ -128,7 +128,7 @@ button {
 .paper-card {
   background: var(--paper);
   box-shadow: 0 12px 26px rgba(0, 0, 0, 0.22);
-  border: 1px solid rgba(44, 36, 23, 0.12);
+  border: 1px solid rgba(36, 26, 29, 0.12);
 }
 
 .btn-scribble {

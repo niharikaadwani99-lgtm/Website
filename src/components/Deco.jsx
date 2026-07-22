@@ -96,7 +96,7 @@ export function HandArrow({ className = '', style, d = 'M4 6 C 40 2, 70 40, 100 
   )
 }
 
-export function FolderTab({ label, color = '#c9b98a', style, className = '' }) {
+export function FolderTab({ label, color = '#b9bd85', style, className = '' }) {
   return (
     <span className={`deco-folder-tab ${className}`} style={{ background: color, ...style }}>
       {label}
