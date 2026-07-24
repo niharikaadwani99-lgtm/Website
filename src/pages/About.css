@@ -34,16 +34,16 @@
   padding: 16px 16px 18px;
   background: var(--paper);
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
-  border: 1px solid rgba(36, 26, 29, 0.1);
+  border: 1px solid rgba(33,81,10,0.1);
 }
 
 .r1 { transform: rotate(-2deg); }
-.r2 { transform: rotate(2deg); background: #f0e6a8 !important; }
+.r2 { transform: rotate(2deg); background: #e1b1c1 !important; }
 .r3 { transform: rotate(-1deg); }
 .r4 { transform: rotate(1.5deg); }
 .r5 { transform: rotate(2.5deg); }
 .r6 { transform: rotate(-2deg); }
-.r7 { transform: rotate(1deg); background: #f0e6a8 !important; }
+.r7 { transform: rotate(1deg); background: #e1b1c1 !important; }
 .r8 { transform: rotate(-2.5deg); }
 
 .scrap-card--photo .scrap-card__photo {
@@ -51,14 +51,14 @@
   height: 190px;
   margin-bottom: 10px;
   background:
-    radial-gradient(circle at 30% 25%, #ffe1ec, transparent 58%),
-    linear-gradient(160deg, #e1b1c1 0%, #a8ad4a 100%);
+    radial-gradient(circle at 30% 25%, #f6d5df, transparent 58%),
+    linear-gradient(160deg, #e1b1c1 0%, #88a82a 100%);
 }
 
 .photo-grain--b {
   background:
-    radial-gradient(circle at 65% 35%, #d9f2ff, transparent 58%),
-    linear-gradient(160deg, #a8bf6a 0%, #c4e9f8 100%) !important;
+    radial-gradient(circle at 65% 35%, #e2f4fd, transparent 58%),
+    linear-gradient(160deg, #8fb84f 0%, #c4e9f8 100%) !important;
 }
 
 .scrap-card__cap {
@@ -110,7 +110,7 @@
 .about-influences__row span {
   font-family: var(--font-type);
   font-size: 0.82rem;
-  background: rgba(36, 26, 29, 0.06);
+  background: rgba(33,81,10,0.06);
   border: 1px solid var(--line);
   padding: 6px 12px;
   border-radius: 2px;

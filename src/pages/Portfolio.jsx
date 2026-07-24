@@ -22,17 +22,17 @@ import './Portfolio.css'
 
 const ITEMS = [
   { type: 'photo', tone: 'a', caption: 'Fitting session, Delhi — third round of corrections on the bodice.', r: -3 },
-  { type: 'swatch', chips: ['#88a82a', '#a8ad4a', '#21510a'], caption: 'Palette for a monsoon capsule — sage, brass, olive.', r: 2 },
+  { type: 'swatch', chips: ['#88a82a', '#88a82a', '#21510a'], caption: 'Palette for a monsoon capsule — sage, brass, olive.', r: 2 },
   { type: 'sketch', caption: 'Original sketch, before it lost the sleeves.', r: -1.5 },
   { type: 'photo', tone: 'b', caption: 'Factory floor, Jaipur — hand block printing in progress.', r: 3 },
   { type: 'note', caption: 'The client wanted "effortless." It took four fittings to look effortless.', r: -2 },
   { type: 'photo', tone: 'c', caption: 'Production run, final QC before shipping.', r: 1.5 },
-  { type: 'swatch', chips: ['#894d5b', '#e1b1c1', '#241a1d'], caption: 'A burgundy story that almost got cut from the line.', r: -3 },
+  { type: 'swatch', chips: ['#894d5b', '#e1b1c1', '#1a2a0d'], caption: 'A burgundy story that almost got cut from the line.', r: -3 },
   { type: 'photo', tone: 'd', caption: 'Reference wall — always half fashion, half unrelated.', r: 2.5 },
   { type: 'sketch', caption: 'Flat sketch for tech pack reference, annotated by hand.', r: -1 },
   { type: 'note', caption: 'A factory detail worth remembering: ask about minimums before you fall in love with a fabric.', r: 3 },
   { type: 'photo', tone: 'e', caption: 'Sampling table, mid-review.', r: -2.5 },
-  { type: 'swatch', chips: ['#c4e9f8', '#88a82a', '#f2e9d6'], caption: 'Cool tones for a resort line that never launched. Yet.', r: 1 },
+  { type: 'swatch', chips: ['#c4e9f8', '#88a82a', '#eef3e2'], caption: 'Cool tones for a resort line that never launched. Yet.', r: 1 },
 ]
 
 function Portfolio() {

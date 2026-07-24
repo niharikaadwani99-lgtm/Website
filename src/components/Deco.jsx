@@ -122,7 +122,7 @@ export function Paperclip({ className = '', style, variant = 'gold' }) {
 
 export function LaceDoily({ className = '', style }) {
   const cx = 320, cy = 230, rx = 300, ry = 210
-  const cream = '#f7f0df'
+  const cream = '#f2f6ea'
   const scallops = 46
   const eyelets = 34
   return (
@@ -132,7 +132,7 @@ export function LaceDoily({ className = '', style }) {
         return <circle key={`s${i}`} cx={cx + Math.cos(a) * rx} cy={cy + Math.sin(a) * ry} r="22" fill={cream} />
       })}
       <ellipse cx={cx} cy={cy} rx={rx} ry={ry} fill={cream} />
-      <ellipse cx={cx} cy={cy} rx={rx - 6} ry={ry - 6} fill="none" stroke="rgba(92,53,64,0.10)" strokeWidth="2" />
+      <ellipse cx={cx} cy={cy} rx={rx - 6} ry={ry - 6} fill="none" stroke="rgba(20,40,10,0.10)" strokeWidth="2" />
       {Array.from({ length: eyelets }).map((_, i) => {
         const a = (i / eyelets) * Math.PI * 2
         return (
@@ -142,12 +142,12 @@ export function LaceDoily({ className = '', style }) {
             cy={cy + Math.sin(a) * (ry - 30)}
             r="6"
             fill="none"
-            stroke="rgba(92,53,64,0.16)"
+            stroke="rgba(20,40,10,0.16)"
             strokeWidth="2"
           />
         )
       })}
-      <ellipse cx={cx} cy={cy} rx={rx - 60} ry={ry - 60} fill="none" stroke="rgba(92,53,64,0.09)" strokeWidth="1.5" strokeDasharray="2 8" />
+      <ellipse cx={cx} cy={cy} rx={rx - 60} ry={ry - 60} fill="none" stroke="rgba(20,40,10,0.09)" strokeWidth="1.5" strokeDasharray="2 8" />
     </svg>
   )
 }
@@ -158,11 +158,11 @@ export function ScallopEnvelope({ className = '', style, color = '#e1b1c1' }) {
   const r = bw / 2
   return (
     <svg className={`deco-scallop-env ${className}`} style={style} viewBox="0 0 230 178" aria-hidden="true">
-      <rect x="2" y="6" width="226" height="150" rx="6" fill={color} stroke="rgba(36,26,29,0.16)" strokeWidth="1.5" />
+      <rect x="2" y="6" width="226" height="150" rx="6" fill={color} stroke="rgba(33,81,10,0.16)" strokeWidth="1.5" />
       {Array.from({ length: bumps }).map((_, i) => (
-        <circle key={i} cx={r + i * bw} cy="156" r={r} fill={color} stroke="rgba(36,26,29,0.14)" strokeWidth="1.2" />
+        <circle key={i} cx={r + i * bw} cy="156" r={r} fill={color} stroke="rgba(33,81,10,0.14)" strokeWidth="1.2" />
       ))}
-      <polygon points="4,8 226,8 115,96" fill="rgba(255,255,255,0.28)" stroke="rgba(36,26,29,0.14)" strokeWidth="1.5" />
+      <polygon points="4,8 226,8 115,96" fill="rgba(255,255,255,0.28)" stroke="rgba(33,81,10,0.14)" strokeWidth="1.5" />
     </svg>
   )
 }
@@ -222,7 +222,7 @@ export function HandArrow({ className = '', style, d = 'M4 6 C 40 2, 70 40, 100 
   )
 }
 
-export function FolderTab({ label, color = '#b9bd85', style, className = '' }) {
+export function FolderTab({ label, color = '#b4c07a', style, className = '' }) {
   return (
     <span className={`deco-folder-tab ${className}`} style={{ background: color, ...style }}>
       {label}

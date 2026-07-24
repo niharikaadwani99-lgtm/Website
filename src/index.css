@@ -1,20 +1,20 @@
 :root {
   --ivory: #eef3ea;
-  --cream: #f4e9ec;
+  --cream: #f1f5ec;
   --paper: #f2f4ea;
-  --paper-aged: #e6d3d6;
+  --paper-aged: #e6dbd0;
   --sage: #88a82a;
   --sage-dim: #6a8620;
   --olive: #21510a;
-  --chocolate: #5c3540;
+  --chocolate: #6e3d47;
   --chocolate-deep: #1c2e0d;
   --washed-black: #16200d;
   --burgundy: #894d5b;
   --pastel-blue: #c4e9f8;
   --pastel-pink: #e1b1c1;
-  --ink: #241a1d;
-  --line: rgba(36, 26, 29, 0.18);
-  --line-strong: rgba(36, 26, 29, 0.4);
+  --ink: #1a2a0d;
+  --line: rgba(33,81,10,0.18);
+  --line-strong: rgba(33,81,10,0.4);
 
   --font-hand: 'Niharika Hand', 'Caveat', cursive;
   --font-hand2: 'Kalam', cursive;
@@ -130,7 +130,7 @@ button {
 .paper-card {
   background: var(--paper);
   box-shadow: 0 12px 26px rgba(0, 0, 0, 0.22);
-  border: 1px solid rgba(36, 26, 29, 0.12);
+  border: 1px solid rgba(33,81,10,0.12);
 }
 
 .btn-scribble {

@@ -9,7 +9,7 @@ import './Process.css'
 const SERVICES = [
   {
     label: 'Concept Development',
-    color: '#a8ad4a',
+    color: '#88a82a',
     sketch: (
       <path d="M50 90 C 20 90, 10 60, 30 40 C 45 25, 70 30, 75 50 C 78 62, 68 70, 58 65" />
     ),

@@ -103,7 +103,7 @@
   position: absolute;
   width: 640px;
   height: auto;
-  filter: drop-shadow(0 10px 22px rgba(92, 53, 64, 0.18));
+  filter: drop-shadow(0 10px 22px rgba(20,40,10,0.18));
   pointer-events: none;
 }
 
@@ -120,7 +120,7 @@
   width: 58px;
   height: 70px;
   background: #eef2e6;
-  border: 2px dotted rgba(36, 26, 29, 0.5);
+  border: 2px dotted rgba(33,81,10,0.5);
   padding: 4px;
   display: flex;
   align-items: center;
@@ -131,7 +131,7 @@
 .deco-stamp__inner {
   width: 100%;
   height: 100%;
-  border: 1px solid rgba(36, 26, 29, 0.4);
+  border: 1px solid rgba(33,81,10,0.4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -142,8 +142,8 @@
   color: var(--olive);
   background: repeating-linear-gradient(
     45deg,
-    rgba(36, 26, 29, 0.06),
-    rgba(36, 26, 29, 0.06) 3px,
+    rgba(33,81,10,0.06),
+    rgba(33,81,10,0.06) 3px,
     transparent 3px,
     transparent 6px
   );
@@ -243,7 +243,7 @@
   position: fixed;
   inset: 0;
   z-index: 900;
-  background: rgba(41, 36, 32, 0.72);
+  background: rgba(20,45,8,0.72);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -289,3 +289,12 @@
   display: block;
   margin-bottom: 10px;
 }
+
+/* strict palette: neutralise the warm/off-palette real-photo props so only the
+   five garden colours read as colour (metal, kraft, wood, red -> muted neutral) */
+.deco-clip, .deco-tape, .deco-clothespin, .deco-tag, .deco-envelope, .deco-scrap, .deco-tapebow {
+  filter: grayscale(0.72) saturate(0.5) brightness(1.03) drop-shadow(0 4px 8px rgba(0,0,0,0.25)) !important;
+}
+.hidden-note__paper { filter: saturate(0.5) drop-shadow(0 7px 15px rgba(0,0,0,0.28)) !important; }
+.deco-pin { filter: saturate(0.55) drop-shadow(0 3px 4px rgba(0,0,0,0.35)) !important; }
+.deco-confetti, .deco-paperstar, .deco-star { filter: saturate(0.7) drop-shadow(0 2px 4px rgba(0,0,0,0.28)) !important; }

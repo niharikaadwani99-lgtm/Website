@@ -166,7 +166,7 @@ function Desk() {
           className="desk-note desk-note--3"
           rotate={-3}
           pin="teal"
-          paper="kraft"
+          paper="pink"
         >
           <span className="hand">the coat that stayed a drawing</span>
           Some ideas are better left as a page in a sketchbook. This one had eleven pattern
